@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-27T15:57:54.494Z",
+  "publishedAt": "2026-09-27T20:33:52.242Z",
   "mods": [
     {
       "id": "evejs-autolockfire",
@@ -41,7 +41,7 @@
       "delisted": false,
       "publishedAt": "2026-09-22",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 58,
+      "downloads": 62,
       "cdnHits": 51
     },
     {
@@ -83,7 +83,7 @@
       "delisted": false,
       "publishedAt": "2026-09-23",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 26,
+      "downloads": 30,
       "cdnHits": 4
     },
     {
@@ -129,7 +129,7 @@
       "delisted": false,
       "publishedAt": "2026-09-27",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 13,
+      "downloads": 17,
       "cdnHits": 0
     },
     {
@@ -169,14 +169,14 @@
       "delisted": false,
       "publishedAt": "2026-09-22",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 47,
+      "downloads": 49,
       "cdnHits": 52
     }
   ],
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "mSYI18qf1LUcKtTzyQqhERdEjbwaLPdQf03WYdtzrJH8dJdK7qCqXYvZYboN8B0XJ/ijd8rVzgHrXg5jWJz/Dg==",
-    "signedAt": "2026-09-27T15:57:54.496Z"
+    "sig": "GzFNrjt60vGrdK0BFWn2EGXkdNlBj2uUuiQSs72ejLtFp1qQTFvpZ0H09ln8jFgbJk9fqm4Wy2dAaR5ekiR5Aw==",
+    "signedAt": "2026-09-27T20:33:52.245Z"
   }
 }
