@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-28T12:54:10.059Z",
+  "updatedAt": "2026-09-28T13:05:29.505Z",
   "entries": [
     {
       "target": "welcome-mod",
@@ -44,6 +44,17 @@
         "en": "manifest 字段缺失，重新提交"
       },
       "at": "2026-09-28T12:54:10.059Z",
+      "by": "diguo520"
+    },
+    {
+      "target": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
+      "kind": "source",
+      "action": "delist",
+      "reason": {
+        "zh": "manifest 字段缺失",
+        "en": "manifest 字段缺失"
+      },
+      "at": "2026-09-28T13:05:29.505Z",
       "by": "diguo520"
     }
   ]
