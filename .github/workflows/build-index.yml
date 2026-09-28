@@ -7,7 +7,8 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: [sources.json, moderation.json, scripts/**, .github/workflows/build-index.yml]
+    # mods/**：合并一条版本记录（审核 PR）后立刻重建，不用等下一个 6 小时的定时任务
+    paths: [sources.json, moderation.json, mods/**, scripts/**, .github/workflows/build-index.yml]
 
 permissions:
   contents: write

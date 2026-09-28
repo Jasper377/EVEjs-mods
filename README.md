@@ -47,13 +47,18 @@ EVEjs-mods/
     mod-index.json
 ```
 
-### How an author gets listed (no PR against the index needed)
+### How an author gets listed (one PR per release, reviewed here)
 
 1. Put the mod source in their own repository and use the launcher's **Submit mod -> Publish to my repo**:
    the launcher writes `evejs-mod.json`, creates the Release and uploads the ZIP;
-2. Use the launcher's **Request listing** to add `<owner>/<repo>` to `sources.json` (**one-off** PR);
-   - new versions afterwards need **no further PR** — they push to their own repository and the next CI run picks the new version up;
-3. The maintainer reviews the PR (checklist below) and merges it.
+2. Use the launcher's **Submit for review** to open a PR against this index repository:
+   - first release: `sources.json` (registers `<owner>/<repo>`) **and** `mods/<id>.json` (the version record);
+   - every later release: `mods/<id>.json` only — the same `release/<id>` branch, so the open PR is refreshed
+     instead of piling up one PR per version;
+3. The maintainer reviews the PR (checklist below) and merges it. **Only merged records go live**:
+   `build-index.mjs` treats the merged `mods/<id>.json` as the authoritative version of that source,
+   so the marketplace moves to a new version when the PR is merged (merging also triggers an immediate rebuild
+   via the `mods/**` path filter; the 6-hourly run stays as a safety net).
 
 ### Listing checklist (PR review)
 
@@ -233,13 +238,18 @@ EVEjs-mods/
     mod-index.json
 ```
 
-### 作者怎么上架自己的模组（不需要向你提 PR 改索引）
+### 作者怎么上架自己的模组（每次发布一条 PR，在这里审）
 
 1. 在自己仓库里放模组源码，用**启动器**的「提交模组 → 发布到我的仓库」：
    启动器会帮他写好 `evejs-mod.json` 并建 Release、上传 ZIP；
-2. 用启动器的「申请收录」往本仓库 `sources.json` 加一行 `<owner>/<repo>`（**一次性** PR）；
-   - 之后**发新版不需要再提 PR** —— 他推自己的仓库，CI 下次跑就会带上新版本；
-3. 你在 PR 里人工看一遍（下面有收录规范），合并即可。
+2. 用启动器的「提交审核」往本仓库提一条 PR：
+   - 首次发布：`sources.json`（登记 `<owner>/<repo>`）**和** `mods/<id>.json`（本次版本记录）；
+   - 之后每次发新版：只更新 `mods/<id>.json`（同一个 `release/<id>` 分支，
+     所以是**刷新同一条 PR**，不会一版一条堆在这里）；
+3. 你在 PR 里人工看一遍（下面有收录规范），合并即可。**只有合并了的记录才会上线**：
+   `build-index.mjs` 把已合并的 `mods/<id>.json` 当作该来源的权威版本，
+   所以市场是**跟着 PR 合并**换版本的（`mods/**` 也在 workflow 的 paths 里，合并即立刻重建；
+   6 小时的定时任务只当兜底）。
 
 ### 收录规范（PR 检查清单）
 

@@ -24,6 +24,7 @@ const ROOT = process.cwd();
 const SOURCES_FILE = path.join(ROOT, "sources.json");
 const AUTHOR_KEYS_FILE = path.join(ROOT, "author-keys.json");
 const MODERATION_FILE = path.join(ROOT, "moderation.json");
+const MODS_DIR = path.join(ROOT, "mods");
 const OUT_DIR = path.join(ROOT, "docs");
 const OUT_FILE = path.join(OUT_DIR, "mod-index.json");
 const LISTING_NAME = "evejs-mod.json";
@@ -169,6 +170,42 @@ const authorKeys = (() => {
 })();
 
 /**
+ * 版本记录：`mods/<id>.json`（启动器的「提交审核」每次发布都会往这个目录提一条 PR）。
+ *
+ * 记录里写的是"哪一版已经被维护者合并"：构建时用它覆盖作者仓库存清单里的
+ * 版本号 / sha256 / 下载地址，所以**没合并的版本不会进市场** —— 审核门就落在这里。
+ * 目录不存在（或记录里没有这个 id）＝按老路子走：只信作者仓库的 `evejs-mod.json`。
+ */
+const modRecords = (() => {
+  const map = new Map();
+  let names = [];
+  try {
+    names = fs.readdirSync(MODS_DIR);
+  } catch {
+    return map; // 还没有 mods/ 目录：正常，全部按老路子
+  }
+  for (const name of names) {
+    if (!name.endsWith(".json")) continue;
+    const shown = "mods/" + name;
+    try {
+      const parsed = JSON.parse(fs.readFileSync(path.join(MODS_DIR, name), "utf8"));
+      const id = parsed && typeof parsed.id === "string" ? parsed.id.trim() : "";
+      if (!id) { console.warn("跳过 " + shown + "：缺 id"); continue; }
+      const key = id.toLowerCase();
+      if (map.has(key)) {
+        console.warn("跳过 " + shown + "：id「" + id + "」已经有记录了（" + map.get(key).__file + "）");
+        continue;
+      }
+      map.set(key, { ...parsed, __file: shown });
+    } catch (e) {
+      console.warn("跳过 " + shown + "：" + (e && e.message ? e.message : e));
+    }
+  }
+  if (map.size) console.log("读到版本记录 " + map.size + " 条（mods/）");
+  return map;
+})();
+
+/**
  * 本地清单覆盖（可选）：INDEX_LOCAL_LISTINGS="owner/repo=/abs/path/evejs-mod.json;owner2/repo2=/abs/..."
  * 用途：本地/离线构建时，不依赖 CDN（jsDelivr 对分支引用有最长约 12h 缓存，刚改完清单时读到的可能是旧的）。
  */
@@ -277,9 +314,28 @@ for (const repo of sources) {
     console.log("  " + repo + " 清单来源：" + label + "（v" + String(entry.version || "?") + "）");
   }
   const id = typeof entry.id === "string" ? entry.id.trim() : "";
+  if (!id) { rejected.push({ repo, reason: "缺 id" }); continue; }
+
+  // 已合并的版本记录是该来源的权威版本：覆盖清单里的版本号 / 摘要 / 下载地址。
+  const record = modRecords.get(id.toLowerCase());
+  if (record) {
+    const recordSource = String(record.source || "").trim();
+    if (recordSource.toLowerCase() !== repo.toLowerCase()) {
+      rejected.push({ repo, reason: record.__file + " 里记录的来源是「" + recordSource + "」，不是这个仓库" });
+      continue;
+    }
+    if (typeof record.version === "string" && record.version.trim()) entry.version = record.version.trim();
+    if (typeof record.sha256 === "string" && /^[0-9a-f]{64}$/i.test(record.sha256.trim())) {
+      entry.sha256 = record.sha256.trim().toLowerCase();
+    }
+    if (typeof record.sizeBytes === "number" && record.sizeBytes > 0) entry.sizeBytes = record.sizeBytes;
+    if (Array.isArray(record.downloadUrls) && record.downloadUrls.length) entry.downloadUrls = record.downloadUrls;
+    if (typeof record.publishedAt === "string" && record.publishedAt.trim()) entry.publishedAt = record.publishedAt.trim();
+    console.log("  " + id + "：采用已合并的版本记录 " + record.__file + "（v" + entry.version + "）");
+  }
+
   const version = typeof entry.version === "string" ? entry.version.trim() : "";
   const sha256 = typeof entry.sha256 === "string" ? entry.sha256.trim().toLowerCase() : "";
-  if (!id) { rejected.push({ repo, reason: "缺 id" }); continue; }
   if (!version) { rejected.push({ repo, reason: "缺 version" }); continue; }
   if (!/^[0-9a-f]{64}$/.test(sha256)) { rejected.push({ repo, reason: "sha256 不是 64 位 hex" }); continue; }
 
