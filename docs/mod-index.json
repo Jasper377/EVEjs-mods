@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-28T01:26:49.602Z",
+  "publishedAt": "2026-09-28T02:26:10.223Z",
   "mods": [
     {
       "id": "evejs-autolockfire",
@@ -176,7 +176,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "K5bhad56ERTUOH57YVTmgZj+MjJce0H+vMETBHsfwSwpyrnHuSLPKZnyR7aIIQaZgYh1R344cqaelvUQwzzKCw==",
-    "signedAt": "2026-09-28T01:26:49.604Z"
+    "sig": "cRE/SULWju2FntX/bRzNOHGW7IkjERC3tzd5YAM2RuzC4/C5Bl1A0H9mqCapTo46e7n/Mzi0IwRlxPQlv/3CAg==",
+    "signedAt": "2026-09-28T02:26:10.225Z"
   }
 }
