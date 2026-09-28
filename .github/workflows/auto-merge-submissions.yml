@@ -49,7 +49,7 @@ permissions:
 
 # 同一条 PR 串行跑：启动器会连续 push 好几次，别让两次校验互相踩
 concurrency:
-  group: auto-merge-${{ github.event.pull_request.number || inputs.pr }}
+  group: auto-merge-${{ github.event.pull_request.number || inputs.pr || github.event.client_payload.pr }}
   cancel-in-progress: false
 
 jobs:
@@ -107,7 +107,7 @@ jobs:
                 return res.text().then(function (text) {
                   let json = null
                   try { json = text ? JSON.parse(text) : null } catch (e) { json = null }
-                  return { status: res.status, ok: res.ok, json: json }
+                  return { status: res.status, ok: res.ok, json: json, text: text }
                 })
               })
           }
@@ -180,6 +180,80 @@ jobs:
             return { added: added, removed: removed, isMaintainer: MAINTAINERS.indexOf(author) >= 0 }
           }
 
+          /**
+           * 分支与 main 撞车时的兜底：对 fork 分支我们没有写权限（update-branch 会 403），
+           * 让作者自己解冲突等于把「无人值守」废掉，所以把「合并后 main 该有的样子」直接提交上去：
+           * sources.json 用 main 现有清单并上本 PR 新增的来源（只增不删、main 的顺序在前），
+           * 再把本 PR 的 mods/*.json 原样放上去。全程只写这里已经校验过的两类文件。
+           * main 在这期间被别的东西推进了就重读一次再试，失败把状态码如实带回去。
+           */
+          async function replayOnMain(added, modTexts, mainDoc, touchesSources) {
+            const paths = Object.keys(modTexts || {})
+            for (let attempt = 0; attempt < 2; attempt += 1) {
+              const ref = await api("/repos/" + REPO + "/git/ref/heads/main")
+              if (!ref.ok) return { ok: false, status: ref.status }
+              const headCommit = await api("/repos/" + REPO + "/git/commits/" + ref.json.object.sha)
+              if (!headCommit.ok) return { ok: false, status: headCommit.status }
+              const baseTree = headCommit.json.tree.sha
+              const tree = []
+
+              if (touchesSources) {
+                const current = readSources(mainDoc)
+                const seen = {}
+                current.forEach(function (s) { seen[s.toLowerCase()] = 1 })
+                const union = current.slice()
+                added.forEach(function (s) { if (!seen[s.toLowerCase()]) { seen[s.toLowerCase()] = 1; union.push(s) } })
+                const text = JSON.stringify(Object.assign({}, mainDoc, { sources: union }), null, 2) + "\n"
+                const blob = await api("/repos/" + REPO + "/git/blobs", {
+                  method: "POST", headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ content: text, encoding: "utf-8" }),
+                })
+                if (!blob.ok) return { ok: false, status: blob.status }
+                tree.push({ path: "sources.json", mode: "100644", type: "blob", sha: blob.json.sha })
+              }
+
+              for (let i = 0; i < paths.length; i += 1) {
+                const p = paths[i]
+                const raw = String(modTexts[p] || "")
+                const text = raw.slice(-1) === "\n" ? raw : raw + "\n"
+                const blob = await api("/repos/" + REPO + "/git/blobs", {
+                  method: "POST", headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ content: text, encoding: "utf-8" }),
+                })
+                if (!blob.ok) return { ok: false, status: blob.status }
+                tree.push({ path: p, mode: "100644", type: "blob", sha: blob.json.sha })
+              }
+
+              if (!tree.length) return { ok: true, already: true, sha: "" }
+
+              const newTree = await api("/repos/" + REPO + "/git/trees", {
+                method: "POST", headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ base_tree: baseTree, tree: tree }),
+              })
+              if (!newTree.ok) return { ok: false, status: newTree.status }
+              // 内容和 main 一模一样（典型的「重跑一条已经收录过的 PR」）→ 不用再生成空提交
+              if (newTree.json.sha === baseTree) return { ok: true, already: true, sha: "" }
+
+              const commit = await api("/repos/" + REPO + "/git/commits", {
+                method: "POST", headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  message: "chore(index): 自动收录 " + (added.length ? added.join(", ") : paths.join(", ")) + "（PR #" + PR_NUMBER + "）\n\n由 auto-merge-submissions 在分支与 main 撞车时按 main 现状重放生成。",
+                  tree: newTree.json.sha,
+                  parents: [headCommit.json.sha],
+                }),
+              })
+              if (!commit.ok) return { ok: false, status: commit.status }
+              const upd = await api("/repos/" + REPO + "/git/refs/heads/main", {
+                method: "PATCH", headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ sha: commit.json.sha, force: false }),
+              })
+              if (upd.ok) return { ok: true, sha: commit.json.sha }
+              // 409/422 一般是这几秒里 main 又被人推进了，重读一次再来
+              if (upd.status !== 409 && upd.status !== 422) return { ok: false, status: upd.status }
+            }
+            return { ok: false, status: 409 }
+          }
+
           async function main() {
             const prRes = await api("/repos/" + REPO + "/pulls/" + PR_NUMBER)
             if (!prRes.ok) {
@@ -228,7 +302,8 @@ jobs:
               }
             }
 
-            const mainList = readSources(baseM.json)
+            const mainDoc = baseM.json
+            const mainList = readSources(mainDoc)
             if (baseM.status !== 200) fail.push("读不到 main 的 sources.json（HTTP " + baseM.status + "）")
             const verdict = evaluate(pr, files, baseList, headList, mainList, author)
 
@@ -252,6 +327,7 @@ jobs:
             mainList.forEach(function (s) { headSet[s.toLowerCase()] = 1 })
             const modFiles = files.map(function (f) { return String(f.filename || "") })
               .filter(function (n) { return n.indexOf("mods/") === 0 })
+            const modTexts = {}
 
             for (let i = 0; i < modFiles.length; i += 1) {
               const p = modFiles[i]
@@ -259,6 +335,7 @@ jobs:
               if (r.status !== 200) { fail.push("读不到 " + p + "（HTTP " + r.status + "）"); continue }
               const rec = r.json
               if (!rec || typeof rec !== "object" || Array.isArray(rec)) { fail.push(p + " 不是 JSON 对象"); continue }
+              modTexts[p] = String(r.text || "")
               const id = String(rec.id || "").trim()
               const wantId = p.slice(5, p.length - 5)
               if (!id) fail.push(p + " 缺 id")
@@ -291,20 +368,40 @@ jobs:
             if (!AUTOMERGE) { console.log("::notice::总开关 AUTO_MERGE_SUBMISSIONS=off，只校验不合并"); return summary }
             if (DRY) { console.log("::notice::DRY_RUN=1，跳过合并"); summary.merged = "dry"; return summary }
 
-            let merge = await api("/repos/" + REPO + "/pulls/" + PR_NUMBER + "/merge", {
-              method: "PUT",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ merge_method: "squash" }),
-            })
-            if (!merge.ok && merge.status === 405) {
-              await api("/repos/" + REPO + "/pulls/" + PR_NUMBER + "/update-branch", { method: "PUT", headers: { "Content-Type": "application/json" }, body: "{}" })
-              merge = await api("/repos/" + REPO + "/pulls/" + PR_NUMBER + "/merge", {
-                method: "PUT",
+            // 正常合并优先：能合上就保留 PR 的 merged 标记，作者在 GitHub 上也有个正式的交待
+            const squash = { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ merge_method: "squash" }) }
+            let merge = await api("/repos/" + REPO + "/pulls/" + PR_NUMBER + "/merge", squash)
+            let replayed = null
+
+            if (!merge.ok) {
+              // 合并失败的常见原因就是 sources.json 撞车：它是所有人共用的一份清单，两条 PR 只要改到
+              // 同一段就会冲突。而对 fork 分支我们没有写权限（update-branch 会 403），把冲突甩给作者
+              // 去解就等于把「无人值守」废掉 —— 所以改成「按 main 现状重放」，见 replayOnMain 的注释。
+              console.log("::notice::直接合并失败（HTTP " + merge.status + "：" + ((merge.json && merge.json.message) || "") + "），改按 main 现状重放")
+              replayed = await replayOnMain(verdict.added, modTexts, mainDoc, touchesSources)
+              if (!replayed.ok) {
+                fail.push("自动合并失败（HTTP " + merge.status + "：" + ((merge.json && merge.json.message) || "") + "），按 main 现状重放也没成功（HTTP " + replayed.status + "）")
+              }
+            }
+            if (fail.length) {
+              // 关键：失败一定要留下痕迹。之前这里直接 return 不留言，作者和站长都看不到原因。
+              console.log("::warning::收录失败：" + fail.join(" ｜ "))
+              await upsertComment(
+                "**自动收录失败，这条 PR 需要维护者看一眼。** / Auto-merge failed, a maintainer should take a look.\n\n" +
+                fail.map(function (r) { return "- " + r }).join("\n") +
+                "\n\n推送新提交、或等下一轮巡检，会自动重试。",
+              )
+              return summary
+            }
+
+            if (replayed) {
+              // 重放完就把 PR 关掉（内容已经进 main 了），否则它会一直挂在队列里被反复巡检
+              await api("/repos/" + REPO + "/pulls/" + PR_NUMBER, {
+                method: "PATCH",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ merge_method: "squash" }),
+                body: JSON.stringify({ state: "closed" }),
               })
             }
-            if (!merge.ok) { fail.push("合并失败（HTTP " + merge.status + "）：" + ((merge.json && merge.json.message) || "")); return summary }
 
             const disp = await api("/repos/" + REPO + "/actions/workflows/build-index.yml/dispatches", {
               method: "POST",
@@ -313,12 +410,15 @@ jobs:
             })
             if (disp.status !== 204) console.log("::warning::触发 build-index 失败（HTTP " + disp.status + "），6 小时兜底会补上")
 
-            summary.merged = true
+            summary.merged = replayed ? "replayed" : true
+            if (replayed && replayed.sha) summary.commit = replayed.sha
             const done = []
             if (verdict.added.length) done.push("- 新增来源 / new source: " + verdict.added.join(", "))
             if (modFiles.length) done.push("- 版本记录 / version record: " + modFiles.join(", "))
             await upsertComment(
-              "**已通过自动校验并自动合并，索引正在重建（约 1 分钟生效）。** / Auto-validated, merged, index rebuilding (live in ~1 min)." +
+              (replayed
+                ? "**已通过自动校验并自动收录**：这条分支和 main 的 sources.json 撞车了，已按 main 的最新清单重新生成提交，所以 PR 显示为已关闭（内容已经在索引仓库里，不用再手动处理）。**索引正在重建，约 1 分钟生效。** / Auto-validated and applied. The branch conflicted with sources.json, so the change was replayed on top of the current main and this PR was closed. Index rebuilding (live in ~1 min)."
+                : "**已通过自动校验并自动合并，索引正在重建（约 1 分钟生效）。** / Auto-validated, merged, index rebuilding (live in ~1 min).") +
               (done.length ? "\n\n" + done.join("\n") : ""),
             )
             console.log("verdict-final " + JSON.stringify(summary))
