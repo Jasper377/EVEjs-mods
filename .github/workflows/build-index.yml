@@ -13,6 +13,12 @@ on:
 permissions:
   contents: write
 
+# 同一个 workflow 串行跑：定时任务和 push 触发几乎同时开跑时，两个都会往 main 提交索引，
+# 后一个 push 会被拒（2026-09-28 实测红过一次）。这里让它们排队，别互相踩。
+concurrency:
+  group: build-index
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -62,6 +68,12 @@ jobs:
           git add docs/mod-index.json author-keys.json
           if [ -n "$(git status --porcelain docs/mod-index.json author-keys.json)" ]; then
             git commit -m "chore(index): refresh mod-index.json"
+            # 万一还是撞上（例如有人在网页上同时动了 main），rebase 后再推，别留红叉
+            for attempt in 1 2 3; do
+              if git push; then exit 0; fi
+              echo "push 被拒（第 $attempt 次），rebase 后重试"
+              git pull --rebase --autostash
+            done
             git push
           else
             echo "索引没有变化，跳过提交"
