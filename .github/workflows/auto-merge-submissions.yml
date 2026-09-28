@@ -78,7 +78,7 @@ jobs:
           const MAINTAINERS = String(process.env.MAINTAINERS || "diguo520").split(",")
             .map(function (s) { return s.trim().toLowerCase() })
             .filter(Boolean)
-          const DRY = String(process.env.DRY_RUN || "") === "1"
+          const DRY = /^(1|true|yes|on)$/i.test(String(process.env.DRY_RUN || "").trim())
 
           const API = "https://api.github.com"
           const ALLOWED_FILE = /^(sources\.json|mods\/[A-Za-z0-9._-]{1,100}\.json)$/
