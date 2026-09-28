@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-28T12:45:04.403Z",
+  "publishedAt": "2026-09-28T12:46:14.188Z",
   "mods": [
     {
       "id": "evejs-autolockfire",
@@ -41,7 +41,7 @@
       "delisted": false,
       "publishedAt": "2026-09-22",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 89,
+      "downloads": 90,
       "cdnHits": 51
     },
     {
@@ -83,7 +83,7 @@
       "delisted": false,
       "publishedAt": "2026-09-23",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 44,
+      "downloads": 45,
       "cdnHits": 4
     },
     {
@@ -208,14 +208,14 @@
       "delisted": false,
       "publishedAt": "2026-09-22",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 60,
+      "downloads": 61,
       "cdnHits": 52
     }
   ],
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "y/cXRoKIXtoSTbApyc0w2DhZzvPRbW9XDaVyjiJHl6HxF9avPf4vWBarXYlJ/HxDut52mvkaaBdqQo8TuJYiCw==",
-    "signedAt": "2026-09-28T12:45:04.405Z"
+    "sig": "LEF8B0GuI89YOmFATZbKw04PwMuUpnRBvC3XxhqbVxO597KUbufD6fllvZW8nu7y0rNvqrucL7soLb8m8p8DBQ==",
+    "signedAt": "2026-09-28T12:46:14.191Z"
   }
 }
