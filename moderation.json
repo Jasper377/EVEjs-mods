@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-28T12:53:11.771Z",
+  "updatedAt": "2026-09-28T12:54:10.059Z",
   "entries": [
     {
       "target": "welcome-mod",
@@ -33,6 +33,17 @@
         "en": "manifest 字段缺失"
       },
       "at": "2026-09-28T12:53:11.771Z",
+      "by": "diguo520"
+    },
+    {
+      "target": "diguo520/evejs-mod-evejs-autolockfire",
+      "kind": "source",
+      "action": "reject",
+      "reason": {
+        "zh": "manifest 字段缺失，重新提交",
+        "en": "manifest 字段缺失，重新提交"
+      },
+      "at": "2026-09-28T12:54:10.059Z",
       "by": "diguo520"
     }
   ]
