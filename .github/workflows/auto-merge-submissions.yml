@@ -1,0 +1,323 @@
+name: auto-merge-submissions
+
+# 无人值守收录（方案3）：作者用启动器「提交审核」开的 PR（register/** 与 release/**）
+# 在这里按收录规范自动校验，通过就自动合并，并立刻触发 build-index 重建 —— 全程不需要
+# 维护者开电脑、也不需要有人点合并。
+#
+# 几条关键设计（都有实测用例兜着，见仓库 README）：
+#   · 用 pull_request_target：workflow 永远取自 base 分支，且能拿到写权限；全程只用
+#     GitHub API 读 PR 里的**数据**，绝不 checkout / 执行 PR 的代码 —— 来自 fork 的
+#     提交因此没有任何机会把代码跑进这个 workflow。
+#   · 只放行 sources.json 与 mods/<id>.json 两类文件：挡住改 workflow / scripts / docs
+#     的 PR（否则等于把自动合并变成任意代码执行的入口）。
+#   · 新增来源必须是 PR 作者自己的仓库（owner == PR 作者），挡住"把别人的仓库登记成自己的"。
+#   · sources.json 只允许新增，不允许删掉 main 上已有的来源。
+#   · 判定按「三方合并后 main 实际会变成什么样」，不是字面 diff：作者分支常常落后 main
+#     很多，字面比较会把 main 早就删掉/早就加上的来源误算成本 PR 的动作而误拦。
+#   · 合并后显式 dispatch build-index：GITHUB_TOKEN 产生的 push 事件不会触发其它
+#     workflow（GitHub 的防递归规则），不点名就得等 6 小时的定时任务兜底。
+#   · 内容层面的合法性（sha256 / 公钥绑定 / id 先到先得等）仍然由 build-index.mjs 把关，
+#     不合格的条目会照旧被跳过并在日志里列出，不会上架。
+#
+# 总开关：仓库 Settings → Secrets and variables → Actions → Variables
+#   加一个 AUTO_MERGE_SUBMISSIONS=off  → 只校验 + 留言，不自动合并（回到人工流程）
+#
+# 手动补跑：Actions → auto-merge-submissions → Run workflow → 填 PR 编号
+#   （dry_run 填 true 可以只校验不合并）
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: "要检查的 PR 编号"
+        required: true
+      dry_run:
+        description: "只校验不合并（true / false）"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write        # 合并 PR
+  pull-requests: write   # 写评论
+  actions: write         # 点名触发 build-index
+
+# 同一条 PR 串行跑：启动器会连续 push 好几次，别让两次校验互相踩
+concurrency:
+  group: auto-merge-${{ github.event.pull_request.number || inputs.pr }}
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 解析 PR 编号
+        id: pr
+        run: |
+          if [ -n "${{ github.event.pull_request.number }}" ]; then
+            echo "number=${{ github.event.pull_request.number }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "number=${{ inputs.pr }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 按收录规范校验，通过则自动合并
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          PR: ${{ steps.pr.outputs.number }}
+          AUTO_MERGE: ${{ vars.AUTO_MERGE_SUBMISSIONS }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          cat > "$RUNNER_TEMP/auto-merge.mjs" <<'JSEOF'
+
+          const TOKEN = process.env.GITHUB_TOKEN
+          const REPO = process.env.REPO
+          const PR_NUMBER = process.env.PR
+          const AUTOMERGE = String(process.env.AUTO_MERGE || "on").trim().toLowerCase() !== "off"
+          const MAINTAINERS = String(process.env.MAINTAINERS || "diguo520").split(",")
+            .map(function (s) { return s.trim().toLowerCase() })
+            .filter(Boolean)
+          const DRY = String(process.env.DRY_RUN || "") === "1"
+
+          const API = "https://api.github.com"
+          const ALLOWED_FILE = /^(sources\.json|mods\/[A-Za-z0-9._-]{1,100}\.json)$/
+          const SUBMIT_BRANCH = /^(register|release)\//
+          const SOURCE_RE = /^[A-Za-z0-9._-]{1,100}\/[A-Za-z0-9._-]{1,100}$/
+
+          const H = {
+            Authorization: "Bearer " + TOKEN,
+            "User-Agent": "auto-merge-submissions",
+            "X-GitHub-Api-Version": "2022-11-28",
+          }
+
+          function api(path, opts) {
+            const o = opts || {}
+            const headers = Object.assign({}, H, o.headers || {})
+            return fetch(API + path, { method: o.method || "GET", headers: headers, body: o.body })
+              .then(function (res) {
+                return res.text().then(function (text) {
+                  let json = null
+                  try { json = text ? JSON.parse(text) : null } catch (e) { json = null }
+                  return { status: res.status, ok: res.ok, json: json }
+                })
+              })
+          }
+
+          function readSources(doc) {
+            const arr = doc && Array.isArray(doc.sources) ? doc.sources : []
+            return arr.filter(function (x) { return typeof x === "string" })
+              .map(function (x) { return x.trim() })
+              .filter(Boolean)
+          }
+
+          const fail = []
+          const note = []
+          const MARKER = "<!-- auto-merge-submissions -->"
+
+          // 给作者留一条「粘性」评论：同一个标记只保留一条，后续用 PATCH 覆盖，
+          // 避免启动器每次刷新同一条 PR 都刷出一堆评论。
+          async function upsertComment(body) {
+            const full = MARKER + "\n\n" + body
+            try {
+              const list = await api("/repos/" + REPO + "/issues/" + PR_NUMBER + "/comments?per_page=100")
+              if (list.ok && Array.isArray(list.json)) {
+                const mine = list.json.filter(function (c) { return c && typeof c.body === "string" && c.body.indexOf(MARKER) >= 0 })
+                if (mine.length) {
+                  await api("/repos/" + REPO + "/issues/comments/" + mine[0].id, {
+                    method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ body: full }),
+                  })
+                  return
+                }
+              }
+              await api("/repos/" + REPO + "/issues/" + PR_NUMBER + "/comments", {
+                method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ body: full }),
+              })
+            } catch (e) {
+              console.log("::warning::写 PR 评论失败（不影响流程）：" + e)
+            }
+          }
+
+          function evaluate(pr, files, baseList, headList, mainList, author) {
+            const baseSet = {}
+            baseList.forEach(function (s) { baseSet[s.toLowerCase()] = 1 })
+            const headSet = {}
+            headList.forEach(function (s) { headSet[s.toLowerCase()] = 1 })
+            const mainSet = {}
+            mainList.forEach(function (s) { mainSet[s.toLowerCase()] = 1 })
+
+            if (pr.state !== "open") fail.push("PR 不是 open 状态（" + pr.state + "）")
+            if (pr.draft) fail.push("PR 还是草稿（draft）")
+            if (!pr.base || pr.base.ref !== "main") fail.push("目标分支不是 main")
+            if (!SUBMIT_BRANCH.test(pr.head.ref)) fail.push("分支名不是 register/** 或 release/**（实际：" + pr.head.ref + "）")
+            if (!pr.head.repo) fail.push("读不到 head 仓库（fork 可能已被删除）")
+            if (files.length === 0) fail.push("PR 没有任何改动文件")
+            if (files.length > 50) fail.push("改动文件过多（" + files.length + " 个）")
+
+            const bad = files.filter(function (f) { return !ALLOWED_FILE.test(String(f.filename || "")) })
+            if (bad.length) {
+              fail.push("改动了不允许的文件：" + bad.map(function (f) { return f.filename }).join(", "))
+            }
+
+            // 判定口径按「合并后 main 实际会变成什么样」，不是「head 与某个提交的字面差异」：
+            // 这两个 PR 的分支都比 main 落后很多，字面比较会把 main 早就删掉的来源、
+            // main 早就加上的来源全都算成这个 PR 的动作，从而误拦。
+            //  · removed：在 main 上有、在这条分支的谱系里也有，却被这个 PR 改没了
+            //    （main 自己删掉的不算 —— 三方合并里它保持删除，不是这个 PR 的锅）
+            //  · added：相对 merge-base 和 main 都是新的，即合并后真正会新增到 main 上的
+            const removed = mainList.filter(function (s) { return baseSet[s.toLowerCase()] && !headSet[s.toLowerCase()] })
+            if (removed.length) fail.push("sources.json 里删掉了已有来源（不允许）：" + removed.join(", "))
+            const added = headList.filter(function (s) { return !baseSet[s.toLowerCase()] && !mainSet[s.toLowerCase()] })
+
+            return { added: added, removed: removed, isMaintainer: MAINTAINERS.indexOf(author) >= 0 }
+          }
+
+          async function main() {
+            const prRes = await api("/repos/" + REPO + "/pulls/" + PR_NUMBER)
+            if (!prRes.ok) {
+              console.log("::error::读不到 PR #" + PR_NUMBER + "（HTTP " + prRes.status + "）")
+              process.exit(1)
+            }
+            const pr = prRes.json
+            const author = String((pr.user && pr.user.login) || "").toLowerCase()
+            const headRepo = String((pr.head && pr.head.repo && pr.head.repo.full_name) || "")
+            const headRef = String((pr.head && pr.head.ref) || "")
+
+            const files = []
+            for (let page = 1; page <= 10; page += 1) {
+              const r = await api("/repos/" + REPO + "/pulls/" + PR_NUMBER + "/files?per_page=100&page=" + page)
+              if (!r.ok) { fail.push("读不到改动文件列表（HTTP " + r.status + "）"); break }
+              const batch = Array.isArray(r.json) ? r.json : []
+              for (let i = 0; i < batch.length; i += 1) files.push(batch[i])
+              if (batch.length < 100) break
+            }
+
+            // 比对基准必须是 merge-base，不是 main 的最新提交：
+            // 分支落后于 main 时，main 后来删掉的来源会出现在 head 里，用 main 当基准会把
+            // 「别人删的」误判成「本 PR 新增的」。用 merge-base 才和 git 合并的真实语义一致。
+            let baseSha = String((pr.base && pr.base.sha) || "main")
+            const cmp = await api("/repos/" + REPO + "/compare/" + baseSha + "..." + pr.head.sha)
+            if (cmp.ok && cmp.json && cmp.json.merge_base_commit && cmp.json.merge_base_commit.sha) {
+              baseSha = cmp.json.merge_base_commit.sha
+            } else {
+              note.push("读不到 merge-base，退回用 base 分支比对（可能产生误判）")
+            }
+            const baseS = await api("/repos/" + REPO + "/contents/sources.json?ref=" + baseSha, { headers: { Accept: "application/vnd.github.raw" } })
+            const baseM = await api("/repos/" + REPO + "/contents/sources.json?ref=main", { headers: { Accept: "application/vnd.github.raw" } })
+            const baseList = readSources(baseS.json)
+            if (baseS.status !== 200) fail.push("读不到基准提交的 sources.json（HTTP " + baseS.status + "）")
+            else if (baseList.length === 0) fail.push("基准提交的 sources.json 解析不出任何来源")
+
+            const touchesSources = files.some(function (f) { return String(f.filename) === "sources.json" })
+            let headList = baseList
+            if (touchesSources && headRepo) {
+              const r = await api("/repos/" + headRepo + "/contents/sources.json?ref=" + encodeURIComponent(headRef), { headers: { Accept: "application/vnd.github.raw" } })
+              if (r.status !== 200) fail.push("读不到 head 的 sources.json（HTTP " + r.status + "）")
+              else {
+                const parsed = readSources(r.json)
+                if (parsed.length === 0) fail.push("head 的 sources.json 解析不出任何来源")
+                else headList = parsed
+              }
+            }
+
+            const mainList = readSources(baseM.json)
+            if (baseM.status !== 200) fail.push("读不到 main 的 sources.json（HTTP " + baseM.status + "）")
+            const verdict = evaluate(pr, files, baseList, headList, mainList, author)
+
+
+            for (let i = 0; i < verdict.added.length; i += 1) {
+              const s = verdict.added[i]
+              if (!SOURCE_RE.test(s)) { fail.push("新增来源格式不合法：" + s); continue }
+              const owner = s.split("/")[0].toLowerCase()
+              if (owner !== author && !verdict.isMaintainer) {
+                fail.push("新增来源「" + s + "」的 owner 不是 PR 作者（@" + author + "），拒绝自动合并")
+                continue
+              }
+              const alive = await api("/repos/" + s)
+              if (alive.status !== 200) fail.push("来源仓库不可访问：" + s + "（HTTP " + alive.status + "）")
+              else note.push("新增来源可用：" + s)
+            }
+
+            // 版本记录允许引用「合并后 sources.json 里有的来源」，所以是 head ∪ main 的并集
+            const headSet = {}
+            headList.forEach(function (s) { headSet[s.toLowerCase()] = 1 })
+            mainList.forEach(function (s) { headSet[s.toLowerCase()] = 1 })
+            const modFiles = files.map(function (f) { return String(f.filename || "") })
+              .filter(function (n) { return n.indexOf("mods/") === 0 })
+
+            for (let i = 0; i < modFiles.length; i += 1) {
+              const p = modFiles[i]
+              const r = await api("/repos/" + headRepo + "/contents/" + p + "?ref=" + encodeURIComponent(headRef), { headers: { Accept: "application/vnd.github.raw" } })
+              if (r.status !== 200) { fail.push("读不到 " + p + "（HTTP " + r.status + "）"); continue }
+              const rec = r.json
+              if (!rec || typeof rec !== "object" || Array.isArray(rec)) { fail.push(p + " 不是 JSON 对象"); continue }
+              const id = String(rec.id || "").trim()
+              const wantId = p.slice(5, p.length - 5)
+              if (!id) fail.push(p + " 缺 id")
+              else if (id !== wantId) fail.push(p + " 的 id「" + id + "」与文件名不一致")
+              const src = String(rec.source || "").trim()
+              if (!src) fail.push(p + " 缺 source")
+              else {
+                if (!headSet[src.toLowerCase()]) fail.push(p + " 的 source「" + src + "」不在 sources.json 里")
+                const owner = src.split("/")[0].toLowerCase()
+                if (owner !== author && !verdict.isMaintainer) fail.push(p + " 的 source「" + src + "」不属于 PR 作者（@" + author + "）")
+              }
+              if (Array.isArray(rec.downloadUrls)) {
+                const okUrl = rec.downloadUrls.some(function (u) { return u && typeof u.url === "string" && u.url.indexOf("https://") === 0 })
+                if (!okUrl) fail.push(p + " 的 downloadUrls 里没有 https 直链")
+              }
+            }
+
+            const summary = { pr: pr.number, title: pr.title, author: author, head: headRepo + "@" + headRef, files: files.map(function (f) { return f.filename }), added: verdict.added, removed: verdict.removed, merged: false, reasons: fail }
+            console.log("verdict " + JSON.stringify(summary))
+
+            if (fail.length) {
+              console.log("::warning::自动合并被拦下：" + fail.join(" ｜ "))
+              await upsertComment(
+                "**未通过自动校验，本次没有自动合并。** / Auto-merge was blocked.\n\n" +
+                fail.map(function (r) { return "- " + r }).join("\n") +
+                "\n\n修正后推送新提交会重新校验；维护者也可以手动检查并合并。",
+              )
+              return summary
+            }
+            if (!AUTOMERGE) { console.log("::notice::总开关 AUTO_MERGE_SUBMISSIONS=off，只校验不合并"); return summary }
+            if (DRY) { console.log("::notice::DRY_RUN=1，跳过合并"); summary.merged = "dry"; return summary }
+
+            let merge = await api("/repos/" + REPO + "/pulls/" + PR_NUMBER + "/merge", {
+              method: "PUT",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ merge_method: "squash" }),
+            })
+            if (!merge.ok && merge.status === 405) {
+              await api("/repos/" + REPO + "/pulls/" + PR_NUMBER + "/update-branch", { method: "PUT", headers: { "Content-Type": "application/json" }, body: "{}" })
+              merge = await api("/repos/" + REPO + "/pulls/" + PR_NUMBER + "/merge", {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ merge_method: "squash" }),
+              })
+            }
+            if (!merge.ok) { fail.push("合并失败（HTTP " + merge.status + "）：" + ((merge.json && merge.json.message) || "")); return summary }
+
+            const disp = await api("/repos/" + REPO + "/actions/workflows/build-index.yml/dispatches", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ ref: "main" }),
+            })
+            if (disp.status !== 204) console.log("::warning::触发 build-index 失败（HTTP " + disp.status + "），6 小时兜底会补上")
+
+            summary.merged = true
+            const done = []
+            if (verdict.added.length) done.push("- 新增来源 / new source: " + verdict.added.join(", "))
+            if (modFiles.length) done.push("- 版本记录 / version record: " + modFiles.join(", "))
+            await upsertComment(
+              "**已通过自动校验并自动合并，索引正在重建（约 1 分钟生效）。** / Auto-validated, merged, index rebuilding (live in ~1 min)." +
+              (done.length ? "\n\n" + done.join("\n") : ""),
+            )
+            console.log("verdict-final " + JSON.stringify(summary))
+            return summary
+          }
+
+          await main()
+
+          JSEOF
+          node "$RUNNER_TEMP/auto-merge.mjs"
