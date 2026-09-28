@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-28T13:05:54.425Z",
+  "publishedAt": "2026-09-28T19:34:26.721Z",
   "mods": [
     {
       "author": {
@@ -88,7 +88,7 @@
       "delisted": false,
       "publishedAt": "2026-09-23",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 48,
+      "downloads": 52,
       "cdnHits": 4
     },
     {
@@ -115,21 +115,18 @@
       ],
       "featured": false,
       "highlights": [
-        "123123",
-        "222222",
-        "33333333",
-        "111111"
+        "123123"
       ],
       "history": [],
       "id": "evejs-modceshi",
       "publishedAt": "2026-09-28",
       "readme": [
-        "33333333333333333111111111111111111111111111111222222222222222222222222222222222222444444444444444444444444444444444444444444444411111111111111111"
+        "123123123123123123123123"
       ],
       "repo": "https://github.com/diguo520/evejs-mod-evejs-modceshi",
       "requiresRestart": true,
-      "sha256": "cd74e118f06bdf478342f65320b05e842b565a069ba5bcb0b8e86f1f38161e44",
-      "sizeBytes": 3935,
+      "sha256": "279a7ef4d565a21de02dfa0d8d7f52625b5f6f692e4cda51652ee281f31e1f78",
+      "sizeBytes": 3916,
       "tags": [],
       "version": "1.0.0",
       "source": "diguo520/evejs-mod-evejs-modceshi",
@@ -179,7 +176,7 @@
       "tags": [],
       "version": "1.5.0",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 0,
+      "downloads": 8,
       "cdnHits": 0
     },
     {
@@ -219,7 +216,7 @@
       "delisted": false,
       "publishedAt": "2026-09-22",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 62,
+      "downloads": 67,
       "cdnHits": 52
     }
   ],
@@ -252,7 +249,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "7sZwRZs4WSsuZuVBI7SDBLxfABTg5CcnGieqPXAL7ihgLK/EuxYJumOT2QNdZ3wq7qYvfwcrXU4I3WE2kHAjCg==",
-    "signedAt": "2026-09-28T13:05:54.428Z"
+    "sig": "uBFSQ3Bdt+ddGEFSOdDydWTIs/GjHiQjUlgXgJrJYsfM+NEGk0Xpqxx57TXlG/Zl1j0p3ACBsIRPdCy9ZUDIAw==",
+    "signedAt": "2026-09-28T19:34:26.724Z"
   }
 }
