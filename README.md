@@ -43,6 +43,7 @@ EVEjs-mods/
     moderate.mjs                reviewer CLI: list / approve / reject / delist / restore / pr-text
   .github/workflows/
     build-index.yml             every 6 hours + manual trigger + push trigger
+    auto-merge-submissions.yml  validates incoming submission PRs and merges them unattended
   docs/                         CI output, published by GitHub Pages (main branch / docs)
     mod-index.json
 ```
@@ -55,10 +56,45 @@ EVEjs-mods/
    - first release: `sources.json` (registers `<owner>/<repo>`) **and** `mods/<id>.json` (the version record);
    - every later release: `mods/<id>.json` only — the same `release/<id>` branch, so the open PR is refreshed
      instead of piling up one PR per version;
-3. The maintainer reviews the PR (checklist below) and merges it. **Only merged records go live**:
+3. **Nobody needs to be at the computer**: `.github/workflows/auto-merge-submissions.yml` validates the PR
+   against the checklist below and merges it on its own (see
+   [Unattended submissions](#unattended-submissions-auto-merge-no-maintainer-needed)), or leaves one comment
+   saying why it would not. A maintainer can of course still review and merge by hand. **Only accepted records go live**:
    `build-index.mjs` treats the merged `mods/<id>.json` as the authoritative version of that source,
    so the marketplace moves to a new version when the PR is merged (merging also triggers an immediate rebuild
    via the `mods/**` path filter; the 6-hourly run stays as a safety net).
+
+### Unattended submissions (auto-merge, no maintainer needed)
+
+`.github/workflows/auto-merge-submissions.yml` removes the "somebody has to sit at the computer and press Merge"
+step: it checks every incoming submission PR against the rules below, merges it on its own, and then explicitly
+dispatches `build-index` — the push the bot makes with `GITHUB_TOKEN` would not trigger another workflow by
+itself (GitHub blocks that to prevent recursion), so the rebuild has to be requested by name.
+
+- Triggered by `pull_request_target` (opened / synchronize / reopened / ready_for_review), plus a
+  `repository_dispatch` event (`auto-merge-check`, with `client_payload.pr`) and a manual `workflow_dispatch`.
+- Safe by construction: the workflow always comes from the base branch and **never checks out or runs the PR's
+  code** — it only reads the PR's *data* through the API, so a fork has no way to smuggle code into it.
+- A submission PR may only touch `sources.json` and `mods/<id>.json`.
+- What it enforces: the new source must be the PR author's own repository (maintainers listed in `MAINTAINERS`
+  are exempt), `sources.json` may only grow, a record's `source` must be listed and belong to the author, the
+  source repository must still be reachable, and the branch must be `register/**` or `release/**`.
+- The comparison uses **merge-base (three-way) semantics**, not a literal diff: authors' branches are often many
+  commits behind `main`, and a literal diff would blame this PR for sources that `main` itself added or removed.
+- If the merge fails because `sources.json` conflicts (it is one shared list, so two simultaneous submissions
+  will clash), the change is **replayed on top of the current `main`** — the union of `sources.json` plus this
+  PR's records — and the PR is closed with an explanatory comment. Forks cannot be written to, so replaying is
+  what keeps the flow unattended.
+- Whatever happens, the bot leaves exactly **one** sticky bilingual comment on the PR
+  (marker `<!-- auto-merge-submissions -->`) saying what it listed, or why it refused.
+
+Kill switch: **Settings → Secrets and variables → Actions → Variables**, add `AUTO_MERGE_SUBMISSIONS=off` →
+validate and comment only, never merge (back to the manual flow).
+Manual re-run: **Actions → auto-merge-submissions → Run workflow** (fill in the PR number; `dry_run=true`
+validates without merging).
+
+Content-level validity (`sha256`, key binding, first-come-first-served `id`, …) is still enforced by
+`build-index.mjs`: bad entries are skipped and listed in the log, they never go live.
 
 ### Listing checklist (PR review)
 
@@ -234,6 +270,7 @@ EVEjs-mods/
     moderate.mjs               审核 CLI：list / approve / reject / delist / restore / pr-text
   .github/workflows/
     build-index.yml            每 6 小时 + 手动触发 + push 触发
+    auto-merge-submissions.yml 自动校验投稿 PR 并无人值守合并
   docs/                        CI 产物，由 GitHub Pages 从 main 分支的 /docs 发布
     mod-index.json
 ```
@@ -246,10 +283,41 @@ EVEjs-mods/
    - 首次发布：`sources.json`（登记 `<owner>/<repo>`）**和** `mods/<id>.json`（本次版本记录）；
    - 之后每次发新版：只更新 `mods/<id>.json`（同一个 `release/<id>` 分支，
      所以是**刷新同一条 PR**，不会一版一条堆在这里）；
-3. 你在 PR 里人工看一遍（下面有收录规范），合并即可。**只有合并了的记录才会上线**：
+3. **不需要有人守在电脑前**：`.github/workflows/auto-merge-submissions.yml` 会照下面的收录规范自动校验并合并
+   （见[无人值守收录](#无人值守收录自动合并不需要维护者在线)），不合格就留一条评论说明原因；
+   维护者当然也可以随时人工看一遍再合。**只有通过校验的记录才会上线**：
    `build-index.mjs` 把已合并的 `mods/<id>.json` 当作该来源的权威版本，
    所以市场是**跟着 PR 合并**换版本的（`mods/**` 也在 workflow 的 paths 里，合并即立刻重建；
    6 小时的定时任务只当兜底）。
+
+### 无人值守收录（自动合并，不需要维护者在线）
+
+`.github/workflows/auto-merge-submissions.yml` 把「必须有人坐在电脑前点合并」这一步去掉了：
+它按下面的收录规范校验每一条投稿 PR，自己决定合不合并，合完立刻点名触发 `build-index`
+（它用 `GITHUB_TOKEN` 推的那次提交不会触发其它 workflow —— 这是 GitHub 防递归的规则，所以必须点名）。
+
+- 触发入口：`pull_request_target`（opened / synchronize / reopened / ready_for_review），
+  外加 `repository_dispatch`（事件 `auto-merge-check`，用 `client_payload.pr` 指定 PR）与手动 `workflow_dispatch`。
+- 结构上就安全：workflow 永远取自 base 分支，**绝不 checkout / 执行 PR 里的代码**，只用 API 读 PR 的**数据**，
+  所以从 fork 提上来的提交没有任何机会把代码跑进这个流程里。
+- 投稿 PR 只允许改 `sources.json` 与 `mods/<id>.json` 两类文件（改 workflow / scripts 的一律拦掉，
+  否则「自动合并」就等于一个任意代码执行入口）。
+- 自动拦下的情况：新增来源不是 PR 作者自己的仓库（`MAINTAINERS` 里的维护者例外）、`sources.json` 里删掉了已有来源、
+  记录的 `source` 不在名单里或不属于作者、来源仓库已经访问不到、分支名不是 `register/**` 或 `release/**`。
+- 判定用 **merge-base 的三方合并语义**，不是字面 diff：作者分支常常落后 `main` 很多，
+  字面比较会把 `main` 早就加过 / 早就删过的来源误算成这条 PR 的动作，从而误拦。
+- 如果因为 `sources.json` 撞车而合不上（这份清单是所有人共用的，两条投稿同时进来必然冲突），
+  会**按 main 现状重放**：用 main 现有清单并上这条 PR 的新增来源与版本记录，直接生成一次提交推到 main，
+  然后把 PR 关掉并说明原因 —— fork 分支我们没有写权限（`update-branch` 会 403），重放才能保住「无人值守」。
+- 不管结果如何，机器人都只在 PR 上留**一条**中英双语评论（标记 `<!-- auto-merge-submissions -->`），
+  说明收录了什么、或者为什么没收录 —— 失败不会静默。
+
+总开关：仓库 **Settings → Secrets and variables → Actions → Variables** 里加 `AUTO_MERGE_SUBMISSIONS=off`
+→ 只校验 + 留言，不自动合并（回到人工流程）。
+手动补跑：**Actions → auto-merge-submissions → Run workflow**（填 PR 编号；`dry_run=true` 只校验不合并）。
+
+内容层面的合法性（`sha256`、公钥绑定、`id` 先到先得……）仍然由 `build-index.mjs` 把关：
+不合格的条目会被跳过并在日志里列出，不会上架。
 
 ### 收录规范（PR 检查清单）
 
