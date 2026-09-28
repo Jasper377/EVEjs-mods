@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-28T12:55:15.534Z",
+  "publishedAt": "2026-09-28T13:05:54.425Z",
   "mods": [
     {
       "author": {
@@ -11,7 +11,7 @@
       "category": "玩法",
       "changelog": "测试",
       "conflicts": [],
-      "delisted": false,
+      "delisted": true,
       "description": "An intentionally empty mod used to test the EvEJS Launcher upload/review flow. It adds no server or client changes.",
       "displayName": "Empty Upload Test",
       "downloadUrls": [
@@ -41,7 +41,13 @@
       "version": "1.0.0",
       "source": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
       "downloads": 0,
-      "cdnHits": 0
+      "cdnHits": 0,
+      "delistReason": {
+        "zh": "manifest 字段缺失",
+        "en": "manifest 字段缺失"
+      },
+      "moderatedAt": "2026-09-28T13:05:29.505Z",
+      "moderatedBy": "diguo520"
     },
     {
       "id": "evejs-automining",
@@ -82,7 +88,7 @@
       "delisted": false,
       "publishedAt": "2026-09-23",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 46,
+      "downloads": 48,
       "cdnHits": 4
     },
     {
@@ -229,12 +235,24 @@
       },
       "at": "2026-09-28T12:53:11.771Z",
       "by": "diguo520"
+    },
+    "evejs-empty-upload-test": {
+      "id": "evejs-empty-upload-test",
+      "source": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
+      "authorId": "au-mueakz9fwyt6",
+      "action": "delist",
+      "reason": {
+        "zh": "manifest 字段缺失",
+        "en": "manifest 字段缺失"
+      },
+      "at": "2026-09-28T13:05:29.505Z",
+      "by": "diguo520"
     }
   },
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "xXKyX/uoA+SIbK/zDVw1dK2yl8Qmoz9TFCAIjrHz+XcQyzFD79hl49T1yeLZuj/J5e/AzQga6m8nLZSQ0PtlCA==",
-    "signedAt": "2026-09-28T12:55:15.537Z"
+    "sig": "7sZwRZs4WSsuZuVBI7SDBLxfABTg5CcnGieqPXAL7ihgLK/EuxYJumOT2QNdZ3wq7qYvfwcrXU4I3WE2kHAjCg==",
+    "signedAt": "2026-09-28T13:05:54.428Z"
   }
 }
