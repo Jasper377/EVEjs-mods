@@ -28,6 +28,10 @@ name: auto-merge-submissions
 on:
   pull_request_target:
     types: [opened, synchronize, reopened, ready_for_review]
+  # 外部程序触发的入口：只要 Contents 写权限就能点名跑某条 PR（无需 Actions 权限），
+  # 便于把「检查某条提交」接进别的自动化里。
+  repository_dispatch:
+    types: [auto-merge-check]
   workflow_dispatch:
     inputs:
       pr:
@@ -55,10 +59,14 @@ jobs:
       - name: 解析 PR 编号
         id: pr
         run: |
+          # 三个入口：pull_request_target（作者提交时自动跑）/ workflow_dispatch（网页手动）/
+          # repository_dispatch（外部程序点名，只要 Contents 写权限即可触发）
           if [ -n "${{ github.event.pull_request.number }}" ]; then
             echo "number=${{ github.event.pull_request.number }}" >> "$GITHUB_OUTPUT"
-          else
+          elif [ -n "${{ inputs.pr }}" ]; then
             echo "number=${{ inputs.pr }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "number=${{ github.event.client_payload.pr }}" >> "$GITHUB_OUTPUT"
           fi
 
       - name: 按收录规范校验，通过则自动合并
@@ -67,7 +75,7 @@ jobs:
           REPO: ${{ github.repository }}
           PR: ${{ steps.pr.outputs.number }}
           AUTO_MERGE: ${{ vars.AUTO_MERGE_SUBMISSIONS }}
-          DRY_RUN: ${{ inputs.dry_run }}
+          DRY_RUN: ${{ inputs.dry_run || github.event.client_payload.dry_run }}
         run: |
           cat > "$RUNNER_TEMP/auto-merge.mjs" <<'JSEOF'
 
