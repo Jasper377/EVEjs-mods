@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-28T12:49:01.120Z",
+  "publishedAt": "2026-09-28T12:53:36.193Z",
   "mods": [
     {
       "author": {
@@ -82,7 +82,7 @@
       "delisted": false,
       "publishedAt": "2026-09-22",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 90,
+      "downloads": 91,
       "cdnHits": 51
     },
     {
@@ -124,7 +124,7 @@
       "delisted": false,
       "publishedAt": "2026-09-23",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 45,
+      "downloads": 46,
       "cdnHits": 4
     },
     {
@@ -136,7 +136,7 @@
       "category": "玩法",
       "changelog": "",
       "conflicts": [],
-      "delisted": false,
+      "delisted": true,
       "description": "2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222",
       "displayName": "modceshi",
       "downloadUrls": [
@@ -170,7 +170,13 @@
       "version": "1.0.0",
       "source": "diguo520/evejs-mod-evejs-modceshi",
       "downloads": 0,
-      "cdnHits": 0
+      "cdnHits": 0,
+      "delistReason": {
+        "zh": "manifest 字段缺失",
+        "en": "manifest 字段缺失"
+      },
+      "moderatedAt": "2026-09-28T12:53:11.771Z",
+      "moderatedBy": "diguo520"
     },
     {
       "author": {
@@ -249,14 +255,28 @@
       "delisted": false,
       "publishedAt": "2026-09-22",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 61,
+      "downloads": 62,
       "cdnHits": 52
     }
   ],
+  "moderation": {
+    "evejs-modceshi": {
+      "id": "evejs-modceshi",
+      "source": "diguo520/evejs-mod-evejs-modceshi",
+      "authorId": "au-muk52dvb6mve",
+      "action": "delist",
+      "reason": {
+        "zh": "manifest 字段缺失",
+        "en": "manifest 字段缺失"
+      },
+      "at": "2026-09-28T12:53:11.771Z",
+      "by": "diguo520"
+    }
+  },
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "U+Qtnwr36+KeHCdu41+iWVMl6Z5Xs7H1INjPuExmgSecx/V7W4GFKYdAOMCPYKUOfHrTi841IUokDgAyWyHBDg==",
-    "signedAt": "2026-09-28T12:49:01.122Z"
+    "sig": "I4unWru6aC7/OHJui0DuGeQYvPp/5rjgbUoS2gJyg7Xt7hf17Q+Z8/WLt5djD/1Oa5H5Yd+kize/w6116mJJDA==",
+    "signedAt": "2026-09-28T12:53:36.195Z"
   }
 }
