@@ -1,7 +1,48 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-28T12:46:14.188Z",
+  "publishedAt": "2026-09-28T12:49:01.120Z",
   "mods": [
+    {
+      "author": {
+        "id": "au-mueakz9fwyt6",
+        "keyId": "bad8165273ee",
+        "name": "橘子"
+      },
+      "category": "玩法",
+      "changelog": "测试",
+      "conflicts": [],
+      "delisted": false,
+      "description": "An intentionally empty mod used to test the EvEJS Launcher upload/review flow. It adds no server or client changes.",
+      "displayName": "Empty Upload Test",
+      "downloadUrls": [
+        {
+          "mirror": "github",
+          "priority": 1,
+          "url": "https://github.com/JUZIMandarin/evejs-mod-evejs-empty-upload-test/releases/download/v1.0.0/evejs-empty-upload-test-1.0.0.zip"
+        }
+      ],
+      "evejsVersions": [
+        "0.12.8"
+      ],
+      "featured": false,
+      "highlights": [],
+      "history": [],
+      "id": "evejs-empty-upload-test",
+      "publishedAt": "2026-09-28",
+      "readme": [
+        "This mod is intentionally empty. It exists only to test the EvEJS Launcher's\nnew mod upload/review flow.",
+        "It does not patch the server, the client, or the game data."
+      ],
+      "repo": "https://github.com/JUZIMandarin/evejs-mod-evejs-empty-upload-test",
+      "requiresRestart": true,
+      "sha256": "d235453c06372daac7e842e0d1dbfccbe4eb25918ccb9d5832ef6daec083d2c6",
+      "sizeBytes": 1367,
+      "tags": [],
+      "version": "1.0.0",
+      "source": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
+      "downloads": 0,
+      "cdnHits": 0
+    },
     {
       "id": "evejs-autolockfire",
       "displayName": "EVEjs-AutoLockFire",
@@ -215,7 +256,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "LEF8B0GuI89YOmFATZbKw04PwMuUpnRBvC3XxhqbVxO597KUbufD6fllvZW8nu7y0rNvqrucL7soLb8m8p8DBQ==",
-    "signedAt": "2026-09-28T12:46:14.191Z"
+    "sig": "U+Qtnwr36+KeHCdu41+iWVMl6Z5Xs7H1INjPuExmgSecx/V7W4GFKYdAOMCPYKUOfHrTi841IUokDgAyWyHBDg==",
+    "signedAt": "2026-09-28T12:49:01.122Z"
   }
 }
