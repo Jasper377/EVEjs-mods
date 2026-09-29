@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-29T17:12:52.589Z",
+  "publishedAt": "2026-09-29T21:37:33.296Z",
   "mods": [
     {
       "author": {
@@ -88,7 +88,7 @@
       "delisted": false,
       "publishedAt": "2026-09-23",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 65,
+      "downloads": 66,
       "cdnHits": 4
     },
     {
@@ -168,7 +168,7 @@
       "delisted": false,
       "publishedAt": "2026-09-22",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 79,
+      "downloads": 80,
       "cdnHits": 52
     }
   ],
@@ -229,7 +229,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "ms6QiDsfmY1/Cw1ICnEZB/GsmEYrozQaBE8gUfAmbyww0MdcXQs21OTxcZZHq5KVyg8U+cAKjdEgVDj5b4u7Aw==",
-    "signedAt": "2026-09-29T17:12:52.591Z"
+    "sig": "XYibLaPoDl4wDjWm93OP2fI/WNrQkgMV28Mlw3kBi9b/5Nt2HODlsjoFRJjb7mGH3ekQjJhmpm1BbVCf+77kAA==",
+    "signedAt": "2026-09-29T21:37:33.298Z"
   }
 }
