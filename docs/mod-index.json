@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-29T14:44:30.020Z",
+  "publishedAt": "2026-09-29T14:47:38.157Z",
   "mods": [
     {
       "author": {
@@ -184,12 +184,52 @@
       },
       "at": "2026-09-28T13:05:29.505Z",
       "by": "diguo520"
+    },
+    "welcome-mod": {
+      "id": "welcome-mod",
+      "action": "reject",
+      "reason": {
+        "zh": "请修改重新提交，不符合 EVEJS MOD 生态",
+        "en": "Please revise and resubmit: this mod does not fit the EVEJS mod ecosystem"
+      },
+      "at": "2026-09-21T22:59:28.193Z",
+      "by": "diguo520"
+    },
+    "igottgo/evejs-mod-mod-mudnca8r": {
+      "source": "igottgo/evejs-mod-mod-mudnca8r",
+      "action": "reject",
+      "reason": {
+        "zh": "仓库已失联，永久删除并从收录名单移除",
+        "en": "Repo is unreachable; permanently removed and dropped from the source list"
+      },
+      "at": "2026-09-28T01:19:41.866Z",
+      "by": "diguo520"
+    },
+    "diguo520/evejs-mod-evejs-autolockfire": {
+      "source": "diguo520/evejs-mod-evejs-autolockfire",
+      "action": "reject",
+      "reason": {
+        "zh": "manifest 字段缺失，重新提交",
+        "en": "manifest 字段缺失，重新提交"
+      },
+      "at": "2026-09-28T12:54:10.059Z",
+      "by": "diguo520"
+    },
+    "diguo520/evejs-mod-evejs-modceshi": {
+      "source": "diguo520/evejs-mod-evejs-modceshi",
+      "action": "reject",
+      "reason": {
+        "zh": "仓库不属于作者",
+        "en": "仓库不属于作者"
+      },
+      "at": "2026-09-29T05:33:15.776Z",
+      "by": "diguo520"
     }
   },
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "lF7Dy/c6T1o83g20MHgsHJSqwcw7e/xrV78cVYekt0TzFotRm6zm23XqSCbymfdj3I2gSmPkRpLTwTZEfhp0BA==",
-    "signedAt": "2026-09-29T14:44:30.023Z"
+    "sig": "SIAUDOykrjLv/TGM6QQF3F1fxwW8ay9AGveTZzrKqvF5XTiEyr2nYNWnOQqsNMmopCkBZ+xXGj+L/grdvVhkAQ==",
+    "signedAt": "2026-09-29T14:47:38.160Z"
   }
 }
