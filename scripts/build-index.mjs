@@ -400,6 +400,23 @@ for (const repo of sources) {
 
 mods.sort((a, b) => String(a.displayName || a.id).localeCompare(String(b.displayName || b.id)));
 
+// 来源级「拒绝收录」会同时把来源从 sources.json 移除（控制台的同步接口就是这么写的），
+// 上面的循环因此再也见不到它，moderationLog 里就永远没有这条结论 —— 作者的启动器既看不到
+// 「已驳回」也看不到理由（2026-09-29 报障：已下架改成拒绝收录后状态不切换、理由不显示）。
+// 索引是客户端唯一的信息来源，所以这里把「已经不在名单里」的拒绝结论照样发布一份。
+// 名单内已发布的（带 id / authorId，信息更全）不覆盖。
+const loggedKeys = new Set(Object.keys(moderationLog).map((key) => key.toLowerCase()));
+for (const rule of moderationRules) {
+  if (rule.action !== "reject") continue;
+  const kind = rule.kind === "source" ? "source" : "id";
+  const target = String(rule.target).trim();
+  if (!target || loggedKeys.has(target.toLowerCase())) continue;
+  moderationLog[target] = kind === "source"
+    ? { source: target, action: "reject", reason: reasonsOf(rule), at: rule.at || "", by: rule.by || "" }
+    : { id: target, action: "reject", reason: reasonsOf(rule), at: rule.at || "", by: rule.by || "" };
+  loggedKeys.add(target.toLowerCase());
+}
+
 const index = { schemaVersion: 1, publishedAt: new Date().toISOString(), mods };
 if (Object.keys(moderationLog).length) index.moderation = moderationLog;
 
