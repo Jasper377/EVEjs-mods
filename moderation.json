@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-28T13:05:29.505Z",
+  "updatedAt": "2026-09-29T05:33:15.776Z",
   "entries": [
     {
       "target": "welcome-mod",
@@ -25,17 +25,6 @@
       "by": "diguo520"
     },
     {
-      "target": "diguo520/evejs-mod-evejs-modceshi",
-      "kind": "source",
-      "action": "delist",
-      "reason": {
-        "zh": "manifest 字段缺失",
-        "en": "manifest 字段缺失"
-      },
-      "at": "2026-09-28T12:53:11.771Z",
-      "by": "diguo520"
-    },
-    {
       "target": "diguo520/evejs-mod-evejs-autolockfire",
       "kind": "source",
       "action": "reject",
@@ -55,6 +44,17 @@
         "en": "manifest 字段缺失"
       },
       "at": "2026-09-28T13:05:29.505Z",
+      "by": "diguo520"
+    },
+    {
+      "target": "diguo520/evejs-mod-evejs-modceshi",
+      "kind": "source",
+      "action": "reject",
+      "reason": {
+        "zh": "仓库不属于作者",
+        "en": "仓库不属于作者"
+      },
+      "at": "2026-09-29T05:33:15.776Z",
       "by": "diguo520"
     }
   ]
