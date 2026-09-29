@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-28T22:43:48.504Z",
+  "publishedAt": "2026-09-29T03:09:45.187Z",
   "mods": [
     {
       "author": {
@@ -88,7 +88,7 @@
       "delisted": false,
       "publishedAt": "2026-09-23",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 52,
+      "downloads": 57,
       "cdnHits": 4
     },
     {
@@ -176,7 +176,7 @@
       "tags": [],
       "version": "1.5.0",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 8,
+      "downloads": 16,
       "cdnHits": 0
     },
     {
@@ -216,7 +216,7 @@
       "delisted": false,
       "publishedAt": "2026-09-22",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 67,
+      "downloads": 72,
       "cdnHits": 52
     }
   ],
@@ -249,7 +249,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "88xwspkL6+obVUTJGRRXxGTDCEfU9qlq5Qp3Gk/Nb9MCJn8Otwf51+gsa4XAkB75/JKDMGswHAC6ilR8ohMPAg==",
-    "signedAt": "2026-09-28T22:43:48.507Z"
+    "sig": "oWTR9LElCpm4ACjo0Wt5OxLt+EeWAvIKcaicHDLkv07oaE3dZu7qGSIqxOORkQxsjpvTQbFoNz8q2Sxija4QAA==",
+    "signedAt": "2026-09-29T03:09:45.189Z"
   }
 }
