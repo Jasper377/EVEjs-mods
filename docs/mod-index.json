@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T02:52:11.507Z",
+  "publishedAt": "2026-09-30T03:58:27.965Z",
   "mods": [
     {
       "author": {
@@ -50,6 +50,48 @@
       "moderatedBy": "diguo520"
     },
     {
+      "id": "evejs-autolockfire",
+      "displayName": "EVEjs-AutoLockFire",
+      "version": "1.0.4",
+      "author": {
+        "id": "au-mubd7h45x3e1",
+        "name": "波坤太叔",
+        "keyId": "691df6c7d2cd"
+      },
+      "description": "仿国服自动锁定，自动集火",
+      "category": "玩法",
+      "tags": [
+        "自动",
+        "锁定",
+        "开火"
+      ],
+      "readme": [],
+      "highlights": [],
+      "conflicts": [],
+      "requiresRestart": true,
+      "evejsVersions": [
+        "0.12.8"
+      ],
+      "sizeBytes": 52044,
+      "sha256": "77ae1031f46b27ea3d931fe25b045d994f3e604e87f3adf5fb4cd6f879e26106",
+      "downloadUrls": [
+        {
+          "mirror": "github",
+          "url": "https://github.com/diguo520/evejs-mod-evejs-autolockfire/releases/download/v1.0.4/evejs-autolockfire-1.0.4.zip",
+          "priority": 1
+        }
+      ],
+      "changelog": "更换了自动锁定和开火的图标",
+      "history": [],
+      "repo": "https://github.com/diguo520/evejs-mod-evejs-autolockfire",
+      "featured": false,
+      "delisted": false,
+      "publishedAt": "2026-09-22",
+      "source": "diguo520/evejs-mod-evejs-autolockfire",
+      "downloads": 94,
+      "cdnHits": 51
+    },
+    {
       "id": "evejs-automining",
       "displayName": "evejs-AutoMining",
       "version": "1.0.7",
@@ -88,7 +130,7 @@
       "delisted": false,
       "publishedAt": "2026-09-23",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 66,
+      "downloads": 67,
       "cdnHits": 4
     },
     {
@@ -128,7 +170,7 @@
       "tags": [],
       "version": "1.5.0",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 40,
+      "downloads": 41,
       "cdnHits": 0
     },
     {
@@ -205,16 +247,6 @@
       "at": "2026-09-28T01:19:41.866Z",
       "by": "diguo520"
     },
-    "diguo520/evejs-mod-evejs-autolockfire": {
-      "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "action": "reject",
-      "reason": {
-        "zh": "manifest 字段缺失，重新提交",
-        "en": "manifest 字段缺失，重新提交"
-      },
-      "at": "2026-09-28T12:54:10.059Z",
-      "by": "diguo520"
-    },
     "diguo520/evejs-mod-evejs-modceshi": {
       "source": "diguo520/evejs-mod-evejs-modceshi",
       "action": "reject",
@@ -229,7 +261,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "T3Orlcwqpn2A/XF/uJbs6oO1v18VzqbTpnWA9YV45/hzLrIwtIRN1DzKA6VfWFRb+Vrftv738NXzbjryz9POAA==",
-    "signedAt": "2026-09-30T02:52:11.510Z"
+    "sig": "pHgDKIfhvMe/rDdp2PUVwLrowWE/2gyhsuAI2HUMBesvtnsHzmb1M7QItasewqH1Q4pGV5b2aOZSPm/CJ7TbCA==",
+    "signedAt": "2026-09-30T03:58:27.968Z"
   }
 }
