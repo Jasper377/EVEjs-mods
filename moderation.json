@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-30T03:58:04.190Z",
+  "updatedAt": "2026-09-30T04:09:17.248Z",
   "entries": [
     {
       "target": "welcome-mod",
@@ -22,17 +22,6 @@
         "en": "Repo is unreachable; permanently removed and dropped from the source list"
       },
       "at": "2026-09-28T01:19:41.866Z",
-      "by": "diguo520"
-    },
-    {
-      "target": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
-      "kind": "source",
-      "action": "delist",
-      "reason": {
-        "zh": "manifest 字段缺失",
-        "en": "manifest 字段缺失"
-      },
-      "at": "2026-09-28T13:05:29.505Z",
       "by": "diguo520"
     },
     {
