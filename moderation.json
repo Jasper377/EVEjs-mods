@@ -1,18 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-30T04:09:17.248Z",
+  "updatedAt": "2026-09-30T04:10:55.498Z",
   "entries": [
-    {
-      "target": "welcome-mod",
-      "kind": "id",
-      "action": "reject",
-      "reason": {
-        "zh": "请修改重新提交，不符合 EVEJS MOD 生态",
-        "en": "Please revise and resubmit: this mod does not fit the EVEJS mod ecosystem"
-      },
-      "at": "2026-09-21T22:59:28.193Z",
-      "by": "diguo520"
-    },
     {
       "target": "igottgo/evejs-mod-mod-mudnca8r",
       "kind": "source",
@@ -33,6 +22,17 @@
         "en": "仓库不属于作者"
       },
       "at": "2026-09-29T05:33:15.776Z",
+      "by": "diguo520"
+    },
+    {
+      "target": "welcome-mod",
+      "kind": "id",
+      "action": "reject",
+      "reason": {
+        "zh": "manifest 字段缺失",
+        "en": "manifest 字段缺失"
+      },
+      "at": "2026-09-30T04:10:55.498Z",
       "by": "diguo520"
     }
   ]
