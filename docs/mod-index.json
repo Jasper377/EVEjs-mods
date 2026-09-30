@@ -1,47 +1,49 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T11:32:32.316Z",
+  "publishedAt": "2026-09-30T13:17:13.398Z",
   "mods": [
     {
-      "id": "evejs-autolockfire",
-      "displayName": "EVEjs-AutoLockFire",
-      "version": "1.0.4",
       "author": {
-        "id": "au-mubd7h45x3e1",
-        "name": "波坤太叔",
-        "keyId": "691df6c7d2cd"
+        "id": "au-muk52dvb6mve",
+        "keyId": "1382094598d9",
+        "name": "波坤太叔"
       },
-      "description": "仿国服自动锁定，自动集火",
       "category": "玩法",
-      "tags": [
-        "自动",
-        "锁定",
-        "开火"
-      ],
-      "readme": [],
-      "highlights": [],
+      "changelog": "兼容 0.12.9",
       "conflicts": [],
-      "requiresRestart": true,
-      "evejsVersions": [
-        "0.12.8"
-      ],
-      "sizeBytes": 52044,
-      "sha256": "77ae1031f46b27ea3d931fe25b045d994f3e604e87f3adf5fb4cd6f879e26106",
+      "delisted": false,
+      "description": "仿国服自动锁定，自动集火",
+      "displayName": "EVEjs-AutoLockFire",
       "downloadUrls": [
         {
           "mirror": "github",
-          "url": "https://github.com/diguo520/evejs-mod-evejs-autolockfire/releases/download/v1.0.4/evejs-autolockfire-1.0.4.zip",
-          "priority": 1
+          "priority": 1,
+          "url": "https://github.com/diguo520/evejs-mod-evejs-autolockfire/releases/download/v1.0.5/evejs-autolockfire-1.0.5.zip"
         }
       ],
-      "changelog": "更换了自动锁定和开火的图标",
-      "history": [],
-      "repo": "https://github.com/diguo520/evejs-mod-evejs-autolockfire",
+      "evejsVersions": [
+        "0.12.8",
+        "0.12.9"
+      ],
       "featured": false,
-      "delisted": false,
-      "publishedAt": "2026-09-22",
+      "highlights": [
+        "自动锁定",
+        "自动集火"
+      ],
+      "history": [],
+      "id": "evejs-autolockfire",
+      "publishedAt": "2026-09-30",
+      "readme": [
+        "从国服客户端移植过来的舰船 HUD 按钮组：在飞行界面右侧加一排按钮，用来一键锁定、集火、停止锁定与停止开火。"
+      ],
+      "repo": "https://github.com/diguo520/evejs-mod-evejs-autolockfire",
+      "requiresRestart": true,
+      "sha256": "51f6daeea2782cc906317b3245c601adbbf59c8eae84389de59a33fbc16144e7",
+      "sizeBytes": 51726,
+      "tags": [],
+      "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 105,
+      "downloads": 113,
       "cdnHits": 51
     },
     {
@@ -83,7 +85,7 @@
       "delisted": false,
       "publishedAt": "2026-09-23",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 69,
+      "downloads": 70,
       "cdnHits": 4
     },
     {
@@ -123,7 +125,7 @@
       "tags": [],
       "version": "1.5.0",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 43,
+      "downloads": 44,
       "cdnHits": 0
     },
     {
@@ -163,7 +165,7 @@
       "delisted": false,
       "publishedAt": "2026-09-22",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 86,
+      "downloads": 87,
       "cdnHits": 52
     }
   ],
@@ -212,7 +214,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "+o+CI7aSOxVl1mBA4Dby+9acnpm1qmKIr/uJ+d9SoQcge9UPkgYItxtdWXOhLRXWRPpWKbHZZukIBnX88D0/CQ==",
-    "signedAt": "2026-09-30T11:32:32.319Z"
+    "sig": "tIbH6Iifv7fxyzP7coXpSQc5ZYvwemtFtDWUAznH4KCHJ79lGLtWHdQi7bDVA/IvO3yBXrkSDfizCdKQ25JjBA==",
+    "signedAt": "2026-09-30T13:17:13.401Z"
   }
 }
