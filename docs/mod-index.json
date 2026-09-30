@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T04:10:12.735Z",
+  "publishedAt": "2026-09-30T04:11:24.674Z",
   "mods": [
     {
       "author": {
@@ -208,16 +208,6 @@
     }
   ],
   "moderation": {
-    "welcome-mod": {
-      "id": "welcome-mod",
-      "action": "reject",
-      "reason": {
-        "zh": "请修改重新提交，不符合 EVEJS MOD 生态",
-        "en": "Please revise and resubmit: this mod does not fit the EVEJS mod ecosystem"
-      },
-      "at": "2026-09-21T22:59:28.193Z",
-      "by": "diguo520"
-    },
     "igottgo/evejs-mod-mod-mudnca8r": {
       "source": "igottgo/evejs-mod-mod-mudnca8r",
       "action": "reject",
@@ -237,12 +227,22 @@
       },
       "at": "2026-09-29T05:33:15.776Z",
       "by": "diguo520"
+    },
+    "welcome-mod": {
+      "id": "welcome-mod",
+      "action": "reject",
+      "reason": {
+        "zh": "manifest 字段缺失",
+        "en": "manifest 字段缺失"
+      },
+      "at": "2026-09-30T04:10:55.498Z",
+      "by": "diguo520"
     }
   },
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "juZkVHPSQ9Nd1MhqUQ1vkXxhHfUQMav7k8SXod/PnVVCAjGZoavej+GIoPalqnWMR5DUQzo769jirFqAIrnDAQ==",
-    "signedAt": "2026-09-30T04:10:12.737Z"
+    "sig": "FnY7fqA0gD6lk9UOeQ5un/qhOCCA9X4Mvz5ueQ/w2K81oEBG4WYS0NaHegj03HAGm+Yh4fc+qTaY1MPXEcW0Dg==",
+    "signedAt": "2026-09-30T04:11:24.676Z"
   }
 }
