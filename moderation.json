@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-29T05:33:15.776Z",
+  "updatedAt": "2026-09-30T03:58:04.190Z",
   "entries": [
     {
       "target": "welcome-mod",
@@ -22,17 +22,6 @@
         "en": "Repo is unreachable; permanently removed and dropped from the source list"
       },
       "at": "2026-09-28T01:19:41.866Z",
-      "by": "diguo520"
-    },
-    {
-      "target": "diguo520/evejs-mod-evejs-autolockfire",
-      "kind": "source",
-      "action": "reject",
-      "reason": {
-        "zh": "manifest 字段缺失，重新提交",
-        "en": "manifest 字段缺失，重新提交"
-      },
-      "at": "2026-09-28T12:54:10.059Z",
       "by": "diguo520"
     },
     {
