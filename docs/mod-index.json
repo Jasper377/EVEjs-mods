@@ -1,47 +1,7 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T04:11:24.674Z",
+  "publishedAt": "2026-09-30T04:12:20.774Z",
   "mods": [
-    {
-      "author": {
-        "id": "au-mueakz9fwyt6",
-        "keyId": "bad8165273ee",
-        "name": "橘子"
-      },
-      "category": "玩法",
-      "changelog": "2",
-      "conflicts": [],
-      "delisted": false,
-      "description": "2",
-      "displayName": "Empty Upload Test",
-      "downloadUrls": [
-        {
-          "mirror": "github",
-          "priority": 1,
-          "url": "https://github.com/JUZIMandarin/evejs-mod-evejs-empty-upload-test/releases/download/v1.0.0/evejs-empty-upload-test-1.0.0.zip"
-        }
-      ],
-      "evejsVersions": [
-        "0.12.8"
-      ],
-      "featured": false,
-      "highlights": [],
-      "history": [],
-      "id": "evejs-empty-upload-test",
-      "publishedAt": "2026-09-30",
-      "readme": [
-        "3"
-      ],
-      "repo": "https://github.com/JUZIMandarin/evejs-mod-evejs-empty-upload-test",
-      "requiresRestart": true,
-      "sha256": "70dc061ab97307c3fa548cca3293c0ffdc4e4738fb4f7655676b30473d253914",
-      "sizeBytes": 1498,
-      "tags": [],
-      "version": "1.0.0",
-      "source": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
-      "downloads": 0,
-      "cdnHits": 0
-    },
     {
       "id": "evejs-autolockfire",
       "displayName": "EVEjs-AutoLockFire",
@@ -81,7 +41,7 @@
       "delisted": false,
       "publishedAt": "2026-09-22",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 94,
+      "downloads": 95,
       "cdnHits": 51
     },
     {
@@ -237,12 +197,22 @@
       },
       "at": "2026-09-30T04:10:55.498Z",
       "by": "diguo520"
+    },
+    "JUZIMandarin/evejs-mod-evejs-empty-upload-test": {
+      "source": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
+      "action": "reject",
+      "reason": {
+        "zh": "manifest 字段缺失",
+        "en": "manifest 字段缺失"
+      },
+      "at": "2026-09-30T04:12:00.928Z",
+      "by": "diguo520"
     }
   },
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "FnY7fqA0gD6lk9UOeQ5un/qhOCCA9X4Mvz5ueQ/w2K81oEBG4WYS0NaHegj03HAGm+Yh4fc+qTaY1MPXEcW0Dg==",
-    "signedAt": "2026-09-30T04:11:24.676Z"
+    "sig": "QvTn+6pJBQgY+Rtxaz7M4h4pzKUsQCv3lBMd2xYVMbPcmQ54araIJmIJbIruLli6z5OCp5esDQ6/qu9jsjSTBg==",
+    "signedAt": "2026-09-30T04:12:20.777Z"
   }
 }
