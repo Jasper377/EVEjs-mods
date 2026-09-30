@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-30T04:10:55.498Z",
+  "updatedAt": "2026-09-30T04:12:00.928Z",
   "entries": [
     {
       "target": "igottgo/evejs-mod-mod-mudnca8r",
@@ -33,6 +33,17 @@
         "en": "manifest 字段缺失"
       },
       "at": "2026-09-30T04:10:55.498Z",
+      "by": "diguo520"
+    },
+    {
+      "target": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
+      "kind": "source",
+      "action": "reject",
+      "reason": {
+        "zh": "manifest 字段缺失",
+        "en": "manifest 字段缺失"
+      },
+      "at": "2026-09-30T04:12:00.928Z",
       "by": "diguo520"
     }
   ]
