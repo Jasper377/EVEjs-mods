@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T15:38:25.282Z",
+  "publishedAt": "2026-09-30T16:20:40.678Z",
   "mods": [
     {
       "author": {
@@ -43,7 +43,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 130,
+      "downloads": 138,
       "cdnHits": 51
     },
     {
@@ -91,7 +91,7 @@
       "tags": [],
       "version": "1.0.10",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 79,
+      "downloads": 83,
       "cdnHits": 4
     },
     {
@@ -131,7 +131,7 @@
       "tags": [],
       "version": "1.5.0",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 49,
+      "downloads": 50,
       "cdnHits": 0
     },
     {
@@ -178,7 +178,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 93,
+      "downloads": 95,
       "cdnHits": 52
     }
   ],
@@ -203,16 +203,6 @@
       "at": "2026-09-29T05:33:15.776Z",
       "by": "diguo520"
     },
-    "welcome-mod": {
-      "id": "welcome-mod",
-      "action": "reject",
-      "reason": {
-        "zh": "manifest 字段缺失",
-        "en": "manifest 字段缺失"
-      },
-      "at": "2026-09-30T04:10:55.498Z",
-      "by": "diguo520"
-    },
     "JUZIMandarin/evejs-mod-evejs-empty-upload-test": {
       "source": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
       "action": "reject",
@@ -222,12 +212,22 @@
       },
       "at": "2026-09-30T04:12:00.928Z",
       "by": "diguo520"
+    },
+    "welcome-mod": {
+      "id": "welcome-mod",
+      "action": "reject",
+      "reason": {
+        "zh": "仓库失联",
+        "en": "仓库失联"
+      },
+      "at": "2026-09-30T16:20:14.205Z",
+      "by": "diguo520"
     }
   },
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "76YamFNGXrKzGpda+ju29HKT+MbFzMw8m5EWQtWWuqPUxSgaTYrVBbbNx9x2dahyhUrXwgHzVOK6Tl/GKdNmDg==",
-    "signedAt": "2026-09-30T15:38:25.285Z"
+    "sig": "Tf9c73VsY8vOunMy8hduQWbtKy/+t0u5C/FbrTSXvrV9rDyBRJlPd4aBAoAkoVdSKDCa6FY8bd1CsBx8XOw1Dg==",
+    "signedAt": "2026-09-30T16:20:40.681Z"
   }
 }
