@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-30T04:12:00.928Z",
+  "updatedAt": "2026-09-30T16:20:14.205Z",
   "entries": [
     {
       "target": "igottgo/evejs-mod-mod-mudnca8r",
@@ -25,17 +25,6 @@
       "by": "diguo520"
     },
     {
-      "target": "welcome-mod",
-      "kind": "id",
-      "action": "reject",
-      "reason": {
-        "zh": "manifest 字段缺失",
-        "en": "manifest 字段缺失"
-      },
-      "at": "2026-09-30T04:10:55.498Z",
-      "by": "diguo520"
-    },
-    {
       "target": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
       "kind": "source",
       "action": "reject",
@@ -44,6 +33,17 @@
         "en": "manifest 字段缺失"
       },
       "at": "2026-09-30T04:12:00.928Z",
+      "by": "diguo520"
+    },
+    {
+      "target": "welcome-mod",
+      "kind": "id",
+      "action": "reject",
+      "reason": {
+        "zh": "仓库失联",
+        "en": "仓库失联"
+      },
+      "at": "2026-09-30T16:20:14.205Z",
       "by": "diguo520"
     }
   ]
