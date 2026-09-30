@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T04:04:09.202Z",
+  "publishedAt": "2026-09-30T04:10:12.735Z",
   "mods": [
     {
       "author": {
@@ -11,7 +11,7 @@
       "category": "玩法",
       "changelog": "2",
       "conflicts": [],
-      "delisted": true,
+      "delisted": false,
       "description": "2",
       "displayName": "Empty Upload Test",
       "downloadUrls": [
@@ -40,13 +40,7 @@
       "version": "1.0.0",
       "source": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
       "downloads": 0,
-      "cdnHits": 0,
-      "delistReason": {
-        "zh": "manifest 字段缺失",
-        "en": "manifest 字段缺失"
-      },
-      "moderatedAt": "2026-09-28T13:05:29.505Z",
-      "moderatedBy": "diguo520"
+      "cdnHits": 0
     },
     {
       "id": "evejs-autolockfire",
@@ -214,18 +208,6 @@
     }
   ],
   "moderation": {
-    "evejs-empty-upload-test": {
-      "id": "evejs-empty-upload-test",
-      "source": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
-      "authorId": "au-mueakz9fwyt6",
-      "action": "delist",
-      "reason": {
-        "zh": "manifest 字段缺失",
-        "en": "manifest 字段缺失"
-      },
-      "at": "2026-09-28T13:05:29.505Z",
-      "by": "diguo520"
-    },
     "welcome-mod": {
       "id": "welcome-mod",
       "action": "reject",
@@ -260,7 +242,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "++Vty/AtKqb5QDStfWwDcS7+BhooLntmAsqWcB8KvwJs0he6iiCvbLXHsd/Hvc1XtMVIwbtOxPreTo7eZFGFBw==",
-    "signedAt": "2026-09-30T04:04:09.205Z"
+    "sig": "juZkVHPSQ9Nd1MhqUQ1vkXxhHfUQMav7k8SXod/PnVVCAjGZoavej+GIoPalqnWMR5DUQzo769jirFqAIrnDAQ==",
+    "signedAt": "2026-09-30T04:10:12.737Z"
   }
 }
