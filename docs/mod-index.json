@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T13:17:13.398Z",
+  "publishedAt": "2026-09-30T15:04:29.715Z",
   "mods": [
     {
       "author": {
@@ -9,7 +9,7 @@
         "name": "波坤太叔"
       },
       "category": "玩法",
-      "changelog": "兼容 0.12.9",
+      "changelog": "修改自动锁定图标大小。修复自动装填BUG",
       "conflicts": [],
       "delisted": false,
       "description": "仿国服自动锁定，自动集火",
@@ -18,7 +18,7 @@
         {
           "mirror": "github",
           "priority": 1,
-          "url": "https://github.com/diguo520/evejs-mod-evejs-autolockfire/releases/download/v1.0.5/evejs-autolockfire-1.0.5.zip"
+          "url": "https://github.com/diguo520/evejs-mod-evejs-autolockfire/releases/download/v1.1.0/evejs-autolockfire-1.1.0.zip"
         }
       ],
       "evejsVersions": [
@@ -38,12 +38,12 @@
       ],
       "repo": "https://github.com/diguo520/evejs-mod-evejs-autolockfire",
       "requiresRestart": true,
-      "sha256": "51f6daeea2782cc906317b3245c601adbbf59c8eae84389de59a33fbc16144e7",
-      "sizeBytes": 51726,
+      "sha256": "78ac30fc53d56bf315a7ba2fb33d1f6d0a17934d01b3399625bf0c6adf8c2591",
+      "sizeBytes": 54969,
       "tags": [],
-      "version": "1.0.5",
+      "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 113,
+      "downloads": 126,
       "cdnHits": 51
     },
     {
@@ -85,7 +85,7 @@
       "delisted": false,
       "publishedAt": "2026-09-23",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 70,
+      "downloads": 75,
       "cdnHits": 4
     },
     {
@@ -125,7 +125,7 @@
       "tags": [],
       "version": "1.5.0",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 44,
+      "downloads": 48,
       "cdnHits": 0
     },
     {
@@ -165,7 +165,7 @@
       "delisted": false,
       "publishedAt": "2026-09-22",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 87,
+      "downloads": 92,
       "cdnHits": 52
     }
   ],
@@ -214,7 +214,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "tIbH6Iifv7fxyzP7coXpSQc5ZYvwemtFtDWUAznH4KCHJ79lGLtWHdQi7bDVA/IvO3yBXrkSDfizCdKQ25JjBA==",
-    "signedAt": "2026-09-30T13:17:13.401Z"
+    "sig": "aZIJIZP03Q/eRN2Hos3LtoTE5ez6RdtUQk0ouWbeKlZ22udZiQqpivOMxyEFcWHUYT8EP0JGOmAi8cY9KJ5uCw==",
+    "signedAt": "2026-09-30T15:04:29.717Z"
   }
 }
