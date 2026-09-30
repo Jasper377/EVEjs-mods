@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-09-30T03:58:27.965Z",
+  "publishedAt": "2026-09-30T04:04:09.202Z",
   "mods": [
     {
       "author": {
@@ -9,10 +9,10 @@
         "name": "橘子"
       },
       "category": "玩法",
-      "changelog": "测试",
+      "changelog": "2",
       "conflicts": [],
       "delisted": true,
-      "description": "An intentionally empty mod used to test the EvEJS Launcher upload/review flow. It adds no server or client changes.",
+      "description": "2",
       "displayName": "Empty Upload Test",
       "downloadUrls": [
         {
@@ -28,15 +28,14 @@
       "highlights": [],
       "history": [],
       "id": "evejs-empty-upload-test",
-      "publishedAt": "2026-09-28",
+      "publishedAt": "2026-09-30",
       "readme": [
-        "This mod is intentionally empty. It exists only to test the EvEJS Launcher's\nnew mod upload/review flow.",
-        "It does not patch the server, the client, or the game data."
+        "3"
       ],
       "repo": "https://github.com/JUZIMandarin/evejs-mod-evejs-empty-upload-test",
       "requiresRestart": true,
-      "sha256": "d235453c06372daac7e842e0d1dbfccbe4eb25918ccb9d5832ef6daec083d2c6",
-      "sizeBytes": 1367,
+      "sha256": "70dc061ab97307c3fa548cca3293c0ffdc4e4738fb4f7655676b30473d253914",
+      "sizeBytes": 1498,
       "tags": [],
       "version": "1.0.0",
       "source": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
@@ -261,7 +260,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "pHgDKIfhvMe/rDdp2PUVwLrowWE/2gyhsuAI2HUMBesvtnsHzmb1M7QItasewqH1Q4pGV5b2aOZSPm/CJ7TbCA==",
-    "signedAt": "2026-09-30T03:58:27.968Z"
+    "sig": "++Vty/AtKqb5QDStfWwDcS7+BhooLntmAsqWcB8KvwJs0he6iiCvbLXHsd/Hvc1XtMVIwbtOxPreTo7eZFGFBw==",
+    "signedAt": "2026-09-30T04:04:09.205Z"
   }
 }
