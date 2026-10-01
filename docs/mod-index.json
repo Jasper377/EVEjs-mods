@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T05:50:34.239Z",
+  "publishedAt": "2026-10-01T06:58:41.757Z",
   "mods": [
     {
       "author": {
@@ -43,7 +43,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 160,
+      "downloads": 162,
       "cdnHits": 51
     },
     {
@@ -91,7 +91,7 @@
       "tags": [],
       "version": "1.0.10",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 100,
+      "downloads": 101,
       "cdnHits": 7
     },
     {
@@ -131,7 +131,7 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 61,
+      "downloads": 65,
       "cdnHits": 3
     },
     {
@@ -178,7 +178,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 118,
+      "downloads": 119,
       "cdnHits": 55
     }
   ],
@@ -193,16 +193,6 @@
       "at": "2026-09-30T04:12:00.928Z",
       "by": "diguo520"
     },
-    "igottgo/evejs-mod-mod-mudnca8r": {
-      "source": "igottgo/evejs-mod-mod-mudnca8r",
-      "action": "reject",
-      "reason": {
-        "zh": "仓库已失联，永久删除并从收录名单移除",
-        "en": "Repo is unreachable; permanently removed and dropped from the source list"
-      },
-      "at": "2026-09-28T01:19:41.866Z",
-      "by": "diguo520"
-    },
     "diguo520/evejs-mod-evejs-modceshi": {
       "source": "diguo520/evejs-mod-evejs-modceshi",
       "action": "reject",
@@ -211,6 +201,16 @@
         "en": "仓库不属于作者"
       },
       "at": "2026-09-29T05:33:15.776Z",
+      "by": "diguo520"
+    },
+    "igottgo/evejs-mod-mod-mudnca8r": {
+      "source": "igottgo/evejs-mod-mod-mudnca8r",
+      "action": "reject",
+      "reason": {
+        "zh": "仓库已失联，永久删除并从收录名单移除",
+        "en": "Repo is unreachable; permanently removed and dropped from the source list"
+      },
+      "at": "2026-09-28T01:19:41.866Z",
       "by": "diguo520"
     },
     "welcome-mod": {
@@ -227,7 +227,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "QOvTDa3ld3R6OkuJfk7Mcd1jsQnnLfclF9pXDxGFLEI7r4Tv9G2MVUMXdPqH8x9XhhcWOvzPME9iuwVRUryrBw==",
-    "signedAt": "2026-10-01T05:50:34.241Z"
+    "sig": "9ApXmPEENHV6mebWfEcU68lKbQpw74hOYPmVIuuXMOTB0jRECVFGAowkM1bIcM/wFpj81INMq0sr90/G2w84BQ==",
+    "signedAt": "2026-10-01T06:58:41.760Z"
   }
 }
