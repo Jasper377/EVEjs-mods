@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": 1790866751185,
+  "sponsors": [
+    {
+      "id": "sponsor-01",
+      "name": "TheIcePower",
+      "amount": 150,
+      "currency": "CNY"
+    },
+    {
+      "id": "sponsor-02",
+      "name": "*华",
+      "amount": 10,
+      "currency": "CNY"
+    }
+  ],
+  "signature": {
+    "alg": "ed25519",
+    "keyId": "evejs-ratings-2026-10-01",
+    "sig": "nuGkJY3vM/4JhRlkY5QTuy9FZVs8bddjI3DmvNVUAJI19eB5p13U5ZkgowhPBCknYqamD8MkGYMr7g2o+impAg=="
+  }
+}
