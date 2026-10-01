@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-01T08:12:44.755Z",
+  "updatedAt": "2026-10-01T08:16:38.099Z",
   "entries": [
     {
       "target": "igottgo/evejs-mod-mod-mudnca8r",
@@ -43,10 +43,10 @@
       "kind": "source",
       "action": "reject",
       "reason": {
-        "zh": "测试结束",
-        "en": "测试结束"
+        "zh": "完美闭环",
+        "en": "完美闭环"
       },
-      "at": "2026-10-01T08:12:44.755Z",
+      "at": "2026-10-01T08:16:38.099Z",
       "by": "diguo520",
       "permanent": true
     }
