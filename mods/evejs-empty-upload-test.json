@@ -13,11 +13,11 @@
     }
   ],
   "id": "evejs-empty-upload-test",
-  "publishedAt": "2026-09-30",
+  "publishedAt": "2026-10-01",
   "schemaVersion": 1,
-  "sha256": "70dc061ab97307c3fa548cca3293c0ffdc4e4738fb4f7655676b30473d253914",
-  "sizeBytes": 1498,
+  "sha256": "fd6a71d5f59b9ae398e56adc47e8c175ab535ede8ed89f386c07798e1ba560b7",
+  "sizeBytes": 1366,
   "source": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
-  "submittedAt": "2026-09-30T04:03:15.626Z",
+  "submittedAt": "2026-10-01T05:49:47.726Z",
   "version": "1.0.0"
 }
