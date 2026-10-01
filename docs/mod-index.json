@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T02:58:06.844Z",
+  "publishedAt": "2026-10-01T05:39:14.392Z",
   "mods": [
     {
       "author": {
@@ -43,7 +43,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 153,
+      "downloads": 160,
       "cdnHits": 51
     },
     {
@@ -91,7 +91,7 @@
       "tags": [],
       "version": "1.0.10",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 92,
+      "downloads": 100,
       "cdnHits": 7
     },
     {
@@ -101,37 +101,37 @@
         "name": "橘子"
       },
       "category": "玩法",
-      "changelog": "",
+      "changelog": "修复了可能存在杀死进程的问题",
       "conflicts": [],
       "delisted": false,
-      "description": "Adds playable Sleeper and Drifter hulls. 1.4.11 makes the startup guard remove stale guard markers and terminate the previous guard/server process pair before opening port 26000, fixing EADDRINUSE after a failed or overlapping start.",
+      "description": "Adds playable Sleeper and Drifter hulls. 1.5.2 fixes the 0.2.x launcher process kill: the startup guard now arms only for the real server entry and no longer terminates the launcher npm/node chain.",
       "displayName": "Sleeper & Drifter Playable Ships",
       "downloadUrls": [
         {
           "mirror": "github",
           "priority": 1,
-          "url": "https://github.com/JUZIMandarin/evejs-mod-evejs-sleeper-drifters/releases/download/v1.5.0/evejs-sleeper-drifters-1.5.0.zip"
+          "url": "https://github.com/JUZIMandarin/evejs-mod-evejs-sleeper-drifters/releases/download/v1.5.2/evejs-sleeper-drifters-1.5.2.zip"
         }
       ],
       "evejsVersions": [
-        "0.12.8"
+        "0.12.9"
       ],
       "featured": false,
       "highlights": [],
       "history": [],
       "id": "evejs-sleeper-drifters",
-      "publishedAt": "2026-09-28",
+      "publishedAt": "2026-10-01",
       "readme": [
         "本模组包含服务端加载器、客户端 FSD 数据、服务端静态表和安装器。目标是让玩家使用根据原版流浪者冬眠者舰船添加的模组舰船。"
       ],
       "repo": "https://github.com/JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
       "requiresRestart": true,
-      "sha256": "5d842cb7972a345692de4f2bf54f0c453f8dc2eb85f367487f136a69ff365643",
-      "sizeBytes": 18698698,
+      "sha256": "fb427e77818da9d21634e61d66ba63000e32f2d11ea6bfcaa1c81857993cfe52",
+      "sizeBytes": 18693285,
       "tags": [],
-      "version": "1.5.0",
+      "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 55,
+      "downloads": 61,
       "cdnHits": 3
     },
     {
@@ -178,7 +178,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 108,
+      "downloads": 118,
       "cdnHits": 55
     }
   ],
@@ -227,7 +227,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "FV5ffFk3qmEJuCABq8eJtiU2+bXQ8Q0a7YP0EjQCehQwBY6d6SjMpxNBziNHS2huyyigAbmM+ZH8+GQtKo+7Dw==",
-    "signedAt": "2026-10-01T02:58:06.846Z"
+    "sig": "R5DhK2HBXc+oJnQHzphHlGOf72501kFO6m87Osvd1Jx/LqrJTntcwJYkCw1czfUpMvd1JGMN9rNZMzulIAn+BQ==",
+    "signedAt": "2026-10-01T05:39:14.394Z"
   }
 }
