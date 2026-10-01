@@ -9,15 +9,15 @@
     {
       "mirror": "github",
       "priority": 1,
-      "url": "https://github.com/diguo520/evejs-mod-evejs-modceshi/releases/download/v1.0.0/evejs-modceshi-1.0.0.zip"
+      "url": "https://github.com/diguo520/evejs-mod-evejs-modceshi/releases/download/v1.0.1/evejs-modceshi-1.0.1.zip"
     }
   ],
   "id": "evejs-modceshi",
-  "publishedAt": "2026-09-28",
+  "publishedAt": "2026-10-01",
   "schemaVersion": 1,
-  "sha256": "279a7ef4d565a21de02dfa0d8d7f52625b5f6f692e4cda51652ee281f31e1f78",
-  "sizeBytes": 3916,
+  "sha256": "1a027318e29e301952d79f7d2f9157dddd03c3871cce747a1492b442f7c670d1",
+  "sizeBytes": 4023,
   "source": "diguo520/evejs-mod-evejs-modceshi",
-  "submittedAt": "2026-09-28T19:33:49.565Z",
-  "version": "1.0.0"
+  "submittedAt": "2026-10-01T06:57:31.987Z",
+  "version": "1.0.1"
 }
