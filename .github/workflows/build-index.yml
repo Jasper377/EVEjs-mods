@@ -62,19 +62,33 @@ jobs:
 
       - name: Commit regenerated index back to main
         if: env.SKIP_BUILD != '1'
+        env:
+          INDEX_SIGNING_KEY: ${{ secrets.INDEX_SIGNING_KEY || vars.INDEX_SIGNING_KEY }}
+          GH_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/mod-index.json author-keys.json
-          if [ -n "$(git status --porcelain docs/mod-index.json author-keys.json)" ]; then
-            git commit -m "chore(index): refresh mod-index.json"
-            # 万一还是撞上（例如有人在网页上同时动了 main），rebase 后再推，别留红叉
-            for attempt in 1 2 3; do
-              if git push; then exit 0; fi
-              echo "push 被拒（第 $attempt 次），rebase 后重试"
-              git pull --rebase --autostash
-            done
-            git push
-          else
+          if [ -z "$(git status --porcelain docs/mod-index.json author-keys.json)" ]; then
             echo "索引没有变化，跳过提交"
+            exit 0
           fi
+          git commit -m "chore(index): refresh mod-index.json"
+          # docs/mod-index.json 是**生成物**：推被拒时绝不能 rebase —— 两边都是重新生成的整份文件，
+          # 冲突是必然的（2026-10-01 实测：一次投稿触发的重建和一次审核结论触发的重建撞在一起，
+          # rebase 直接 conflict，两次重建全部红叉，索引停在旧结论上）。
+          # 正确做法是丢掉本地这次生成、对齐最新 main 后**重新生成一遍**。
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            echo "push 被拒（第 $attempt 次），对齐最新 main 后重新生成索引"
+            git fetch origin main
+            git reset --hard FETCH_HEAD
+            node scripts/build-index.mjs
+            git add docs/mod-index.json author-keys.json
+            if [ -z "$(git status --porcelain docs/mod-index.json author-keys.json)" ]; then
+              echo "对齐最新 main 后索引已经是最新，无需再提交"
+              exit 0
+            fi
+            git commit -m "chore(index): refresh mod-index.json"
+          done
+          git push
