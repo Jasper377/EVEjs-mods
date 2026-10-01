@@ -9,15 +9,15 @@
     {
       "mirror": "github",
       "priority": 1,
-      "url": "https://github.com/JUZIMandarin/evejs-mod-evejs-sleeper-drifters/releases/download/v1.5.0/evejs-sleeper-drifters-1.5.0.zip"
+      "url": "https://github.com/JUZIMandarin/evejs-mod-evejs-sleeper-drifters/releases/download/v1.5.2/evejs-sleeper-drifters-1.5.2.zip"
     }
   ],
   "id": "evejs-sleeper-drifters",
-  "publishedAt": "2026-09-28",
+  "publishedAt": "2026-10-01",
   "schemaVersion": 1,
-  "sha256": "5d842cb7972a345692de4f2bf54f0c453f8dc2eb85f367487f136a69ff365643",
-  "sizeBytes": 18698698,
+  "sha256": "fb427e77818da9d21634e61d66ba63000e32f2d11ea6bfcaa1c81857993cfe52",
+  "sizeBytes": 18693285,
   "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-  "submittedAt": "2026-09-28T11:39:48.887Z",
-  "version": "1.5.0"
+  "submittedAt": "2026-10-01T05:38:26.720Z",
+  "version": "1.5.2"
 }
