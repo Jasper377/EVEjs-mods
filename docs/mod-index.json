@@ -1,54 +1,7 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T08:12:44.247Z",
+  "publishedAt": "2026-10-01T08:13:03.107Z",
   "mods": [
-    {
-      "author": {
-        "id": "au-mueakz9fwyt6",
-        "keyId": "bad8165273ee",
-        "name": "橘子"
-      },
-      "category": "玩法",
-      "changelog": "",
-      "conflicts": [],
-      "delisted": true,
-      "description": "An intentionally empty mod used to test the EvEJS Launcher upload/review flow. It adds no server or client changes.",
-      "displayName": "Empty Upload Test",
-      "downloadUrls": [
-        {
-          "mirror": "github",
-          "priority": 1,
-          "url": "https://github.com/JUZIMandarin/evejs-mod-evejs-empty-upload-test/releases/download/v1.0.0/evejs-empty-upload-test-1.0.0.zip"
-        }
-      ],
-      "evejsVersions": [
-        "0.12.8"
-      ],
-      "featured": false,
-      "highlights": [],
-      "history": [],
-      "id": "evejs-empty-upload-test",
-      "publishedAt": "2026-10-01",
-      "readme": [
-        "This mod is intentionally empty. It exists only to test the EvEJS Launcher's\nnew mod upload/review flow.",
-        "It does not patch the server, the client, or the game data."
-      ],
-      "repo": "https://github.com/JUZIMandarin/evejs-mod-evejs-empty-upload-test",
-      "requiresRestart": true,
-      "sha256": "7e60e49ee8c0cfe91de9244bb80a7d76502b49c5cbb73d03445e9ffb475f3b19",
-      "sizeBytes": 1366,
-      "tags": [],
-      "version": "1.0.0",
-      "source": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
-      "downloads": 0,
-      "cdnHits": 3,
-      "delistReason": {
-        "zh": "闭关结束可以删了",
-        "en": "闭关结束可以删了"
-      },
-      "moderatedAt": "2026-10-01T08:11:36.900Z",
-      "moderatedBy": "diguo520"
-    },
     {
       "author": {
         "id": "au-muk52dvb6mve",
@@ -230,18 +183,6 @@
     }
   ],
   "moderation": {
-    "evejs-empty-upload-test": {
-      "id": "evejs-empty-upload-test",
-      "source": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
-      "authorId": "au-mueakz9fwyt6",
-      "action": "delist",
-      "reason": {
-        "zh": "闭关结束可以删了",
-        "en": "闭关结束可以删了"
-      },
-      "at": "2026-10-01T08:11:36.900Z",
-      "by": "diguo520"
-    },
     "igottgo/evejs-mod-mod-mudnca8r": {
       "source": "igottgo/evejs-mod-mod-mudnca8r",
       "action": "reject",
@@ -274,12 +215,23 @@
       "at": "2026-10-01T08:12:18.170Z",
       "by": "diguo520",
       "permanent": true
+    },
+    "JUZIMandarin/evejs-mod-evejs-empty-upload-test": {
+      "source": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
+      "action": "reject",
+      "reason": {
+        "zh": "测试结束",
+        "en": "测试结束"
+      },
+      "at": "2026-10-01T08:12:44.755Z",
+      "by": "diguo520",
+      "permanent": true
     }
   },
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "PtbMsYnnrh0w/Tif+rbIdy4sV5iRhf3cxANBgZCHXpanGo6R0/KRV6H20I7JLEeZJ6Ji1V/nM1N9OKPL5VD1Aw==",
-    "signedAt": "2026-10-01T08:12:44.249Z"
+    "sig": "tyPRylMykczcXiGsIRQ8XH2dGu3cc+dPgpi+dvsnej8/t/4UafPaiU3nbIQGuBAbEVQPo9snalRUJHmia0HbBg==",
+    "signedAt": "2026-10-01T08:13:03.109Z"
   }
 }
