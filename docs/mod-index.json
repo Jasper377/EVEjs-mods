@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T07:43:37.932Z",
+  "publishedAt": "2026-10-01T08:06:15.415Z",
   "mods": [
     {
       "author": {
@@ -35,7 +35,7 @@
       ],
       "repo": "https://github.com/JUZIMandarin/evejs-mod-evejs-empty-upload-test",
       "requiresRestart": true,
-      "sha256": "fd6a71d5f59b9ae398e56adc47e8c175ab535ede8ed89f386c07798e1ba560b7",
+      "sha256": "7e60e49ee8c0cfe91de9244bb80a7d76502b49c5cbb73d03445e9ffb475f3b19",
       "sizeBytes": 1366,
       "tags": [],
       "version": "1.0.0",
@@ -132,7 +132,7 @@
       "tags": [],
       "version": "1.0.10",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 102,
+      "downloads": 103,
       "cdnHits": 7
     },
     {
@@ -172,7 +172,7 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 66,
+      "downloads": 67,
       "cdnHits": 3
     },
     {
@@ -260,7 +260,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "sS6Xofk3YHMPno6oL3gfQP5IV13napnGZd5hu5H4ugwuu4wGLu0UHCt7indSinSqRwOhFMN8g8kl2gULqyd4Cw==",
-    "signedAt": "2026-10-01T07:43:37.935Z"
+    "sig": "78cxGfX7cIy4XoRUyfY/Wkll3/tcyTj0RaNE/WI4Lcy8Hks8D5YrU4ScwwBKrP2Mdz5QoVfg7XaboQrcOlKmCw==",
+    "signedAt": "2026-10-01T08:06:15.418Z"
   }
 }
