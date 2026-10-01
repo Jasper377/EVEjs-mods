@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T05:39:14.392Z",
+  "publishedAt": "2026-10-01T05:50:34.239Z",
   "mods": [
     {
       "author": {
@@ -183,6 +183,16 @@
     }
   ],
   "moderation": {
+    "JUZIMandarin/evejs-mod-evejs-empty-upload-test": {
+      "source": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
+      "action": "reject",
+      "reason": {
+        "zh": "manifest 字段缺失",
+        "en": "manifest 字段缺失"
+      },
+      "at": "2026-09-30T04:12:00.928Z",
+      "by": "diguo520"
+    },
     "igottgo/evejs-mod-mod-mudnca8r": {
       "source": "igottgo/evejs-mod-mod-mudnca8r",
       "action": "reject",
@@ -203,16 +213,6 @@
       "at": "2026-09-29T05:33:15.776Z",
       "by": "diguo520"
     },
-    "JUZIMandarin/evejs-mod-evejs-empty-upload-test": {
-      "source": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
-      "action": "reject",
-      "reason": {
-        "zh": "manifest 字段缺失",
-        "en": "manifest 字段缺失"
-      },
-      "at": "2026-09-30T04:12:00.928Z",
-      "by": "diguo520"
-    },
     "welcome-mod": {
       "id": "welcome-mod",
       "action": "reject",
@@ -227,7 +227,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "R5DhK2HBXc+oJnQHzphHlGOf72501kFO6m87Osvd1Jx/LqrJTntcwJYkCw1czfUpMvd1JGMN9rNZMzulIAn+BQ==",
-    "signedAt": "2026-10-01T05:39:14.394Z"
+    "sig": "QOvTDa3ld3R6OkuJfk7Mcd1jsQnnLfclF9pXDxGFLEI7r4Tv9G2MVUMXdPqH8x9XhhcWOvzPME9iuwVRUryrBw==",
+    "signedAt": "2026-10-01T05:50:34.241Z"
   }
 }
