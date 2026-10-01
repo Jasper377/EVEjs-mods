@@ -1,18 +1,5 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-01T08:38:29.211Z",
-  "entries": [
-    {
-      "target": "diguo520/evejs-mod-evejs-modceshi",
-      "kind": "source",
-      "action": "reject",
-      "reason": {
-        "zh": "闭环结束可以删了",
-        "en": "闭环结束可以删了"
-      },
-      "at": "2026-10-01T08:12:18.170Z",
-      "by": "diguo520",
-      "permanent": true
-    }
-  ]
+  "updatedAt": "2026-10-01T08:39:24.640Z",
+  "entries": []
 }
