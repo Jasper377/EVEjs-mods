@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-01T07:21:18.518Z",
+  "updatedAt": "2026-10-01T08:11:36.900Z",
   "entries": [
     {
       "target": "igottgo/evejs-mod-mod-mudnca8r",
@@ -36,6 +36,17 @@
       "at": "2026-09-30T16:20:14.205Z",
       "by": "diguo520",
       "permanent": true
+    },
+    {
+      "target": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
+      "kind": "source",
+      "action": "delist",
+      "reason": {
+        "zh": "闭关结束可以删了",
+        "en": "闭关结束可以删了"
+      },
+      "at": "2026-10-01T08:11:36.900Z",
+      "by": "diguo520"
     }
   ]
 }
