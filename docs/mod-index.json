@@ -1,7 +1,48 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T07:21:22.671Z",
+  "publishedAt": "2026-10-01T07:24:01.304Z",
   "mods": [
+    {
+      "author": {
+        "id": "au-mueakz9fwyt6",
+        "keyId": "bad8165273ee",
+        "name": "橘子"
+      },
+      "category": "玩法",
+      "changelog": "",
+      "conflicts": [],
+      "delisted": false,
+      "description": "An intentionally empty mod used to test the EvEJS Launcher upload/review flow. It adds no server or client changes.",
+      "displayName": "Empty Upload Test",
+      "downloadUrls": [
+        {
+          "mirror": "github",
+          "priority": 1,
+          "url": "https://github.com/JUZIMandarin/evejs-mod-evejs-empty-upload-test/releases/download/v1.0.0/evejs-empty-upload-test-1.0.0.zip"
+        }
+      ],
+      "evejsVersions": [
+        "0.12.8"
+      ],
+      "featured": false,
+      "highlights": [],
+      "history": [],
+      "id": "evejs-empty-upload-test",
+      "publishedAt": "2026-10-01",
+      "readme": [
+        "This mod is intentionally empty. It exists only to test the EvEJS Launcher's\nnew mod upload/review flow.",
+        "It does not patch the server, the client, or the game data."
+      ],
+      "repo": "https://github.com/JUZIMandarin/evejs-mod-evejs-empty-upload-test",
+      "requiresRestart": true,
+      "sha256": "fd6a71d5f59b9ae398e56adc47e8c175ab535ede8ed89f386c07798e1ba560b7",
+      "sizeBytes": 1366,
+      "tags": [],
+      "version": "1.0.0",
+      "source": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
+      "downloads": 0,
+      "cdnHits": 3
+    },
     {
       "author": {
         "id": "au-muk52dvb6mve",
@@ -183,16 +224,6 @@
     }
   ],
   "moderation": {
-    "JUZIMandarin/evejs-mod-evejs-empty-upload-test": {
-      "source": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
-      "action": "reject",
-      "reason": {
-        "zh": "manifest 字段缺失",
-        "en": "manifest 字段缺失"
-      },
-      "at": "2026-09-30T04:12:00.928Z",
-      "by": "diguo520"
-    },
     "diguo520/evejs-mod-evejs-modceshi": {
       "source": "diguo520/evejs-mod-evejs-modceshi",
       "action": "reject",
@@ -229,7 +260,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "d0tCZSgonifKBdwdrSUAC/pjJt9P+RwYbz5MJcb40fL2EvanzutX3bYOSuHDNY1ENPQv16Srg8y/zEMCnc3YAg==",
-    "signedAt": "2026-10-01T07:21:22.674Z"
+    "sig": "niWhLnKcPfrLTYTItf+zJefKoUNoh3mJCQf7EM9wa1oetJ33Cl+h+X1Y/JIR00QQQR50Orp7rqlRjdq0rhmcAQ==",
+    "signedAt": "2026-10-01T07:24:01.307Z"
   }
 }
