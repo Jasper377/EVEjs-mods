@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T08:13:03.107Z",
+  "publishedAt": "2026-10-01T08:17:00.136Z",
   "mods": [
     {
       "author": {
@@ -131,7 +131,7 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 67,
+      "downloads": 68,
       "cdnHits": 3
     },
     {
@@ -220,10 +220,10 @@
       "source": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
       "action": "reject",
       "reason": {
-        "zh": "测试结束",
-        "en": "测试结束"
+        "zh": "完美闭环",
+        "en": "完美闭环"
       },
-      "at": "2026-10-01T08:12:44.755Z",
+      "at": "2026-10-01T08:16:38.099Z",
       "by": "diguo520",
       "permanent": true
     }
@@ -231,7 +231,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "tyPRylMykczcXiGsIRQ8XH2dGu3cc+dPgpi+dvsnej8/t/4UafPaiU3nbIQGuBAbEVQPo9snalRUJHmia0HbBg==",
-    "signedAt": "2026-10-01T08:13:03.109Z"
+    "sig": "GHn4KHW+mhE6Jl86CCpEiEaxCMowM8Kb2cVhQWkpq1D2x1ZNaPuKxwb6hGjpNaxnPmoLj0YUke0Gixjrqw0lBQ==",
+    "signedAt": "2026-10-01T08:17:00.138Z"
   }
 }
