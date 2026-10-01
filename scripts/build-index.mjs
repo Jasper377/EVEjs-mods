@@ -237,6 +237,15 @@ function reasonsOf(rule) {
   return { zh: String(r.zh || ""), en: String(r.en || r.zh || "") };
 }
 
+/**
+ * 永久除名的结论要带上 permanent 标记。
+ * 控制台据此区分「可重新提交复审的拒绝」与「永久除名的终局结论」——
+ * 没有这个标记，作者重新提交一个被永久删除的模组就会被当成正常重提。
+ */
+function permanentOf(rule) {
+  return rule && rule.permanent === true ? { permanent: true } : {};
+}
+
 function ruleFor(kind, target) {
   const t = String(target || "").trim().toLowerCase();
   if (!t) return null;
@@ -256,7 +265,7 @@ for (const repo of sources) {
   const srcRule = ruleFor("source", repo);
   if (srcRule && srcRule.action === "reject") {
     rejected.push({ repo, reason: "维护者已拒绝收录：" + (reasonsOf(srcRule).zh || "未填写原因") });
-    moderationLog[repo] = { source: repo, action: "reject", reason: reasonsOf(srcRule), at: srcRule.at || "", by: srcRule.by || "" };
+    moderationLog[repo] = { source: repo, action: "reject", reason: reasonsOf(srcRule), at: srcRule.at || "", by: srcRule.by || "", ...permanentOf(srcRule) };
     continue;
   }
   // 多镜像候选（顺序 = 新鲜度）：
@@ -384,7 +393,7 @@ for (const repo of sources) {
   const rule = ruleFor("id", id) || ruleFor("source", repo);
   if (rule && rule.action === "reject") {
     rejected.push({ repo, reason: "维护者已拒绝收录 id「" + id + "」：" + (reasonsOf(rule).zh || "未填写原因") });
-    moderationLog[id] = { id, source: repo, authorId, action: "reject", reason: reasonsOf(rule), at: rule.at || "", by: rule.by || "" };
+    moderationLog[id] = { id, source: repo, authorId, action: "reject", reason: reasonsOf(rule), at: rule.at || "", by: rule.by || "", ...permanentOf(rule) };
     continue;
   }
   if (rule && rule.action === "delist") {
@@ -412,8 +421,8 @@ for (const rule of moderationRules) {
   const target = String(rule.target).trim();
   if (!target || loggedKeys.has(target.toLowerCase())) continue;
   moderationLog[target] = kind === "source"
-    ? { source: target, action: "reject", reason: reasonsOf(rule), at: rule.at || "", by: rule.by || "" }
-    : { id: target, action: "reject", reason: reasonsOf(rule), at: rule.at || "", by: rule.by || "" };
+    ? { source: target, action: "reject", reason: reasonsOf(rule), at: rule.at || "", by: rule.by || "", ...permanentOf(rule) }
+    : { id: target, action: "reject", reason: reasonsOf(rule), at: rule.at || "", by: rule.by || "", ...permanentOf(rule) };
   loggedKeys.add(target.toLowerCase());
 }
 

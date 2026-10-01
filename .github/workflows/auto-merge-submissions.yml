@@ -356,6 +356,40 @@ jobs:
             const summary = { pr: pr.number, title: pr.title, author: author, head: headRepo + "@" + headRef, files: files.map(function (f) { return f.filename }), added: verdict.added, removed: verdict.removed, merged: false, reasons: fail }
             console.log("verdict " + JSON.stringify(summary))
 
+            // 重新提交提示：这条 PR 重新登记的来源 / 模组 id 如果此前已被驳回或下架，
+            // 索引重建后控制台会把它标成「重新提交」进复审队列。提前跟作者说清楚，
+            // 免得作者以为重新提交一下就会自动上架。
+            const reHits = []
+            try {
+              const modRes = await api("/repos/" + REPO + "/contents/moderation.json?ref=main", { headers: { Accept: "application/vnd.github.raw" } })
+              const modEntries = modRes.json && Array.isArray(modRes.json.entries) ? modRes.json.entries : []
+              const ruleMap = {}
+              modEntries.forEach(function (e) {
+                if (e && typeof e.target === "string") ruleMap[e.target.trim().toLowerCase()] = e
+              })
+              const seen = {}
+              const checkRule = function (key, label) {
+                const text = key ? String(key).trim() : ""
+                if (!text || seen[text.toLowerCase()]) return
+                const hit = ruleMap[text.toLowerCase()]
+                if (!hit || (hit.action !== "reject" && hit.action !== "delist")) return
+                seen[text.toLowerCase()] = 1
+                reHits.push(label + "「" + text + "」此前已" + (hit.action === "delist" ? "下架" : "被驳回") +
+                  (hit.reason && hit.reason.zh ? "（" + hit.reason.zh + "）" : "") +
+                  (hit.permanent === true ? "，且已永久除名" : ""))
+              }
+              verdict.added.forEach(function (s) { checkRule(s, "来源") })
+              Object.keys(modTexts).forEach(function (p) {
+                try {
+                  const rec = JSON.parse(modTexts[p] || "{}")
+                  checkRule(rec.id, "模组")
+                  checkRule(rec.source, "来源")
+                } catch (e) { /* 文本不合法时上面已经拦下了 */ }
+              })
+            } catch (e) {
+              console.log("::warning::读 moderation.json 失败（不影响收录）：" + e)
+            }
+
             if (fail.length) {
               console.log("::warning::自动合并被拦下：" + fail.join(" ｜ "))
               await upsertComment(
@@ -419,7 +453,11 @@ jobs:
               (replayed
                 ? "**已通过自动校验并自动收录**：这条分支和 main 的 sources.json 撞车了，已按 main 的最新清单重新生成提交，所以 PR 显示为已关闭（内容已经在索引仓库里，不用再手动处理）。**索引正在重建，约 1 分钟生效。** / Auto-validated and applied. The branch conflicted with sources.json, so the change was replayed on top of the current main and this PR was closed. Index rebuilding (live in ~1 min)."
                 : "**已通过自动校验并自动合并，索引正在重建（约 1 分钟生效）。** / Auto-validated, merged, index rebuilding (live in ~1 min).") +
-              (done.length ? "\n\n" + done.join("\n") : ""),
+              (done.length ? "\n\n" + done.join("\n") : "") +
+              (reHits.length
+                ? "\n\n**注意：这条提交涉及此前已被驳回 / 已下架的模组，索引重建后它会进入维护者的「重新提交」复审队列，不会直接上架。** 属于自动检查可复核理由的（比如清单缺字段、包体不在 Release），维护者开启无人值守时会自动复审；其余需要人工确认。 / Note: this submission touches a previously rejected or delisted mod. After the index rebuild it enters the maintainer's re-review queue instead of being published right away." +
+                  "\n\n" + reHits.map(function (r) { return "- " + r }).join("\n")
+                : ""),
             )
             console.log("verdict-final " + JSON.stringify(summary))
             return summary

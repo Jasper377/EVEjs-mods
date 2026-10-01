@@ -96,6 +96,23 @@ validates without merging).
 Content-level validity (`sha256`, key binding, first-come-first-served `id`, …) is still enforced by
 `build-index.mjs`: bad entries are skipped and listed in the log, they never go live.
 
+### Re-submitting a rejected / delisted mod
+
+An author who fixes a **rejected** or **delisted** mod and pushes again is not silently stuck:
+re-registering the source (or publishing a new version) puts it back in front of the maintainer as a
+**re-submission**, and the review console (`mod.5318.cm` → `重新提交` filter) shows the new version next to
+the previous verdict and reason.
+
+- `reject` + the source is registered in `sources.json` again → status `重新提交` (re-review), the
+  previous reason is shown, the new submission is **not** published until it is reviewed.
+- `delist` + the author's manifest version is newer than the indexed one → same re-review state.
+- Unattended mode auto-approves a re-submission only when the previous reason is something the automatic
+  checks can verify again (manifest completeness, ZIP location, category, `id` uniqueness, key binding,
+  unreachable repo). Reasons only a human can judge (e.g. *repo does not belong to the author*, plagiarism,
+  malicious code) always wait for the maintainer.
+- **`delete` is final**: it writes `"permanent": true` into `moderation.json`, and a later submission is
+  never treated as a re-submission. Use it only for mods that must never come back.
+
 ### Listing checklist (PR review)
 
 - [ ] the repository added to `sources.json` is the **author's own** (not somebody else's, re-registered as theirs)
@@ -315,6 +332,20 @@ EVEjs-mods/
 总开关：仓库 **Settings → Secrets and variables → Actions → Variables** 里加 `AUTO_MERGE_SUBMISSIONS=off`
 → 只校验 + 留言，不自动合并（回到人工流程）。
 手动补跑：**Actions → auto-merge-submissions → Run workflow**（填 PR 编号；`dry_run=true` 只校验不合并）。
+
+### 作者修正后重新提交（未通过 / 已下架）
+
+作者修好一个**未通过**或**已下架**的模组再推一次，不会永远卡住：他重新登记来源（或发布新版本）后，
+条目会作为**重新提交**回到维护者面前，审核台（`mod.5318.cm` → 「重新提交」筛选）会把新版本
+连同**上次结论与理由**一起列出来。
+
+- `reject` 之后来源又出现在 `sources.json` 里 → 状态变成「重新提交」，复审通过前**不会**上架。
+- `delist` 之后作者仓库里的清单版本比索引里的新 → 同样进入「重新提交」复审。
+- 无人值守只在「历史理由能被自动检查重新复核」时自动复审（清单完整性、包体位置、分类、`id` 唯一、
+  密钥绑定、仓库失联）。只能靠人判断的理由（例如**仓库不属于作者**、抄袭、恶意代码）一律等维护者，
+  否则重新提交就等于绕过拒绝。
+- **`delete` 是终局结论**：它会在 `moderation.json` 里写 `"permanent": true`，之后再提交也**不会**
+  被当成重新提交。只对「永远不希望它回来」的模组用它。
 
 内容层面的合法性（`sha256`、公钥绑定、`id` 先到先得……）仍然由 `build-index.mjs` 把关：
 不合格的条目会被跳过并在日志里列出，不会上架。
