@@ -110,8 +110,9 @@ the previous verdict and reason.
   checks can verify again (manifest completeness, ZIP location, category, `id` uniqueness, key binding,
   unreachable repo). Reasons only a human can judge (e.g. *repo does not belong to the author*, plagiarism,
   malicious code) always wait for the maintainer.
-- **`delete` is final**: it writes `"permanent": true` into `moderation.json`, and a later submission is
-  never treated as a re-submission. Use it only for mods that must never come back.
+- **`delete` removes the mod completely.** The maintainer console drops the source from `sources.json`
+  and clears the mod's `moderation.json` entries — **no blacklist is kept**. If the author wants the mod
+  listed again, they publish it from the launcher again and it goes through as a brand-new submission.
 
 ### Duplicate submissions and submission bursts
 
@@ -366,8 +367,8 @@ EVEjs-mods/
 - 无人值守只在「历史理由能被自动检查重新复核」时自动复审（清单完整性、包体位置、分类、`id` 唯一、
   密钥绑定、仓库失联）。只能靠人判断的理由（例如**仓库不属于作者**、抄袭、恶意代码）一律等维护者，
   否则重新提交就等于绕过拒绝。
-- **`delete` 是终局结论**：它会在 `moderation.json` 里写 `"permanent": true`，之后再提交也**不会**
-  被当成重新提交。只对「永远不希望它回来」的模组用它。
+- **`delete` 是彻底移除**：审核台会把来源从 `sources.json` 里删掉，并清掉它在 `moderation.json`
+  里的记录 —— **不留黑名单**。作者想重新上架，用启动器重新发布提交即可，那会走一次**全新的收录**。
 
 内容层面的合法性（`sha256`、公钥绑定、`id` 先到先得……）仍然由 `build-index.mjs` 把关：
 不合格的条目会被跳过并在日志里列出，不会上架。

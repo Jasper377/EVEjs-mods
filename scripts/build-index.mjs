@@ -265,9 +265,10 @@ function reasonsOf(rule) {
 }
 
 /**
- * 永久除名的结论要带上 permanent 标记。
- * 控制台据此区分「可重新提交复审的拒绝」与「永久除名的终局结论」——
- * 没有这个标记，作者重新提交一个被永久删除的模组就会被当成正常重提。
+ * 旧版「永久除名」写进 moderation.json 的 permanent 标记，这里只做向后兼容的透传：
+ * 老数据里还有几条带这个标记的记录，索引照原样发布，客户端才不会解读成别的东西。
+ * 新逻辑不再产生它 —— 永久删除会把来源从 sources.json 移除、moderation.json 记录一并清掉，
+ * 不留黑名单，作者重新用启动器发布提交就是一次全新的收录。
  */
 function permanentOf(rule) {
   return rule && rule.permanent === true ? { permanent: true } : {};
