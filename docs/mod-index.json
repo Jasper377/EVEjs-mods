@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T08:06:15.415Z",
+  "publishedAt": "2026-10-01T08:12:03.028Z",
   "mods": [
     {
       "author": {
@@ -11,7 +11,7 @@
       "category": "玩法",
       "changelog": "",
       "conflicts": [],
-      "delisted": false,
+      "delisted": true,
       "description": "An intentionally empty mod used to test the EvEJS Launcher upload/review flow. It adds no server or client changes.",
       "displayName": "Empty Upload Test",
       "downloadUrls": [
@@ -41,7 +41,13 @@
       "version": "1.0.0",
       "source": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
       "downloads": 0,
-      "cdnHits": 3
+      "cdnHits": 3,
+      "delistReason": {
+        "zh": "闭关结束可以删了",
+        "en": "闭关结束可以删了"
+      },
+      "moderatedAt": "2026-10-01T08:11:36.900Z",
+      "moderatedBy": "diguo520"
     },
     {
       "author": {
@@ -219,11 +225,23 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 121,
+      "downloads": 122,
       "cdnHits": 55
     }
   ],
   "moderation": {
+    "evejs-empty-upload-test": {
+      "id": "evejs-empty-upload-test",
+      "source": "JUZIMandarin/evejs-mod-evejs-empty-upload-test",
+      "authorId": "au-mueakz9fwyt6",
+      "action": "delist",
+      "reason": {
+        "zh": "闭关结束可以删了",
+        "en": "闭关结束可以删了"
+      },
+      "at": "2026-10-01T08:11:36.900Z",
+      "by": "diguo520"
+    },
     "diguo520/evejs-mod-evejs-modceshi": {
       "source": "diguo520/evejs-mod-evejs-modceshi",
       "action": "reject",
@@ -260,7 +278,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "78cxGfX7cIy4XoRUyfY/Wkll3/tcyTj0RaNE/WI4Lcy8Hks8D5YrU4ScwwBKrP2Mdz5QoVfg7XaboQrcOlKmCw==",
-    "signedAt": "2026-10-01T08:06:15.418Z"
+    "sig": "sz+r88TaaOZt0oMFre8r7DjjKZRwNOYFX6tf0o98GpGT7uORkBm87LzQX2zOxkrpqd/1ABQSMGLmot2+AZvWDA==",
+    "signedAt": "2026-10-01T08:12:03.030Z"
   }
 }
