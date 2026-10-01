@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": 1790866751185,
+  "generatedAt": 1790885453906,
   "sponsors": [
     {
       "id": "sponsor-01",
@@ -13,11 +13,95 @@
       "name": "*华",
       "amount": 10,
       "currency": "CNY"
+    },
+    {
+      "id": "sponsor-03",
+      "name": "*嘎",
+      "amount": 10,
+      "currency": "CNY"
+    },
+    {
+      "id": "sponsor-04",
+      "name": "*鹭",
+      "amount": 20,
+      "currency": "CNY"
+    },
+    {
+      "id": "sponsor-05",
+      "name": "*对",
+      "amount": 1,
+      "currency": "CNY"
+    },
+    {
+      "id": "sponsor-06",
+      "name": "*🦋",
+      "amount": 5,
+      "currency": "CNY"
+    },
+    {
+      "id": "sponsor-07",
+      "name": "橘子",
+      "amount": 50,
+      "currency": "CNY"
+    },
+    {
+      "id": "sponsor-08",
+      "name": "*🍊",
+      "amount": 6.7,
+      "currency": "CNY"
+    },
+    {
+      "id": "sponsor-09",
+      "name": "*扬",
+      "amount": 100,
+      "currency": "CNY"
+    },
+    {
+      "id": "sponsor-10",
+      "name": "*钱",
+      "amount": 8.88,
+      "currency": "CNY"
+    },
+    {
+      "id": "sponsor-11",
+      "name": "*顺",
+      "amount": 10,
+      "currency": "CNY"
+    },
+    {
+      "id": "sponsor-12",
+      "name": "*心",
+      "amount": 1,
+      "currency": "CNY"
+    },
+    {
+      "id": "sponsor-13",
+      "name": "*💤",
+      "amount": 5,
+      "currency": "CNY"
+    },
+    {
+      "id": "sponsor-14",
+      "name": "*旭",
+      "amount": 1,
+      "currency": "CNY"
+    },
+    {
+      "id": "sponsor-15",
+      "name": "o*z",
+      "amount": 1,
+      "currency": "CNY"
+    },
+    {
+      "id": "sponsor-16",
+      "name": "*🥀",
+      "amount": 10,
+      "currency": "CNY"
     }
   ],
   "signature": {
     "alg": "ed25519",
     "keyId": "evejs-ratings-2026-10-01",
-    "sig": "nuGkJY3vM/4JhRlkY5QTuy9FZVs8bddjI3DmvNVUAJI19eB5p13U5ZkgowhPBCknYqamD8MkGYMr7g2o+impAg=="
+    "sig": "gpuP5PK6XR5/GRGZM7ozqSsZlLPsG2962ycGy2t3oFgBqyvHQZloatuFx0Ue5NSDSPycGLjBLyQWukrqQRZsBA=="
   }
 }

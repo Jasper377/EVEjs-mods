@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": 1790866751185,
+  "generatedAt": 1790885453906,
   "mods": {},
   "signature": {
     "alg": "ed25519",
     "keyId": "evejs-ratings-2026-10-01",
-    "sig": "mw94n5NhjKKNxUov5Tfdvz1KzeONVwxAws341ebLGjiDPkDSPZ/P92fu5iALmIpvqf6Pgx9mgrMJ8HBAFGScAA=="
+    "sig": "9HDkKEGd+Y7aAREH+jsMRCW+QPnhA+sIUxMm9+Vo311/hpBuy9pcFvgly3TU7FjuJM5KroFWpa0X2eKosKAgCQ=="
   }
 }
