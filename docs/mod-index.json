@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T06:58:41.757Z",
+  "publishedAt": "2026-10-01T07:21:22.671Z",
   "mods": [
     {
       "author": {
@@ -43,7 +43,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 162,
+      "downloads": 163,
       "cdnHits": 51
     },
     {
@@ -91,7 +91,7 @@
       "tags": [],
       "version": "1.0.10",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 101,
+      "downloads": 102,
       "cdnHits": 7
     },
     {
@@ -178,7 +178,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 119,
+      "downloads": 121,
       "cdnHits": 55
     }
   ],
@@ -211,7 +211,8 @@
         "en": "Repo is unreachable; permanently removed and dropped from the source list"
       },
       "at": "2026-09-28T01:19:41.866Z",
-      "by": "diguo520"
+      "by": "diguo520",
+      "permanent": true
     },
     "welcome-mod": {
       "id": "welcome-mod",
@@ -221,13 +222,14 @@
         "en": "仓库失联"
       },
       "at": "2026-09-30T16:20:14.205Z",
-      "by": "diguo520"
+      "by": "diguo520",
+      "permanent": true
     }
   },
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "9ApXmPEENHV6mebWfEcU68lKbQpw74hOYPmVIuuXMOTB0jRECVFGAowkM1bIcM/wFpj81INMq0sr90/G2w84BQ==",
-    "signedAt": "2026-10-01T06:58:41.760Z"
+    "sig": "d0tCZSgonifKBdwdrSUAC/pjJt9P+RwYbz5MJcb40fL2EvanzutX3bYOSuHDNY1ENPQv16Srg8y/zEMCnc3YAg==",
+    "signedAt": "2026-10-01T07:21:22.674Z"
   }
 }
