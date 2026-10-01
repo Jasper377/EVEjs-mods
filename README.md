@@ -113,6 +113,28 @@ the previous verdict and reason.
 - **`delete` is final**: it writes `"permanent": true` into `moderation.json`, and a later submission is
   never treated as a re-submission. Use it only for mods that must never come back.
 
+### Duplicate submissions and submission bursts
+
+Author-side network retries can open the same submission twice, and a busy hour can bring many authors
+at once. Both are handled without the maintainer doing anything:
+
+- **Duplicate PRs are closed automatically.** If a PR adds no new source and every `mods/*.json` it
+  carries is byte-identical to `main`, it is treated as a duplicate: the workflow comments, closes the
+  PR, and does **not** merge or re-trigger the index rebuild.
+- **`sources.json` is de-duplicated.** `build-index.mjs` normalizes the list on every build — trims
+  entries, drops malformed ones, and removes case-insensitive duplicates (first occurrence wins,
+  order preserved). If anything changed, the same workflow commits the normalized file, so retries can
+  never leave phantom duplicates behind.
+- **Index rebuilds are serialized.** `build-index.yml` uses `concurrency: build-index`, so a burst of
+  submissions queues up instead of racing over `docs/mod-index.json`.
+- **Per-author flood gate.** When a non-maintainer account has more than `MAX_OPEN_PER_AUTHOR` open PRs
+  at once (default 10, `0` disables), that PR pauses auto-merge for manual review. Set it under
+  Settings → Secrets and variables → Actions → Variables.
+- **Kill switch.** `AUTO_MERGE_SUBMISSIONS=off` degrades auto-merge to "validate + comment only".
+
+None of these paths lose data: blocked and duplicate PRs stay in the GitHub PR list, and every
+moderation decision stays reversible from the console.
+
 ### Listing checklist (PR review)
 
 - [ ] the repository added to `sources.json` is the **author's own** (not somebody else's, re-registered as theirs)
@@ -349,6 +371,25 @@ EVEjs-mods/
 
 内容层面的合法性（`sha256`、公钥绑定、`id` 先到先得……）仍然由 `build-index.mjs` 把关：
 不合格的条目会被跳过并在日志里列出，不会上架。
+
+### 重复提交 / 集中大量提交
+
+作者端网络重试可能把同一次投稿开出两条 PR，热门时段也可能一次涌进来很多作者。这两种情况都**不需要**
+维护者盯着：
+
+- **重复 PR 自动关闭**：一条 PR 如果没有新增来源，且它带的每个 `mods/*.json` 都与 `main` 上的内容
+  逐字节一致，就按「重复提交」处理 —— 工作流留言并关闭这条 PR，**不合并、也不再重复触发一次索引重建**。
+- **`sources.json` 自动去重**：`build-index.mjs` 每次构建都会归一化这份清单 —— 去空白、丢掉格式非法的
+  条目、按**不区分大小写**去重（保留第一次出现的写法与顺序）。内容真的变了才由同一个工作流提交回去，
+  所以重试不会在清单里留下重复项。
+- **索引重建串行化**：`build-index.yml` 用 `concurrency: build-index`，一次涌进来多少提交都只是排队，
+  不会出现两个重建同时改 `docs/mod-index.json` 互相踩。
+- **单作者洪泛闸**：非维护者账号同时挂着的 open PR 超过 `MAX_OPEN_PER_AUTHOR`（默认 10，填 0 关闭）时，
+  这条 PR 暂停自动合并、转人工看一眼。阈值在 Settings → Secrets and variables → Actions → Variables 里改。
+- **总开关**：`AUTO_MERGE_SUBMISSIONS=off` 会把自动合并退化成「只校验 + 留言」。
+
+这几条路径都不会丢数据：被拦下、或被判定为重复的 PR 都还留在 GitHub 的 PR 列表里，
+审核结论也随时可以从审核台回退。
 
 ### 收录规范（PR 检查清单）
 

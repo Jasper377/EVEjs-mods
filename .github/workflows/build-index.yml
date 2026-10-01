@@ -68,8 +68,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/mod-index.json author-keys.json
-          if [ -z "$(git status --porcelain docs/mod-index.json author-keys.json)" ]; then
+          # sources.json 也一起提交：build-index.mjs 会把重复 / 大小写重复的来源归一化后写回它
+          # （作者重试、分支落后都可能写进重复行），这一步顺带把清单洗干净。
+          git add docs/mod-index.json author-keys.json sources.json
+          if [ -z "$(git status --porcelain docs/mod-index.json author-keys.json sources.json)" ]; then
             echo "索引没有变化，跳过提交"
             exit 0
           fi
@@ -84,8 +86,8 @@ jobs:
             git fetch origin main
             git reset --hard FETCH_HEAD
             node scripts/build-index.mjs
-            git add docs/mod-index.json author-keys.json
-            if [ -z "$(git status --porcelain docs/mod-index.json author-keys.json)" ]; then
+            git add docs/mod-index.json author-keys.json sources.json
+            if [ -z "$(git status --porcelain docs/mod-index.json author-keys.json sources.json)" ]; then
               echo "对齐最新 main 后索引已经是最新，无需再提交"
               exit 0
             fi

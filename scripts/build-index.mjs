@@ -149,16 +149,43 @@ async function fetchJsdelivrHits(repo) {
   }
 }
 
-const sources = (() => {
+/**
+ * sources.json 是所有人共用的一份清单，作者端重试、分支落后于 main 都可能写进重复项：
+ *   · 同一条来源出现两次（启动器重试时把同一行又追加了一遍）
+ *   · 同一个仓库大小写不同（Owner/Repo 与 owner/repo，看起来是两条，其实是同一个）
+ * 重复项会让下面重复抓仓库（浪费额度）、也会让「来源数」虚高，所以这里统一归一化：
+ * 去空白、丢掉格式不合法的、按**不区分大小写**去重（保留第一次出现的写法与顺序）。
+ * 数组内容真的变了才写回文件，交给 workflow 一起提交 —— 只改格式不会触发重写，免得来回打架。
+ */
+const sourcesDoc = (() => {
   try {
     const parsed = JSON.parse(fs.readFileSync(SOURCES_FILE, "utf8"));
-    const list = Array.isArray(parsed.sources) ? parsed.sources : [];
-    return list.filter((x) => typeof x === "string" && /^[\w.-]+\/[\w.-]+$/.test(x.trim())).map((x) => x.trim());
+    return parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed : null;
   } catch {
     console.error("读不到或解析不了 sources.json，按空列表处理");
-    return [];
+    return null;
   }
 })();
+
+const sourcesRaw = sourcesDoc && Array.isArray(sourcesDoc.sources) ? sourcesDoc.sources : [];
+const sources = [];
+const normalizedSources = [];
+const seenSources = new Set();
+const droppedSources = [];
+for (const item of sourcesRaw) {
+  const text = typeof item === "string" ? item.trim() : "";
+  if (!text || !/^[\w.-]+\/[\w.-]+$/.test(text)) { droppedSources.push(typeof item === "string" ? text || "(空)" : "(非字符串)"); continue; }
+  const key = text.toLowerCase();
+  if (seenSources.has(key)) { droppedSources.push(text); continue; }
+  seenSources.add(key);
+  normalizedSources.push(text);
+  sources.push(text);
+}
+if (sourcesDoc && JSON.stringify(sourcesDoc.sources) !== JSON.stringify(normalizedSources)) {
+  sourcesDoc.sources = normalizedSources;
+  fs.writeFileSync(SOURCES_FILE, JSON.stringify(sourcesDoc, null, 2) + "\n", "utf8");
+  console.log("sources.json 已归一化：去掉 " + droppedSources.length + " 条重复/非法来源 —— " + droppedSources.join(", "));
+}
 
 const authorKeys = (() => {
   try {

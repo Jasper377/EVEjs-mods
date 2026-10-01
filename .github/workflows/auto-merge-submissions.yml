@@ -21,6 +21,14 @@ name: auto-merge-submissions
 #
 # 总开关：仓库 Settings → Secrets and variables → Actions → Variables
 #   加一个 AUTO_MERGE_SUBMISSIONS=off  → 只校验 + 留言，不自动合并（回到人工流程）
+#   加一个 MAX_OPEN_PER_AUTHOR=<n>     → 同一作者同时挂着的 open PR 超过 n 条就转人工（默认 10，填 0 关闭）
+#
+# 提交量异常时的两道闸（都只影响「自动合并」，不会丢数据）：
+#   · 重复提交短路：作者网络重试开出的重复 PR（没有新增来源、版本记录与 main 逐字节一致）
+#     会被直接关掉并留言，不重复合并、也不再触发索引重建。
+#   · 单作者洪泛保护：同一账号同时挂着太多 open PR 时暂停自动合并，交维护者确认。
+#   · 整仓总开关仍然是 AUTO_MERGE_SUBMISSIONS=off；索引重建本身在 build-index.yml 里
+#     用 concurrency: build-index 串行化，再多提交也只会排队，不会互相踩。
 #
 # 手动补跑：Actions → auto-merge-submissions → Run workflow → 填 PR 编号
 #   （dry_run 填 true 可以只校验不合并）
@@ -75,6 +83,7 @@ jobs:
           REPO: ${{ github.repository }}
           PR: ${{ steps.pr.outputs.number }}
           AUTO_MERGE: ${{ vars.AUTO_MERGE_SUBMISSIONS }}
+          MAX_OPEN_PER_AUTHOR: ${{ vars.MAX_OPEN_PER_AUTHOR }}
           DRY_RUN: ${{ inputs.dry_run || github.event.client_payload.dry_run }}
         run: |
           cat > "$RUNNER_TEMP/auto-merge.mjs" <<'JSEOF'
@@ -355,6 +364,60 @@ jobs:
 
             const summary = { pr: pr.number, title: pr.title, author: author, head: headRepo + "@" + headRef, files: files.map(function (f) { return f.filename }), added: verdict.added, removed: verdict.removed, merged: false, reasons: fail }
             console.log("verdict " + JSON.stringify(summary))
+
+            // —— 重复提交短路 ——
+            // 作者端网络重试经常会为同一次投稿开出好几条 PR。等价的重复 PR 到这里表现为：
+            // 没有新增来源、带过来的版本记录与 main 上的逐字节一致。这种 PR 直接关掉并留言，
+            // 不重复合并，也不再白白触发一次索引重建（大批重试时能省下几十次无谓的重建）。
+            if (fail.length === 0 && verdict.added.length === 0 && modFiles.length > 0) {
+              const trimTail = function (s) { return String(s == null ? "" : s).replace(/\s+$/, "") }
+              let duplicate = true
+              for (let i = 0; i < modFiles.length; i += 1) {
+                const cur = await api("/repos/" + REPO + "/contents/" + modFiles[i] + "?ref=main", { headers: { Accept: "application/vnd.github.raw" } })
+                if (cur.status !== 200 || trimTail(modTexts[modFiles[i]]) !== trimTail(cur.text)) { duplicate = false; break }
+              }
+              if (duplicate) {
+                await upsertComment(
+                  "**这条提交的内容已经在索引仓库里了，按重复提交处理，不会重复收录。** " +
+                  "多半是提交时网络重试开了两条 PR —— 以已经生效的那条为准，这条自动关闭即可，不用再操作。 / " +
+                  "This submission is already in the index repository, so it is treated as a duplicate and closed." +
+                  "\n\n" + modFiles.map(function (n) { return "- " + n }).join("\n"),
+                )
+                await api("/repos/" + REPO + "/pulls/" + PR_NUMBER, {
+                  method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ state: "closed" }),
+                })
+                summary.duplicate = true
+                console.log("verdict-final " + JSON.stringify(summary))
+                return summary
+              }
+            }
+
+            // —— 单作者洪泛保护 ——
+            // 同一个账号同时挂着太多 open PR（启动器死循环重试 / 一次性批量投稿的常见形态）时
+            // 不再自动合并，转人工看一眼，免得异常提交把索引重建刷爆。
+            // 阈值用仓库 Variable MAX_OPEN_PER_AUTHOR 调，填 0 关掉这道闸；维护者自己不受限。
+            const MAX_OPEN = Number(process.env.MAX_OPEN_PER_AUTHOR || 10)
+            // 只在这条 PR 本身没问题时才用洪泛理由拦下：真有问题（格式 / 归属等）仍旧照实告诉作者。
+            if (fail.length === 0 && MAX_OPEN > 0 && MAINTAINERS.indexOf(author) < 0) {
+              const openRes = await api("/repos/" + REPO + "/pulls?state=open&per_page=100&sort=created&direction=desc")
+              if (openRes.ok && Array.isArray(openRes.json)) {
+                const mine = openRes.json.filter(function (p) { return p && p.user && String(p.user.login).toLowerCase() === author })
+                if (mine.length > MAX_OPEN) {
+                  console.log("::warning::@" + author + " 同时挂着 " + mine.length + " 条 open PR（上限 " + MAX_OPEN + "），转人工")
+                  summary.gated = "flood"
+                  await upsertComment(
+                    "**这个账号同时挂着的 PR 太多（" + mine.length + " 条，超过上限 " + MAX_OPEN + "），已暂停自动合并，等维护者确认。**\n\n" +
+                    "常见原因是提交时网络重试开了好几条 PR：重复的那些会被自动识别并关闭，不需要你重新提交；" +
+                    "剩下的维护者会依次处理。 / Too many open PRs from this account, so auto-merge is paused for manual review. " +
+                    "Duplicate PRs are detected and closed automatically; no need to resubmit.",
+                  )
+                  console.log("verdict-final " + JSON.stringify(summary))
+                  return summary
+                }
+              } else {
+                note.push("读不到 open PR 列表，跳过洪泛检查（HTTP " + openRes.status + "）")
+              }
+            }
 
             // 重新提交提示：这条 PR 重新登记的来源 / 模组 id 如果此前已被驳回或下架，
             // 索引重建后控制台会把它标成「重新提交」进复审队列。提前跟作者说清楚，
