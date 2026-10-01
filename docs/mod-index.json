@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-01T07:24:01.304Z",
+  "publishedAt": "2026-10-01T07:43:37.932Z",
   "mods": [
     {
       "author": {
@@ -172,7 +172,7 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 65,
+      "downloads": 66,
       "cdnHits": 3
     },
     {
@@ -260,7 +260,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "niWhLnKcPfrLTYTItf+zJefKoUNoh3mJCQf7EM9wa1oetJ33Cl+h+X1Y/JIR00QQQR50Orp7rqlRjdq0rhmcAQ==",
-    "signedAt": "2026-10-01T07:24:01.307Z"
+    "sig": "sS6Xofk3YHMPno6oL3gfQP5IV13napnGZd5hu5H4ugwuu4wGLu0UHCt7indSinSqRwOhFMN8g8kl2gULqyd4Cw==",
+    "signedAt": "2026-10-01T07:43:37.935Z"
   }
 }
