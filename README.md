@@ -44,8 +44,10 @@ EVEjs-mods/
   .github/workflows/
     build-index.yml             every 6 hours + manual trigger + push trigger
     auto-merge-submissions.yml  validates incoming submission PRs and merges them unattended
+    mirror-ratings.yml          hourly copy of the signed market snapshots into docs/ratings/
   docs/                         CI output, published by GitHub Pages (main branch / docs)
     mod-index.json
+    ratings/                    fallback mirror of the market snapshots (ratings.json, sponsors.json, reviews/)
 ```
 
 ### How an author gets listed (one PR per release, reviewed here)
@@ -311,8 +313,10 @@ EVEjs-mods/
   .github/workflows/
     build-index.yml            每 6 小时 + 手动触发 + push 触发
     auto-merge-submissions.yml 自动校验投稿 PR 并无人值守合并
+    mirror-ratings.yml         每小时把已签名的市场快照抄进 docs/ratings/
   docs/                        CI 产物，由 GitHub Pages 从 main 分支的 /docs 发布
     mod-index.json
+    ratings/                   市场快照的备门镜像（ratings.json / sponsors.json / reviews/）
 ```
 
 ### 作者怎么上架自己的模组（每次发布一条 PR，在这里审）

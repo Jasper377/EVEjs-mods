@@ -1,0 +1,67 @@
+name: mirror-ratings
+
+# 模组市场快照的**备门**：定时把 ping.5318.cm 上已签名的快照抄进 docs/ratings/。
+# 启动器读快照是「多镜像 + 本地缓存 + 验签」，主门挂了（Workers 故障 / 证书 / KV 抖动）
+# 就靠这一份，所以这里只做搬运 + 验签，**不改内容**：签名对不上就整个失败、旧文件原样保留。
+#
+# 为什么在索引仓库这边跑、而不是 launcher 仓库：GitHub Pages 只认本仓库的 docs/，
+# 拉取端在这里就能用自带的 GITHUB_TOKEN 提交，不必给 launcher 配一个跨仓库 PAT。
+on:
+  schedule:
+    # 线上每 10 分钟重签一次；镜像慢一档、每小时对齐一遍就够（快照本身不是秒级数据）
+    - cron: "0 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    # 改脚本或本工作流时顺带跑一次，改完立刻能看到效果
+    paths: [scripts/mirror-ratings.mjs, .github/workflows/mirror-ratings.yml]
+
+permissions:
+  contents: write
+
+# 与 build-index.yml 同一个理由：定时任务和 push 触发撞在一起时会互相踩，排队跑。
+concurrency:
+  group: mirror-ratings
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # 只需要 Node 内置的 fetch + node:crypto：验签用的是启动器内置那把公钥，没有任何依赖
+      - name: Fetch and verify snapshots
+        run: node scripts/mirror-ratings.mjs
+
+      - name: Commit mirror
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/ratings
+          if [ -z "$(git status --porcelain docs/ratings)" ]; then
+            echo "镜像没有变化，跳过提交"
+            exit 0
+          fi
+          git commit -m "chore(mirror): sync docs/ratings from ping.5318.cm"
+          # docs/ratings 是**生成物**：推被拒时先对齐最新 main 再重新生成，绝不 rebase
+          # （两边都是整份重算的文件，冲突是必然的 —— 同 build-index.yml 里那次教训）。
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            echo "push 被拒（第 $attempt 次），对齐最新 main 后重新生成"
+            git fetch origin main
+            git reset --hard FETCH_HEAD
+            node scripts/mirror-ratings.mjs
+            git add docs/ratings
+            if [ -z "$(git status --porcelain docs/ratings)" ]; then
+              echo "对齐最新 main 后镜像已经是最新，无需再提交"
+              exit 0
+            fi
+            git commit -m "chore(mirror): sync docs/ratings from ping.5318.cm"
+          done
+          git push
