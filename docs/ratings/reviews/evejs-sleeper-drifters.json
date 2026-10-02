@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": 1790923236743,
+  "modId": "evejs-sleeper-drifters",
+  "reviews": [
+    {
+      "id": "rv-1790915982249-23524",
+      "keyId": "1382094598d9",
+      "author": "",
+      "corp": "",
+      "country": "CN",
+      "stars": 3,
+      "version": "1.5.2",
+      "date": "2026-10-02",
+      "body": "这个怎么使用？",
+      "edited": false,
+      "reply": {
+        "date": "2026-10-02",
+        "body": "下载后点击启用，重启服务器即可",
+        "edited": false
+      }
+    },
+    {
+      "id": "rv-1790919378903-7192",
+      "keyId": "bad8165273ee",
+      "author": "",
+      "corp": "",
+      "country": "CN",
+      "stars": 5,
+      "version": "1.5.2",
+      "date": "2026-10-02",
+      "body": "",
+      "edited": false
+    }
+  ],
+  "signature": {
+    "alg": "ed25519",
+    "keyId": "evejs-ratings-2026-10-01",
+    "sig": "gp8NmMKyoKUsue6RIv2x7SmCxuouC5x2wv3w9z2ldGJvFWuu3ny1cSa33bMoPPnTi2QROGdDMal0SCC3YCpDCw=="
+  }
+}

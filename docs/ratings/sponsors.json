@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": 1790901056606,
+  "generatedAt": 1790923236743,
   "sponsors": [
     {
       "id": "sponsor-01",
@@ -94,7 +94,13 @@
     },
     {
       "id": "sponsor-16",
-      "name": "*🥀",
+      "name": "*꧂",
+      "amount": 10,
+      "currency": "CNY"
+    },
+    {
+      "id": "sponsor-17",
+      "name": "ghjjjj",
       "amount": 10,
       "currency": "CNY"
     }
@@ -102,6 +108,6 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "evejs-ratings-2026-10-01",
-    "sig": "iRzj0HD1+T+xFHOuj9BgcvoC3J7dlcfyNG9cX1wLRNcC4sYC7K2efaZ0ftMTVB95y1e3P85y5M6/s2fMuJAXAA=="
+    "sig": "4SJRirOWKyNnSSQBXBTlZeGIiExvuhlYCovZhyo5FWq22V0ogix3wZogTC8sC/Sidi4kIlwU+WGmkVp9cjaxAA=="
   }
 }
