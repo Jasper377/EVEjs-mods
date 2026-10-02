@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": 1790947844960,
+  "generatedAt": 1790967036552,
   "sponsors": [
     {
       "id": "sponsor-01",
@@ -115,11 +115,17 @@
       "name": "倒影",
       "amount": 50,
       "currency": "CNY"
+    },
+    {
+      "id": "sponsor-20",
+      "name": "囧囧丸",
+      "amount": 5,
+      "currency": "CNY"
     }
   ],
   "signature": {
     "alg": "ed25519",
     "keyId": "evejs-ratings-2026-10-01",
-    "sig": "IOvYw9HYCaV1PPrjLTkTt7IsTClEGShzLItmwHvCB96R9N3J6TPnSECxFdW5qNDnngziGWrd3MS/2/NEb6YoAw=="
+    "sig": "SG7OSfXsypu/C2rr7tmDFd7/aCbV2tFse5AHIgP1k0veg/aT5dPdiyvauaQCHzP/anJ0obJTKN/FOxbGCcstBw=="
   }
 }
