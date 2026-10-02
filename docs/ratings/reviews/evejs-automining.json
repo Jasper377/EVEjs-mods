@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": 1790983836653,
+  "modId": "evejs-automining",
+  "reviews": [
+    {
+      "id": "rv-1790977679222-6948",
+      "keyId": "12486cab79d0",
+      "author": "",
+      "corp": "",
+      "country": "CN",
+      "stars": 5,
+      "version": "1.0.10",
+      "date": "2026-10-02",
+      "body": "我的服务端是0.12.9   在游戏里能看到图标但是打不点击打不开,只能用命令打开",
+      "edited": false
+    }
+  ],
+  "signature": {
+    "alg": "ed25519",
+    "keyId": "evejs-ratings-2026-10-01",
+    "sig": "+54F5FtJ0TZzSv6XOZHAJAl7AcqOvE8CMnvi9etSD1QXqeMazZ0mKBqsp4e/NXhQjhcfZPg8dIUpUBu8W5VcAg=="
+  }
+}
