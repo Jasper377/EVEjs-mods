@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": 1790923236743,
+  "generatedAt": 1790947844960,
   "sponsors": [
     {
       "id": "sponsor-01",
@@ -103,11 +103,23 @@
       "name": "ghjjjj",
       "amount": 10,
       "currency": "CNY"
+    },
+    {
+      "id": "sponsor-18",
+      "name": "圣灵战士",
+      "amount": 10,
+      "currency": "CNY"
+    },
+    {
+      "id": "sponsor-19",
+      "name": "倒影",
+      "amount": 50,
+      "currency": "CNY"
     }
   ],
   "signature": {
     "alg": "ed25519",
     "keyId": "evejs-ratings-2026-10-01",
-    "sig": "4SJRirOWKyNnSSQBXBTlZeGIiExvuhlYCovZhyo5FWq22V0ogix3wZogTC8sC/Sidi4kIlwU+WGmkVp9cjaxAA=="
+    "sig": "IOvYw9HYCaV1PPrjLTkTt7IsTClEGShzLItmwHvCB96R9N3J6TPnSECxFdW5qNDnngziGWrd3MS/2/NEb6YoAw=="
   }
 }
