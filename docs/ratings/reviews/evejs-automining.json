@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": 1791000050968,
+  "generatedAt": 1791022246263,
   "modId": "evejs-automining",
   "reviews": [
     {
@@ -13,12 +13,17 @@
       "version": "1.0.10",
       "date": "2026-10-02",
       "body": "我的服务端是0.12.9   在游戏里能看到图标但是打不点击打不开,只能用命令打开",
-      "edited": false
+      "edited": false,
+      "reply": {
+        "date": "2026-10-03",
+        "body": "不可能，绝对不能。我用的也是0.12.9，肯定你装了市场以外的MOD引起冲突了。",
+        "edited": true
+      }
     }
   ],
   "signature": {
     "alg": "ed25519",
     "keyId": "evejs-ratings-2026-10-01",
-    "sig": "6otfaaX2jA0ZKdwngM2IgkWCyCeNoSmpx26m9WzZEE2v3yTr8kgaJXh9Uha+I6Bik1wxmXooUd7Ac9/IP/3gCw=="
+    "sig": "KPBW6L67QbYyasHIIq0McBDW/5RJurBclXLt8KwLWgav9RtXbVD3T12YytsCDLV0a7IwfAC6ICJJ9dVtmuenAw=="
   }
 }
