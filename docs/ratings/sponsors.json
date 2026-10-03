@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": 1791022246263,
+  "generatedAt": 1791039648868,
   "sponsors": [
     {
       "id": "sponsor-01",
@@ -121,11 +121,29 @@
       "name": "囧囧丸",
       "amount": 5,
       "currency": "CNY"
+    },
+    {
+      "id": "sponsor-21",
+      "name": "已逝者的摇篮曲",
+      "amount": 50,
+      "currency": "CNY"
+    },
+    {
+      "id": "sponsor-22",
+      "name": "稗田阿求",
+      "amount": 100,
+      "currency": "CNY"
+    },
+    {
+      "id": "sponsor-23",
+      "name": "βǒβò",
+      "amount": 50,
+      "currency": "CNY"
     }
   ],
   "signature": {
     "alg": "ed25519",
     "keyId": "evejs-ratings-2026-10-01",
-    "sig": "JW1WG9vVWu77vigcN3yOGB/0+3swObmqI41dKlt3ozOlqgrgGd7CuWtAv3j6iBwnQH2xF31AsDxkszBEc11kCQ=="
+    "sig": "b1a9TLl2idwU/kP9W9eowuSg4Esp86LW3h0eSJQ38xG2mlJylkVn1v/QeGCjIGyhow84wVJ8+FjZn8/qXJm5DA=="
   }
 }

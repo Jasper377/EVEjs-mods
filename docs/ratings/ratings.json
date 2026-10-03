@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": 1791022246263,
+  "generatedAt": 1791039648868,
   "mods": {
     "evejs-automining": {
       "average": 5,
@@ -30,6 +30,6 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "evejs-ratings-2026-10-01",
-    "sig": "5aBpFG+6D0fRhQgSSgvU1d/PUXO9XS3+y5uSyf0kSyG12Ia4UVd4Vq42rMe9vEyq1V+a3JgS0sz1TdgJMKDvAQ=="
+    "sig": "WKaMJWE11sFsqKP2GbLpXMnVnKx9bz+VDduLs0oE0GEEeNt8xS1F+9sR4QnQvs/OU828lJY3PqgBZfe45CMMDQ=="
   }
 }
