@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": 1791039648868,
+  "generatedAt": 1791054050752,
   "modId": "evejs-sleeper-drifters",
   "reviews": [
     {
@@ -36,6 +36,6 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "evejs-ratings-2026-10-01",
-    "sig": "K0hvZaHXXcUDFM72BnwpiFWP0bnYsFiugc59hXntN0IJ9CxiqLpQtOmwQ8av3UcFyy01swZlof7LDibq1vfUBA=="
+    "sig": "/+ROcf9u3yKbEtS4l/4RMrx5plsANvsjXVDXdIPJlzoUvxItrAu8Wznpmfp5yRhI5us4MPNpdtTb6g0uqaYMCw=="
   }
 }
