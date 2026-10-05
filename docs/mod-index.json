@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-05T07:40:03.103Z",
+  "publishedAt": "2026-10-05T08:13:58.565Z",
   "mods": [
     {
       "author": {
@@ -135,7 +135,7 @@
       "tags": [],
       "version": "1.0.0",
       "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite",
-      "downloads": 0,
+      "downloads": 1,
       "cdnHits": 0
     },
     {
@@ -179,7 +179,7 @@
       "tags": [],
       "version": "1.0.0",
       "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-site-content",
-      "downloads": 0,
+      "downloads": 1,
       "cdnHits": 0
     },
     {
@@ -219,7 +219,7 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 176,
+      "downloads": 178,
       "cdnHits": 3
     },
     {
@@ -266,14 +266,55 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 197,
+      "downloads": 198,
       "cdnHits": 55
+    },
+    {
+      "author": {
+        "id": "au-mumlvhn7zooq",
+        "keyId": "5130f2c97ae0",
+        "name": "sleephah"
+      },
+      "category": "玩法",
+      "changelog": "",
+      "conflicts": [],
+      "delisted": false,
+      "description": "把 4 个掉落 / 拾取类 mod 收成一次注入：内容包站点掉落档位 · NPC 掉落装箱态 · 11 类掉落规则 · 残骸拾取广播修复。★只是包装器：成员原样留在 mods/ 里由本套件按固定顺序加载，不重写任何人的代码★ ⇒ NODE_OPTIONS 只多 1 条 ✓ 启用/停用只需动本目录的 loader.js ✓ 单个成员失败不影响其它 ✓",
+      "displayName": "掉落套件（4 合一）",
+      "downloadUrls": [
+        {
+          "mirror": "github",
+          "priority": 1,
+          "url": "https://github.com/guihaitianyi-cmd/evejs-mod-evejs-suite-loot/releases/download/v1.0.0/evejs-suite-loot-1.0.0.zip"
+        }
+      ],
+      "evejsVersions": [
+        "0.12.8",
+        "0.12.9"
+      ],
+      "featured": false,
+      "highlights": [],
+      "history": [],
+      "id": "evejs-suite-loot",
+      "publishedAt": "2026-10-05",
+      "readme": [
+        "★包装器 mod★ —— 把 4 个成员合成**一次注入** ✓ 不重写任何人的代码 ✓ 不搬动任何人的目录 ✓"
+      ],
+      "repo": "https://github.com/guihaitianyi-cmd/evejs-mod-evejs-suite-loot",
+      "requiresRestart": true,
+      "sha256": "46bd5d82a0e07ce6fd57a41b3e4e0558d9ae1b263969423a6552c0be35c91cd6",
+      "sizeBytes": 3252,
+      "tags": [],
+      "version": "1.0.0",
+      "source": "guihaitianyi-cmd/evejs-mod-evejs-suite-loot",
+      "downloads": 0,
+      "cdnHits": 0
     }
   ],
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "sV3RK4MOYLKR1tlapcbfZDIuZkmCMpuwGNppBBI8XVwDjigOQjklxKLfpTYqJNMtGkYl3Bm+p+3O7TmAM2tPBA==",
-    "signedAt": "2026-10-05T07:40:03.104Z"
+    "sig": "jBam56dzR4fsDB++AoukzepoG3Slp68NpAzzCK2q+xiN0tsKQDTfZ97d59vPOP31zNVPDekwxwzi+doncQacCg==",
+    "signedAt": "2026-10-05T08:13:58.567Z"
   }
 }
