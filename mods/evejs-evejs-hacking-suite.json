@@ -1,23 +1,23 @@
 {
   "author": {
-    "id": "au-mumlvhn7zooq",
-    "keyId": "5130f2c97ae0",
+    "id": "au-muuy8xmc62sr",
+    "keyId": "f163b59ae080",
     "name": "sleephah"
   },
-  "displayName": "evejs-hacking-suite",
+  "displayName": "遗迹开箱破解小游戏（Data/Relic）",
   "downloadUrls": [
     {
       "mirror": "github",
       "priority": 1,
-      "url": "https://github.com/guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite/releases/download/v1.0.0/evejs-evejs-hacking-suite-1.0.0.zip"
+      "url": "https://github.com/guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite/releases/download/v1.0.2/evejs-evejs-hacking-suite-1.0.2.zip"
     }
   ],
   "id": "evejs-evejs-hacking-suite",
   "publishedAt": "2026-10-05",
   "schemaVersion": 1,
-  "sha256": "b47b5817e4c6fdfc7371d881e4ac3e189dbda99c5e7c01ff312a6819ec707b42",
-  "sizeBytes": 4148,
+  "sha256": "115523a4a856eeb6e02cdabda7f9af319be7e17124353d27840eb1c3b223f5a1",
+  "sizeBytes": 40718,
   "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite",
-  "submittedAt": "2026-10-05T07:35:42.469Z",
-  "version": "1.0.0"
+  "submittedAt": "2026-10-05T09:43:05.979Z",
+  "version": "1.0.2"
 }
