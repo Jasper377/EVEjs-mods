@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-05T07:36:48.032Z",
+  "publishedAt": "2026-10-05T07:40:03.103Z",
   "mods": [
     {
       "author": {
@@ -140,6 +140,50 @@
     },
     {
       "author": {
+        "id": "au-mumlvhn7zooq",
+        "keyId": "5130f2c97ae0",
+        "name": "sleephah"
+      },
+      "category": "玩法",
+      "changelog": "",
+      "conflicts": [],
+      "delisted": false,
+      "description": "优化遗迹/数据产出",
+      "displayName": "evejs-site-content",
+      "downloadUrls": [
+        {
+          "mirror": "github",
+          "priority": 1,
+          "url": "https://github.com/guihaitianyi-cmd/evejs-mod-evejs-evejs-site-content/releases/download/v1.0.0/evejs-evejs-site-content-1.0.0.zip"
+        }
+      ],
+      "evejsVersions": [
+        "0.12.9"
+      ],
+      "featured": false,
+      "highlights": [
+        "玩家上线后在其本地聊天频道发送欢迎消息",
+        "只改运行内存，不修改 server/ 下任何文件",
+        "骨架已内置进程身份校验与 require.cache 等待，不会提前拉起大依赖"
+      ],
+      "history": [],
+      "id": "evejs-evejs-site-content",
+      "publishedAt": "2026-10-05",
+      "readme": [
+        "优化遗迹/数据产出"
+      ],
+      "repo": "https://github.com/guihaitianyi-cmd/evejs-mod-evejs-evejs-site-content",
+      "requiresRestart": true,
+      "sha256": "1a6ce27a6da3d67f9551a57d39f732268b21388b43f0c020445bb51914e4bc2f",
+      "sizeBytes": 4074,
+      "tags": [],
+      "version": "1.0.0",
+      "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-site-content",
+      "downloads": 0,
+      "cdnHits": 0
+    },
+    {
+      "author": {
         "id": "au-mueakz9fwyt6",
         "keyId": "bad8165273ee",
         "name": "橘子"
@@ -229,7 +273,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "2xS7RmHFdlewI0PBZQLmtDYvU5lTSB7DqRQjpey+M1EotjRIJrCqDm8C9CF/6QxcKYy4z+U5ovOlqa5BBgSWDg==",
-    "signedAt": "2026-10-05T07:36:48.034Z"
+    "sig": "sV3RK4MOYLKR1tlapcbfZDIuZkmCMpuwGNppBBI8XVwDjigOQjklxKLfpTYqJNMtGkYl3Bm+p+3O7TmAM2tPBA==",
+    "signedAt": "2026-10-05T07:40:03.104Z"
   }
 }
