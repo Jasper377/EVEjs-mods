@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-05T10:30:22.751Z",
+  "publishedAt": "2026-10-05T12:07:25.618Z",
   "mods": [
     {
       "author": {
@@ -43,7 +43,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 243,
+      "downloads": 250,
       "cdnHits": 51
     },
     {
@@ -91,8 +91,52 @@
       "tags": [],
       "version": "1.0.10",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 177,
+      "downloads": 184,
       "cdnHits": 7
+    },
+    {
+      "author": {
+        "id": "au-muuy8xmc62sr",
+        "keyId": "f163b59ae080",
+        "name": "sleephah"
+      },
+      "category": "玩法",
+      "changelog": "",
+      "conflicts": [],
+      "delisted": false,
+      "description": "遗迹 / 数据站点开箱破解小游戏",
+      "displayName": "evejs-hacking-suite-1.0.3",
+      "downloadUrls": [
+        {
+          "mirror": "github",
+          "priority": 1,
+          "url": "https://github.com/guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite-1-0-3/releases/download/v1.0.3/evejs-evejs-hacking-suite-1-0-3-1.0.3.zip"
+        }
+      ],
+      "evejsVersions": [
+        "0.12.9"
+      ],
+      "featured": false,
+      "highlights": [
+        "保留全部 loader 加载要点（身份校验 / require.cache 等待 / unref）",
+        "业务钩子集中在 loader.js 的 start() 里，改这一处即可",
+        "改服务端源码用 SOURCE_PATCH（走注入总线），不自己 hook _compile"
+      ],
+      "history": [],
+      "id": "evejs-evejs-hacking-suite-1-0-3",
+      "publishedAt": "2026-10-05",
+      "readme": [
+        "遗迹 / 数据站点开箱破解小游戏"
+      ],
+      "repo": "https://github.com/guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite-1-0-3",
+      "requiresRestart": true,
+      "sha256": "6c8e29828007eef55b11937be635067671af8c508a86717b83bc60f7e9b6abca",
+      "sizeBytes": 36217,
+      "tags": [],
+      "version": "1.0.3",
+      "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite-1-0-3",
+      "downloads": 0,
+      "cdnHits": 0
     },
     {
       "author": {
@@ -131,7 +175,7 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 181,
+      "downloads": 183,
       "cdnHits": 3
     },
     {
@@ -178,7 +222,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 200,
+      "downloads": 206,
       "cdnHits": 55
     },
     {
@@ -253,7 +297,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "Flb1Xh4eRfr4vhmcIPmKp30lttMRYIH6huMqxjuUMiKHJQoOIputpVXnmOQdy3MqG7PXXlyuoqufJobGtXdMBQ==",
-    "signedAt": "2026-10-05T10:30:22.753Z"
+    "sig": "9lCOaGmq0faqzC4Ea5CMhjzhCMSa79+FosQc5gIG4BY7BtDLHEIMd/GBmrfK/Ka50r0mLUwk7vUQaeURojNzAw==",
+    "signedAt": "2026-10-05T12:07:25.621Z"
   }
 }
