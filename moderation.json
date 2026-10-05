@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T09:19:27.535Z",
+  "updatedAt": "2026-10-05T09:19:36.753Z",
   "entries": [
     {
       "target": "guihaitianyi-cmd/evejs-mod-evejs-suite-loot",
@@ -11,6 +11,17 @@
         "en": "loader.js内容不符"
       },
       "at": "2026-10-05T09:19:27.535Z",
+      "by": "diguo520"
+    },
+    {
+      "target": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite",
+      "kind": "source",
+      "action": "delist",
+      "reason": {
+        "zh": "loader.js内容不符",
+        "en": "loader.js内容不符"
+      },
+      "at": "2026-10-05T09:19:36.753Z",
       "by": "diguo520"
     }
   ]
