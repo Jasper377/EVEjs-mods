@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-06T12:08:17.714Z",
+  "publishedAt": "2026-10-06T12:10:57.747Z",
   "mods": [
     {
       "author": {
@@ -136,6 +136,64 @@
       "version": "1.0.3",
       "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite-1-0-3",
       "downloads": 22,
+      "cdnHits": 0
+    },
+    {
+      "author": {
+        "id": "au-mujkaep5shgv",
+        "keyId": "2792fbac9b88",
+        "name": "xuenai"
+      },
+      "category": "玩法",
+      "changelog": "【NPC势力模拟-2 NPC 势力模拟】NPC 势力像玩家一样活动：有机器人账号、公司和联盟，会采矿、造船、建 Upwell 建筑、巡逻、结盟、开战，也会打玩家。\n· 首次启动数据库为空时，自动按「开放宇宙」剧本开局（EVEJS_FACTIONSIM_SCENARIO=none 可关闭）\n· 玩家可通过「势力动态」窗口接委托、跑货、打悬赏，积累声望\n· 本机网页面板新增「入门」页：功能介绍、特点、玩家玩法和基础教程\n· 修复：崩溃后推演时钟回退、事件出错留下半截写入、备份中断留下残缺文件\n必须与 evejs-npc-fleet  ， evejs-perf-fix 一起安装。",
+      "conflicts": [],
+      "delisted": false,
+      "description": "像玩家一样的 NPC 势力：独立推演线程按事件推进势力数据（faction.sqlite），为每个势力建机器人账号、角色、公司和联盟，本机面板 127.0.0.1:26410 查看状态。聊天命令 /faction。只在内存中打补丁，不改任何文件；EVEJS_MOD_FACTIONSIM=0 关闭。 必须和 evejs-npc-fleet（NPC 舰队模板）一起安装；推荐再装 evejs-perf-fix。首次启动数据库为空时自动按「开放宇宙」剧本开局，面板有「入门」页。",
+      "displayName": "NPC 势力模拟（推演线程 / 机器人势力 / 面板）",
+      "downloadUrls": [
+        {
+          "mirror": "github",
+          "priority": 1,
+          "url": "https://github.com/xuenaimiao/evejs-mod-evejs-faction-sim/releases/download/v0.2.0-preview/evejs-faction-sim-0.2.0-preview.zip"
+        }
+      ],
+      "evejsVersions": [
+        "0.12.9"
+      ],
+      "featured": false,
+      "highlights": [
+        "骨架（P1）。",
+        "舰队实体化、跳门、停靠、敌我（P2）。",
+        "采矿、库存、精炼制造、物流（P3），以及小、中、大三档采矿队。",
+        "领地、建筑、基地与补给（P4），包括游戏里的真实 Upwell 建筑、多级制造和货舰队。",
+        "军事（P5）：巡逻、侦察与情报、对玩家的敌意、打击队、离屏交战、旗舰保护伞，以及有玩家时的在场战斗。",
+        "高安法则（统合部）与自杀式强爆，开局剧本（吉他三方），\"像玩家一样显示\"的驾驶员。",
+        "导演在氏族地板没满时，可以在离现有领地不到 6 跳的无主星系立足，只要那里有空间站和小行星带；已经有主的星系、别人在用的空间站仍然拒绝。势力不能获得和自己现有领地不相连的星系。",
+        "和平且没有超过行政容量时，一天的人口维持费不超过这些定居点当天的税；超过容量仍按原维持费。",
+        "自动会战可以投入库存里的一艘主力舰（无畏、航母、力辅），不借出正在值守的家园保护伞。攻方打赢且战场上有建筑或家园时，结果记成拿下建筑或打破家园。",
+        "没有价格的购买先看仓库，再换成同族有价格的型号（先 T2 再 T1），不换成别的武器。",
+        "交战中的舰队上限是和平上限的 1.5 倍。面板总览的“世界近况”显示导演配额和为什么还不能出生、两种舰队上限、税收对维持、旗舰订单进度、当前阶段，以及危机或大可汗。",
+        "快进一个晚期小时时，规划、补给检查和采购检查各做一页，临时库用较大的缓存。从 `tools/expansion-sim.js --from <快照目录>` 可以接着一份快照跑，不会写回 `_local/faction-sim`。"
+      ],
+      "history": [],
+      "id": "evejs-faction-sim",
+      "publishedAt": "2026-10-06",
+      "readme": [
+        "> **必须和 `evejs-npc-fleet`（NPC 舰队模板）一起安装。** 势力的舰船是通过它整队生成、摆阵型、整队跃迁的，势力模拟启动时还要把舰队模板登记进去；没有它，势力出不了船（日志会提示「没有 evejs-npc-fleet」）。\n> 安装顺序：先 `evejs-npc-fleet`，再 `evejs-faction-sim`（清单里 `loadAfter` 了前者）。推荐再装 `evejs-perf-fix`（性能修复，可选）。",
+        "像玩家一样的 NPC 势力：每个势力有自己的机器人账号、角色、公司和联盟，由一个独立的推演线程按事件推进。已有：",
+        "设计和进度见 `docs/npc-faction-plan.html`、`docs/npc-faction-dev-plan.html`。",
+        "2026-10-04 的推演补充（游戏内画面没有自动验收，LLM 顾问没有接模型）：",
+        "只在服务端内存中打补丁，不改任何文件：",
+        "挂钩启动时自检，结果（以及推演线程的启动、重启、初始化）写进 `server/logs/evejs-mods.log`；挂不上时服务器照常启动。推演线程崩溃不会影响服务器，1 秒后自动重启（接着再崩依次等 2、5、10、30 秒；10 分钟内崩溃超过 5 次就不再重启，用 `/faction restart` 手动重启）。"
+      ],
+      "repo": "https://github.com/xuenaimiao/evejs-mod-evejs-faction-sim",
+      "requiresRestart": true,
+      "sha256": "e3e482f40bb1e840f79d689a1c584bde269fa134e8d7d4df0c2f574f7ec47a34",
+      "sizeBytes": 5389659,
+      "tags": [],
+      "version": "0.2.0-preview",
+      "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
+      "downloads": 0,
       "cdnHits": 0
     },
     {
@@ -347,7 +405,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "Wrl4RHMv5bK9rbAhyD6o/RVct0bsr7wcu0nVl/Xs99ga6ch4BcytC4SIhs6TfCHR7p4VHVAXl2AjafluDUk4AQ==",
-    "signedAt": "2026-10-06T12:08:17.716Z"
+    "sig": "Wor/nswOrFimrM1bfVYcnT9tW1+YiAwrtUJXpi2ikgwGO2LfpMMnBv86SMRfEqhPjf0jaFgFfo0eqNTXvGIGBQ==",
+    "signedAt": "2026-10-06T12:10:57.750Z"
   }
 }
