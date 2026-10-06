@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-06T12:23:04.609Z",
+  "publishedAt": "2026-10-06T13:25:59.062Z",
   "mods": [
     {
       "author": {
@@ -135,7 +135,7 @@
       "tags": [],
       "version": "1.0.3",
       "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite-1-0-3",
-      "downloads": 22,
+      "downloads": 23,
       "cdnHits": 0
     },
     {
@@ -145,7 +145,7 @@
         "name": "xuenai"
       },
       "category": "玩法",
-      "changelog": "【NPC势力模拟-2 NPC 势力模拟】NPC 势力像玩家一样活动：有机器人账号、公司和联盟，会采矿、造船、建 Upwell 建筑、巡逻、结盟、开战，也会打玩家。\n· 首次启动数据库为空时，自动按「开放宇宙」剧本开局（EVEJS_FACTIONSIM_SCENARIO=none 可关闭）\n· 玩家可通过「势力动态」窗口接委托、跑货、打悬赏，积累声望\n· 本机网页面板新增「入门」页：功能介绍、特点、玩家玩法和基础教程\n· 修复：崩溃后推演时钟回退、事件出错留下半截写入、备份中断留下残缺文件\n必须与 evejs-npc-fleet  ， evejs-perf-fix 一起安装。",
+      "changelog": "",
       "conflicts": [],
       "delisted": false,
       "description": "像玩家一样的 NPC 势力：独立推演线程按事件推进势力数据（faction.sqlite），为每个势力建机器人账号、角色、公司和联盟，本机面板 127.0.0.1:26410 查看状态。聊天命令 /faction。只在内存中打补丁，不改任何文件；EVEJS_MOD_FACTIONSIM=0 关闭。 必须和 evejs-npc-fleet（NPC 舰队模板）一起安装；推荐再装 evejs-perf-fix。首次启动数据库为空时自动按「开放宇宙」剧本开局，面板有「入门」页。",
@@ -154,7 +154,7 @@
         {
           "mirror": "github",
           "priority": 1,
-          "url": "https://github.com/xuenaimiao/evejs-mod-evejs-faction-sim/releases/download/v0.2.0-preview/evejs-faction-sim-0.2.0-preview.zip"
+          "url": "https://github.com/xuenaimiao/evejs-mod-evejs-faction-sim/releases/download/v0.2.1-preview/evejs-faction-sim-0.2.1-preview.zip"
         }
       ],
       "evejsVersions": [
@@ -188,12 +188,12 @@
       ],
       "repo": "https://github.com/xuenaimiao/evejs-mod-evejs-faction-sim",
       "requiresRestart": true,
-      "sha256": "e3e482f40bb1e840f79d689a1c584bde269fa134e8d7d4df0c2f574f7ec47a34",
-      "sizeBytes": 5389659,
+      "sha256": "b66dce4fa85fe29a730fcf9d73086b2e6581dbd9badad656134ba26c13c913a3",
+      "sizeBytes": 5390391,
       "tags": [],
-      "version": "0.2.0-preview",
+      "version": "0.2.1-preview",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 0,
+      "downloads": 3,
       "cdnHits": 0
     },
     {
@@ -243,7 +243,7 @@
       "tags": [],
       "version": "0.1.0",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
-      "downloads": 0,
+      "downloads": 3,
       "cdnHits": 0
     },
     {
@@ -370,7 +370,7 @@
       "tags": [],
       "version": "0.2.0",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 0,
+      "downloads": 2,
       "cdnHits": 0
     },
     {
@@ -445,7 +445,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "uu8Ct0+Xagea3Diee5Gt4CnX56g6ZP3HDHG+CBh3TRkmei6Mud9Lz7IuqiwWX6TQqud3kp65DI7taN2dGH2/DA==",
-    "signedAt": "2026-10-06T12:23:04.611Z"
+    "sig": "XF+kwxMiAlovIuQZMcvPeTL5Fj1vBFvUk9ApBqv7+MNqV8/wjfkhPYv8Ma5XEdzn6wDndTVD/X3ZRPePpWEfBw==",
+    "signedAt": "2026-10-06T13:25:59.066Z"
   }
 }
