@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-06T17:17:46.285Z",
+  "publishedAt": "2026-10-06T17:19:31.278Z",
   "mods": [
     {
       "author": {
@@ -203,7 +203,7 @@
         "name": "xuenai"
       },
       "category": "玩法",
-      "changelog": "【NPC势力模拟-1 舰队模板】按模板一次生成整支 NPC 舰队，每艘船按阵型（球形、方阵、横队、楔形、环形）分配阵位，整队只广播一次，支持整队保持阵型跃迁和解散。\n这是「NPC 势力模拟」（evejs-faction-sim）的必需前置，也可以单独给其他 mod 当舰队接口用。",
+      "changelog": "修复bug",
       "conflicts": [],
       "delisted": false,
       "description": "按模板一次生成整支 NPC 舰队：每艘船按阵型（球形、方阵、横队、楔形、环形）分配阵位，整队只广播一次，支持整队保持阵型跃迁和解散。聊天命令 /npcfleet；其他 mod 通过 globalThis[Symbol.for(\"evejs.npcFleet\")] 调用。只在内存中打补丁，不改任何文件；EVEJS_MOD_NPCFLEET=0 关闭。",
@@ -212,7 +212,7 @@
         {
           "mirror": "github",
           "priority": 1,
-          "url": "https://github.com/xuenaimiao/evejs-mod-evejs-npc-fleet/releases/download/v0.1.0/evejs-npc-fleet-0.1.0.zip"
+          "url": "https://github.com/xuenaimiao/evejs-mod-evejs-npc-fleet/releases/download/v0.1.1/evejs-npc-fleet-0.1.1.zip"
         }
       ],
       "evejsVersions": [
@@ -238,10 +238,10 @@
       ],
       "repo": "https://github.com/xuenaimiao/evejs-mod-evejs-npc-fleet",
       "requiresRestart": true,
-      "sha256": "e9a11a8fce8b343f0adff7a1b3c3161814b1969d49057d7aa5be7a1cb8b8213b",
-      "sizeBytes": 53499,
+      "sha256": "118d71b65ea42fdd73866c10ec9d7b0edc8f5f22af154e2b3c8774071c87225c",
+      "sizeBytes": 55882,
       "tags": [],
-      "version": "0.1.0",
+      "version": "0.1.1",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
       "downloads": 18,
       "cdnHits": 0
@@ -445,7 +445,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "gmMdU6RxRzfl8gpCZqoddJnLZgZHH2hiAACa3tZPff2iCGPQGLqwQguMHOEHBcOaBBhjk55jIA69oIN3fJxEDw==",
-    "signedAt": "2026-10-06T17:17:46.288Z"
+    "sig": "G5M90jRXdAB1uYEGbhJi3W4Fqmw6DEhVLaDF84bVhHYeMsz510dYn5E/d8SjA2MLUSNpuvT8romMDG5o3mFOBg==",
+    "signedAt": "2026-10-06T17:19:31.281Z"
   }
 }
