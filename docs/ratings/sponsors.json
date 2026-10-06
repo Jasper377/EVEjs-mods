@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": 1791266445247,
+  "generatedAt": 1791294688083,
   "sponsors": [
     {
       "id": "sponsor-01",
@@ -156,6 +156,6 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "evejs-ratings-2026-10-01",
-    "sig": "BHEZR2IM/jG36TT39h2GjKyrL94LmlJkFF3rejyDdHJtApCa/6W5Kijy5KVw6oSbdEhERPWAkwgXIFdnhcJxAQ=="
+    "sig": "VkiS5g/l+FSj0y/o2+uyY2i/Es7wWNzlRp5X5auKdvCKiwnTdrWE392UffYPSYdchx/deGDgv0vK1ejAkDl0AQ=="
   }
 }
