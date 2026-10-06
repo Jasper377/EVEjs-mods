@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-05T23:27:14.854Z",
+  "publishedAt": "2026-10-06T03:43:37.663Z",
   "mods": [
     {
       "author": {
@@ -43,7 +43,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 263,
+      "downloads": 264,
       "cdnHits": 51
     },
     {
@@ -135,7 +135,7 @@
       "tags": [],
       "version": "1.0.3",
       "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite-1-0-3",
-      "downloads": 11,
+      "downloads": 13,
       "cdnHits": 0
     },
     {
@@ -175,7 +175,7 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 200,
+      "downloads": 201,
       "cdnHits": 3
     },
     {
@@ -297,7 +297,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "wm/g8iUD5E7LMcNz3j6Q/YtgZ9qkYANwcxTMaqt08xcBTU1dL8JADiMqOeG7raIW5fEyrsWGGDH61R5xX470Aw==",
-    "signedAt": "2026-10-05T23:27:14.857Z"
+    "sig": "Zyq3o38/dq5VfyM1Sbi9HzNYmNEf33Xwb7Wqcx3jRFG/Iba69adv//Kzztd1gL0/ncaLiRgFJ4qdJbeG11wnAA==",
+    "signedAt": "2026-10-06T03:43:37.666Z"
   }
 }
