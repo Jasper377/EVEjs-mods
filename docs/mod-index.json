@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-06T17:19:31.278Z",
+  "publishedAt": "2026-10-06T17:24:15.496Z",
   "mods": [
     {
       "author": {
@@ -193,7 +193,7 @@
       "tags": [],
       "version": "0.2.3",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 30,
+      "downloads": 31,
       "cdnHits": 0
     },
     {
@@ -243,7 +243,7 @@
       "tags": [],
       "version": "0.1.1",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
-      "downloads": 18,
+      "downloads": 19,
       "cdnHits": 0
     },
     {
@@ -340,7 +340,7 @@
         "name": "xuenai"
       },
       "category": "玩法",
-      "changelog": "【NPC势力模拟-3 性能修复】降低太空帧循环在实体多时的开销：移动计划不再逐个刷新整场景，锁定扫描、NPC 存储、规则、击毁等路径做了缓存与等价重写，所有补丁只在内存里打、不改文件，可按补丁单独关闭（EVEJS_PERF_DISABLE）。\n本版修复：某个 NPC 控制器出错不再中断整轮思考。\n注意：部分补丁会改变行为，例如 NPC 互杀不再生成击杀邮件、残骸只保留 5 分钟。为大场面（势力模拟）推荐安装，也可单独使用。",
+      "changelog": "修复bug",
       "conflicts": [],
       "delisted": false,
       "description": "修复太空帧循环在实体多时的开销：移动计划不再逐个刷新整场景、只比对成员；NPC 每帧只推演一遍（玩家不变）；锁定扫描按场景时间测距；NPC 存储按行读取、按舰船索引；启动规则先筛选后克隆；击毁时残骸类型查找不再做模糊匹配（每艘 1.2 秒 → 22 毫秒）；跃迁拦截扫描先判类型（每次 15 → 不到 1 毫秒）。只在内存中打补丁，不改任何文件；EVEJS_MOD_PERFFIX=0 全部关闭，EVEJS_PERF_DISABLE=plan,member,lock,store,rules,wreck,warp,npcmove,gc,prio 单项关闭。",
@@ -349,7 +349,7 @@
         {
           "mirror": "github",
           "priority": 1,
-          "url": "https://github.com/xuenaimiao/evejs-mod-evejs-perf-fix/releases/download/v0.2.0/evejs-perf-fix-0.2.0.zip"
+          "url": "https://github.com/xuenaimiao/evejs-mod-evejs-perf-fix/releases/download/v0.2.1/evejs-perf-fix-0.2.1.zip"
         }
       ],
       "evejsVersions": [
@@ -365,10 +365,10 @@
       ],
       "repo": "https://github.com/xuenaimiao/evejs-mod-evejs-perf-fix",
       "requiresRestart": true,
-      "sha256": "21bd34f59d6bcbaa006bacd5a745aea23dee9dc92959e844e4e11e625cc75114",
-      "sizeBytes": 153030,
+      "sha256": "2b4ced985e07606ce43fc78d1920de03bdbf7689344e7283feaa28d277ea813b",
+      "sizeBytes": 155422,
       "tags": [],
-      "version": "0.2.0",
+      "version": "0.2.1",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
       "downloads": 19,
       "cdnHits": 0
@@ -445,7 +445,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "G5M90jRXdAB1uYEGbhJi3W4Fqmw6DEhVLaDF84bVhHYeMsz510dYn5E/d8SjA2MLUSNpuvT8romMDG5o3mFOBg==",
-    "signedAt": "2026-10-06T17:19:31.281Z"
+    "sig": "xNMpwd/2e2klHMrkq9xQuClDq3do5iKKJ72gAySZjNjMLwWBHttXZk24JS7iE4/V1+9TCg2QfqotCPVHyiveBQ==",
+    "signedAt": "2026-10-06T17:24:15.499Z"
   }
 }
