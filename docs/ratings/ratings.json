@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": 1791372655160,
+  "generatedAt": 1791397243962,
   "mods": {
     "evejs-autolockfire": {
       "average": 5,
@@ -16,14 +16,14 @@
     },
     "evejs-automining": {
       "average": 5,
-      "count": 1,
+      "count": 2,
       "withText": 1,
       "histogram": [
         0,
         0,
         0,
         0,
-        1
+        2
       ]
     },
     "evejs-sleeper-drifters": {
@@ -42,6 +42,6 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "evejs-ratings-2026-10-01",
-    "sig": "0/iBPFBR45nJMd6PBn9oh/HHTAfj3lrSsLDc0PNa/EvhbFuNa2RRAhgNGw20qQyum7DIk7PxMBopGPif/e/eBw=="
+    "sig": "utnRHkO4cVytjtN1cGNiu4T7aHDA8bwCLqn8KZ57QKMVGhrtB9jCdSXyDBZL96ghzqLpFfk4gzESmiiMG5G0AQ=="
   }
 }

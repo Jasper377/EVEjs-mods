@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": 1791372655160,
+  "generatedAt": 1791397243962,
   "sponsors": [
     {
       "id": "sponsor-01",
@@ -151,11 +151,17 @@
       "name": "*渐",
       "amount": 10,
       "currency": "CNY"
+    },
+    {
+      "id": "sponsor-26",
+      "name": "朗溪",
+      "amount": 20,
+      "currency": "CNY"
     }
   ],
   "signature": {
     "alg": "ed25519",
     "keyId": "evejs-ratings-2026-10-01",
-    "sig": "ySyhNP8nrWNYXS6+w4bpXNwjQWvh80lBkdMa/EYwxkOGL4CcUYh+lNHIRiaCr5jQOKnkSllPtFkYiFjUr1/ICA=="
+    "sig": "YKN1Ck42XgE+Hkb6/Dw3yaOATmnEvVNUDgFF1vXsGQiEMOetbAOowOrfoy9Ar6Sdu5LTxEvjnrumrtF2lQQBDA=="
   }
 }
