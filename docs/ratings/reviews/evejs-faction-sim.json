@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": 1791483868286,
+  "generatedAt": 1791502242765,
   "modId": "evejs-faction-sim",
   "reviews": [
     {
@@ -19,6 +19,6 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "evejs-ratings-2026-10-01",
-    "sig": "bF/r/ikRwnrqsUSAf2Wwr7sKIB0q3Ha3u9sM1+aZrDrR6lMKXim48jzyGnqMbDSnYedrEyWg4HSy/QE+uNv2BQ=="
+    "sig": "rHoBwI76ssoc4eNBoQNysDzIM7ZmUlQ1MEMgUU+CaKGJjQ86k1a0ADX67w3BoAYNRDpqvhKpqgq96ifXyB3+Cw=="
   }
 }
