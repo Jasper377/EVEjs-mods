@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-08T03:26:49.717Z",
+  "publishedAt": "2026-10-08T12:25:36.281Z",
   "mods": [
     {
       "author": {
@@ -43,7 +43,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 303,
+      "downloads": 308,
       "cdnHits": 51
     },
     {
@@ -91,7 +91,7 @@
       "tags": [],
       "version": "1.0.10",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 223,
+      "downloads": 230,
       "cdnHits": 7
     },
     {
@@ -135,7 +135,7 @@
       "tags": [],
       "version": "1.0.3",
       "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite-1-0-3",
-      "downloads": 51,
+      "downloads": 54,
       "cdnHits": 0
     },
     {
@@ -193,7 +193,7 @@
       "tags": [],
       "version": "0.2.3",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 85,
+      "downloads": 94,
       "cdnHits": 0
     },
     {
@@ -243,7 +243,7 @@
       "tags": [],
       "version": "0.1.1",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
-      "downloads": 54,
+      "downloads": 59,
       "cdnHits": 0
     },
     {
@@ -283,7 +283,7 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 247,
+      "downloads": 250,
       "cdnHits": 3
     },
     {
@@ -330,7 +330,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 278,
+      "downloads": 284,
       "cdnHits": 55
     },
     {
@@ -370,7 +370,7 @@
       "tags": [],
       "version": "0.2.1",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 70,
+      "downloads": 77,
       "cdnHits": 0
     },
     {
@@ -445,7 +445,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "UQ4qhEJk5+7yrQiCcv3qnkpfAN2qCEA94DI0/XH0ufFI+IumJCri6IqRTDmtx3k0jww0qiS6Y8PbBzmsfwukBQ==",
-    "signedAt": "2026-10-08T03:26:49.720Z"
+    "sig": "WWcxyzebVb6VKxUSFtTKmcotPRB/epn1SFvurOav3rNZDBB1OJ7WtToTXFra7S3iSbXI5ctcZoKpQLuvRWBjAg==",
+    "signedAt": "2026-10-08T12:25:36.284Z"
   }
 }
