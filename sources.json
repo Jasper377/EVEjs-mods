@@ -11,6 +11,7 @@
     "xuenaimiao/evejs-mod-evejs-npc-fleet",
     "xuenaimiao/evejs-mod-evejs-faction-sim",
     "xuenaimiao/evejs-mod-evejs-perf-fix",
-    "Jasper377/evejs-mod-evejs-acspecialbattleship"
+    "Jasper377/evejs-mod-evejs-acspecialbattleship",
+    "Jasper377/evejs-mod-evejs-sim-guard"
   ]
 }
