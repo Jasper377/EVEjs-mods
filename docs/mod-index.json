@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-08T22:37:43.379Z",
+  "publishedAt": "2026-10-09T03:32:08.802Z",
   "mods": [
     {
       "author": {
@@ -43,7 +43,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 324,
+      "downloads": 327,
       "cdnHits": 51
     },
     {
@@ -91,7 +91,7 @@
       "tags": [],
       "version": "1.0.10",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 239,
+      "downloads": 242,
       "cdnHits": 7
     },
     {
@@ -193,7 +193,7 @@
       "tags": [],
       "version": "0.2.3",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 134,
+      "downloads": 137,
       "cdnHits": 0
     },
     {
@@ -243,7 +243,7 @@
       "tags": [],
       "version": "0.1.1",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
-      "downloads": 73,
+      "downloads": 76,
       "cdnHits": 0
     },
     {
@@ -283,7 +283,7 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 256,
+      "downloads": 257,
       "cdnHits": 3
     },
     {
@@ -330,7 +330,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 309,
+      "downloads": 311,
       "cdnHits": 55
     },
     {
@@ -370,7 +370,7 @@
       "tags": [],
       "version": "0.2.1",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 96,
+      "downloads": 98,
       "cdnHits": 0
     },
     {
@@ -445,7 +445,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "FSblAcd/qZ6Xcp1EzP/ZflKIFDSnCgpk3XdVXvVphuDtEY85cxFOripOFwwA0P9mV27HW6l0Za+U6n0eviZHBg==",
-    "signedAt": "2026-10-08T22:37:43.382Z"
+    "sig": "KtLn7ei8wLruti1mtr5zXDmWKXAOa7pGx0LzdgGNMZPsYs/jqJt2EsMBgJoCWG6IgfQEnJIFoTN919EoGv3YAA==",
+    "signedAt": "2026-10-09T03:32:08.804Z"
   }
 }
