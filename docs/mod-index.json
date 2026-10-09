@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-09T15:47:08.203Z",
+  "publishedAt": "2026-10-09T16:38:24.605Z",
   "mods": [
     {
       "author": {
@@ -194,7 +194,7 @@
       "tags": [],
       "version": "0.3.0",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 247,
+      "downloads": 248,
       "cdnHits": 0
     },
     {
@@ -286,7 +286,7 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 306,
+      "downloads": 308,
       "cdnHits": 3
     },
     {
@@ -333,7 +333,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 332,
+      "downloads": 333,
       "cdnHits": 55
     },
     {
@@ -354,7 +354,7 @@
         {
           "mirror": "github",
           "priority": 1,
-          "url": "https://github.com/Jasper377/evejs-mod-evejs-sim-guard/releases/download/v0.1.0/evejs-sim-guard-0.1.0.zip"
+          "url": "https://github.com/Jasper377/evejs-mod-evejs-sim-guard/releases/download/v0.2.0/evejs-sim-guard-0.2.0.zip"
         }
       ],
       "evejsVersions": [
@@ -370,12 +370,12 @@
       ],
       "repo": "https://github.com/Jasper377/evejs-mod-evejs-sim-guard",
       "requiresRestart": true,
-      "sha256": "190da6ad0cf059cf1c07026607919b7706fa47e397ceec0cd1a94bdc53ee49d7",
-      "sizeBytes": 15067,
+      "sha256": "600bd3537a735af994171aca1f38463d18d39082c99d4beb821c35d14083b7ca",
+      "sizeBytes": 17683,
       "tags": [],
-      "version": "0.1.0",
+      "version": "0.2.0",
       "source": "Jasper377/evejs-mod-evejs-sim-guard",
-      "downloads": 0,
+      "downloads": 2,
       "cdnHits": 0
     },
     {
@@ -458,7 +458,7 @@
       "tags": [],
       "version": "1.2",
       "source": "Jasper377/evejs-mod-evejs-acspecialbattleship",
-      "downloads": 16,
+      "downloads": 19,
       "cdnHits": 0
     },
     {
@@ -533,7 +533,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "KfhO8SCrG8weg6b4OCzMlH5DNrDn3JMhDdxeaqCDAKwceAvRvK4aw2sHpf3ZEyMKXOGH8NeZZKy0mVm4eShaBw==",
-    "signedAt": "2026-10-09T15:47:08.206Z"
+    "sig": "trv9G65INhpm04QbDi+VjRwU77Iw8hLEXFWDXD5f7Z6qzx5cymBTS6Atja15Rhh01m0HAg6oYbFYnRE/oVgbDw==",
+    "signedAt": "2026-10-09T16:38:24.608Z"
   }
 }
