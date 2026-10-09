@@ -1,0 +1,23 @@
+{
+  "author": {
+    "id": "au-muwt2r89fjz0",
+    "keyId": "62c4ee92863e",
+    "name": "正在北极拔草"
+  },
+  "displayName": "十六槽机架（槽位上限解禁 8→16）",
+  "downloadUrls": [
+    {
+      "mirror": "github",
+      "priority": 1,
+      "url": "https://github.com/Jasper377/evejs-mod-evejs-racks16/releases/download/v2.0.0/evejs-racks16-2.0.0.zip"
+    }
+  ],
+  "id": "evejs-racks16",
+  "publishedAt": "2026-10-09",
+  "schemaVersion": 1,
+  "sha256": "05be2af8d264343f798981f3c735a50ba859b4144cf1d96dbf59b9e548320ba5",
+  "sizeBytes": 55609,
+  "source": "Jasper377/evejs-mod-evejs-racks16",
+  "submittedAt": "2026-10-09T20:21:49.791Z",
+  "version": "2.0.0"
+}
