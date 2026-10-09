@@ -1,0 +1,23 @@
+{
+  "author": {
+    "id": "au-muwt2r89fjz0",
+    "keyId": "62c4ee92863e",
+    "name": "正在北极拔草"
+  },
+  "displayName": "倍速推演守护（WAL 与堆积自动限速）",
+  "downloadUrls": [
+    {
+      "mirror": "github",
+      "priority": 1,
+      "url": "https://github.com/Jasper377/evejs-mod-evejs-sim-guard/releases/download/v0.1.0/evejs-sim-guard-0.1.0.zip"
+    }
+  ],
+  "id": "evejs-sim-guard",
+  "publishedAt": "2026-10-09",
+  "schemaVersion": 1,
+  "sha256": "190da6ad0cf059cf1c07026607919b7706fa47e397ceec0cd1a94bdc53ee49d7",
+  "sizeBytes": 15067,
+  "source": "Jasper377/evejs-mod-evejs-sim-guard",
+  "submittedAt": "2026-10-09T15:45:58.074Z",
+  "version": "0.1.0"
+}
