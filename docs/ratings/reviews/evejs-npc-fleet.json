@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": 1791568846761,
+  "modId": "evejs-npc-fleet",
+  "reviews": [
+    {
+      "id": "rv-1791564367841-23980",
+      "keyId": "1574beaf5442",
+      "author": "",
+      "corp": "",
+      "country": "JP",
+      "stars": 5,
+      "version": "0.2.0",
+      "date": "2026-10-09",
+      "body": "",
+      "edited": false
+    }
+  ],
+  "signature": {
+    "alg": "ed25519",
+    "keyId": "evejs-ratings-2026-10-01",
+    "sig": "EDb9Pk5P7QEBelhSjE+yaRsClEUEg9Yjw9ULlCMO3y/K1OFVZeeY+hmwSQF3DR0aTvoAdfaEIV/rzM1gmDVOBA=="
+  }
+}

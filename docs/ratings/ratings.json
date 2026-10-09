@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": 1791545443561,
+  "generatedAt": 1791568846761,
   "mods": {
     "evejs-autolockfire": {
       "average": 5,
@@ -38,6 +38,18 @@
         1
       ]
     },
+    "evejs-npc-fleet": {
+      "average": 5,
+      "count": 1,
+      "withText": 0,
+      "histogram": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
     "evejs-sleeper-drifters": {
       "average": 4,
       "count": 2,
@@ -54,6 +66,6 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "evejs-ratings-2026-10-01",
-    "sig": "5qN8pMfaFiXORKeSv+kY6nSWtM+zy+OgK/EwPy8HnFY+Z+gW439m7Sr2oK0y5dl8s7Nu9G+nSUp9uiqJLv11AA=="
+    "sig": "44MuAt7f+V+dfYuyZG0/vJRhCwoawOvUOcrXStYqZJs0LvAriaKLVQi2Lr79JRtZaMnB9Suugi73r96Ws/mUAw=="
   }
 }
