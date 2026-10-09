@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-09T11:43:07.397Z",
+  "publishedAt": "2026-10-09T11:45:05.287Z",
   "mods": [
     {
       "author": {
@@ -204,16 +204,16 @@
         "name": "xuenai"
       },
       "category": "玩法",
-      "changelog": "修复bug",
+      "changelog": "【NPC势力模拟-1 舰队模板】0.2.0\n· 新增一批标准配装方案（按战术分类：近战、风筝、狙击、后勤、拦截等），势力模拟 0.3.0 按配装造船要用到，两个模组请一起更新。\n· 带配装的 NPC 舰船按“全技能 5 级”计算属性。\n· 击毁后的掉落来自舰船实际装的模块；每门炮都显示出来；弹药按弹匣数量带。\n· 修复：带配装的旗舰停在自己武器够不着的距离上。",
       "conflicts": [],
       "delisted": false,
-      "description": "按模板一次生成整支 NPC 舰队：每艘船按阵型（球形、方阵、横队、楔形、环形）分配阵位，整队只广播一次，支持整队保持阵型跃迁和解散。聊天命令 /npcfleet；其他 mod 通过 globalThis[Symbol.for(\"evejs.npcFleet\")] 调用。只在内存中打补丁，不改任何文件；EVEJS_MOD_NPCFLEET=0 关闭。",
+      "description": "【仅限本机／内网使用，禁止用于公开或收费服务器】按模板一次生成整支 NPC 舰队：每艘船按阵型（球形、方阵、横队、楔形、环形）分配阵位，整队只广播一次，支持整队保持阵型跃迁和解散。聊天命令 /npcfleet；其他 mod 通过 globalThis[Symbol.for(\"evejs.npcFleet\")] 调用。只在内存中打补丁，不改任何文件；EVEJS_MOD_NPCFLEET=0 关闭。",
       "displayName": "NPC 舰队模板（整队生成 / 阵型 / 整队跃迁）",
       "downloadUrls": [
         {
           "mirror": "github",
           "priority": 1,
-          "url": "https://github.com/xuenaimiao/evejs-mod-evejs-npc-fleet/releases/download/v0.1.1/evejs-npc-fleet-0.1.1.zip"
+          "url": "https://github.com/xuenaimiao/evejs-mod-evejs-npc-fleet/releases/download/v0.2.0/evejs-npc-fleet-0.2.0.zip"
         }
       ],
       "evejsVersions": [
@@ -225,24 +225,26 @@
         "`space/npc/nativeNpcService.js`：生成参数带 `npcFleetFit` 时换船体和装备。",
         "`space/npc/npcBehaviorLoop.js`、`capitals/capitalNpcTargeting.js`：实体带 `npcFleetTargetSize` 时，选目标给符合大小的目标加分；其他 NPC 走原版。",
         "`space/npc/npcEquipment.js`：攻城 / 分诊模块算作 NPC 的自身模块（原版 NPC 没有装这两种模块的）。",
+        "`space/npc/capitals/capitalNpcDoctrine.js`：穿装配的旗舰把整个停留区间放在最短武器射程之内。原版的停留区间远端是“射程加容差（至少 5 公里）”，导弹旗舰会停在射程外永远不开火；其他旗舰走原版。",
         "`space/runtime/scene/visibility.js`：跃迁中的 NPC，目的地在观察者所在网格时可以中途进入视野（看到跃迁落地）。只放行已经起跳的船，对准中的和只是路过的都不变。",
         "`space/npc/npcBehaviorLoop.js`（同上文件）：舰队装配船目标进入武器射程才开攻城；攻城整轮跑完才停，停火不会连带关掉攻城。",
         "`services/chat/chatCommands.js`：加 `/npcfleet` 命令。"
       ],
       "history": [],
       "id": "evejs-npc-fleet",
-      "publishedAt": "2026-10-06",
+      "publishedAt": "2026-10-09",
       "readme": [
+        "> **使用声明：仅限本机／内网使用，禁止用于公开或收费服务器。** 本模组不接受公网地址的连接；作者不同意、也不支持把它用于对外开放或收费的服务器。全文见 [NOTICE.md](NOTICE.md)。",
         "按模板一次生成整支 NPC 舰队。每艘船按阵型分到自己的阵位，整队只广播一次，可以保持阵型整队跃迁，也可以一次解散。给以后的 NPC 势力模拟当舰队实体化的底座，也可以直接在游戏里用 `/npcfleet` 刷舰队测试。",
         "只在服务端内存中打补丁，不改任何文件：",
         "挂不上时写进 `server/logs/evejs-mods.log`，服务器照常启动。`EVEJS_MOD_NPCFLEET=0` 关闭整个 mod。"
       ],
       "repo": "https://github.com/xuenaimiao/evejs-mod-evejs-npc-fleet",
       "requiresRestart": true,
-      "sha256": "118d71b65ea42fdd73866c10ec9d7b0edc8f5f22af154e2b3c8774071c87225c",
-      "sizeBytes": 55882,
+      "sha256": "f37db1553447e37a2bed3575404ef659157f46658529aa9680dc9f0af0d7e111",
+      "sizeBytes": 68124,
       "tags": [],
-      "version": "0.1.1",
+      "version": "0.2.0",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
       "downloads": 84,
       "cdnHits": 0
@@ -446,7 +448,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "351pJsIqp/sAT+4K53TJi5zPlVVTwdCnWxpUiUDT2jfZ+xNCOdSnRf41SiX4G+qWQflc0yeD7Aorp5H9SGYOAQ==",
-    "signedAt": "2026-10-09T11:43:07.400Z"
+    "sig": "ayj+wvzLWBM/zzg6Pgr59GEPdNBEdb5JiXspPZONUUg9rZRiIvi+nQpU9m6jRsaluBhm/HIPi/PXZAJqLeMQBQ==",
+    "signedAt": "2026-10-09T11:45:05.290Z"
   }
 }
