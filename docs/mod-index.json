@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-09T20:22:37.341Z",
+  "publishedAt": "2026-10-09T20:31:08.569Z",
   "mods": [
     {
       "author": {
@@ -194,7 +194,7 @@
       "tags": [],
       "version": "0.3.0",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 259,
+      "downloads": 260,
       "cdnHits": 0
     },
     {
@@ -246,7 +246,7 @@
       "tags": [],
       "version": "0.2.0",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
-      "downloads": 140,
+      "downloads": 141,
       "cdnHits": 0
     },
     {
@@ -354,7 +354,7 @@
         {
           "mirror": "github",
           "priority": 1,
-          "url": "https://github.com/Jasper377/evejs-mod-evejs-sim-guard/releases/download/v0.2.0/evejs-sim-guard-0.2.0.zip"
+          "url": "https://github.com/Jasper377/evejs-mod-evejs-sim-guard/releases/download/v0.3.0/evejs-sim-guard-0.3.0.zip"
         }
       ],
       "evejsVersions": [
@@ -370,10 +370,10 @@
       ],
       "repo": "https://github.com/Jasper377/evejs-mod-evejs-sim-guard",
       "requiresRestart": true,
-      "sha256": "600bd3537a735af994171aca1f38463d18d39082c99d4beb821c35d14083b7ca",
-      "sizeBytes": 17683,
+      "sha256": "4e52b9444721f3692adf89c4f9433ce1dc27aad2b319808c4b822c123dac018b",
+      "sizeBytes": 22407,
       "tags": [],
-      "version": "0.2.0",
+      "version": "0.3.0",
       "source": "Jasper377/evejs-mod-evejs-sim-guard",
       "downloads": 2,
       "cdnHits": 0
@@ -465,7 +465,7 @@
       "tags": [],
       "version": "0.2.2",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 167,
+      "downloads": 168,
       "cdnHits": 0
     },
     {
@@ -514,7 +514,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "Gd2fr4lEeDLnVMUUnnPdsz/8QapQ9FnqTZqiGQssgIQmsrlkVyk5PcG5WyIbQ/aAZZCrbzw1T//37sa9DLSACA==",
-    "signedAt": "2026-10-09T20:22:37.344Z"
+    "sig": "L4Eq+TfQQwYQe3aWiMUOjqp0zlLrRYYonAdrjNx0wBBgNqF00F8Ma82dBhCbljLQ7DUbGc9adXtaVc+YRVieCw==",
+    "signedAt": "2026-10-09T20:31:08.572Z"
   }
 }
