@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-09T12:14:47.996Z",
+  "publishedAt": "2026-10-09T13:13:23.240Z",
   "mods": [
     {
       "author": {
@@ -43,7 +43,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 337,
+      "downloads": 339,
       "cdnHits": 51
     },
     {
@@ -91,7 +91,7 @@
       "tags": [],
       "version": "1.0.10",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 250,
+      "downloads": 251,
       "cdnHits": 7
     },
     {
@@ -135,7 +135,7 @@
       "tags": [],
       "version": "1.0.3",
       "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite-1-0-3",
-      "downloads": 63,
+      "downloads": 66,
       "cdnHits": 0
     },
     {
@@ -194,7 +194,7 @@
       "tags": [],
       "version": "0.3.0",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 160,
+      "downloads": 195,
       "cdnHits": 0
     },
     {
@@ -246,7 +246,7 @@
       "tags": [],
       "version": "0.2.0",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
-      "downloads": 92,
+      "downloads": 104,
       "cdnHits": 0
     },
     {
@@ -333,7 +333,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 322,
+      "downloads": 323,
       "cdnHits": 55
     },
     {
@@ -374,7 +374,49 @@
       "tags": [],
       "version": "0.2.2",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 118,
+      "downloads": 128,
+      "cdnHits": 0
+    },
+    {
+      "author": {
+        "id": "au-muwt2r89fjz0",
+        "keyId": "62c4ee92863e",
+        "name": "正在北极拔草"
+      },
+      "category": "玩法",
+      "changelog": "",
+      "conflicts": [],
+      "delisted": false,
+      "description": "新增两艘特别版掠夺舰：炽天使级（地狱天使级T2，激光4+导弹4，黑隐跳跃/隐身）与扶摇级（鹏鲲级T2，混合4+射弹4，黑隐跳跃/隐身）。加成链与角色文案全部复用帕拉丁/魔像/克洛诺斯/恶狼原版实现。服务端内存注入不改任何文件；客户端 a5 补丁见 client-patch/（需先安装并重启）。",
+      "displayName": "特别版掠夺舰双舰（炽天使级 / 扶摇级）",
+      "downloadUrls": [
+        {
+          "mirror": "github",
+          "priority": 1,
+          "url": "https://github.com/Jasper377/evejs-mod-evejs-acspecialbattleship/releases/download/v1.0/evejs-acspecialbattleship-1.0.zip"
+        }
+      ],
+      "evejsVersions": [
+        "0.12.9"
+      ],
+      "featured": false,
+      "highlights": [],
+      "history": [],
+      "id": "evejs-acspecialbattleship",
+      "publishedAt": "2026-10-09",
+      "readme": [
+        "新增两艘**特别版掠夺舰**",
+        "| 船 | typeID | 原型 | 武器 | 特色 |\n|---|---|---|---|---|\n| **炽天使级 Seraph** | 340010 | 地狱天使级 Abaddon | 激光 4 + 导弹 4 | 堡垒 + 黑隐跳跃(4ly 氦) + 隐型装置 + 黑隐诱导 |\n| **扶摇级 Fuyao** | 340011 | 鹏鲲级 Raven | 混合 4 + 射弹 4 | 同上（跳跃燃料氮同位素） |",
+        "加成链与特性面板文案**全部复用原版**（帕拉丁/魔像/克洛诺斯/恶狼/救世的现役效果与 nameID），不改任何原版船。"
+      ],
+      "repo": "https://github.com/Jasper377/evejs-mod-evejs-acspecialbattleship",
+      "requiresRestart": true,
+      "sha256": "926613af1639a1efd23df59b6ed9548e36fd0d0e29fd5fd75ea164b766172d07",
+      "sizeBytes": 14071,
+      "tags": [],
+      "version": "1.0",
+      "source": "Jasper377/evejs-mod-evejs-acspecialbattleship",
+      "downloads": 0,
       "cdnHits": 0
     },
     {
@@ -449,7 +491,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "K2bCKRkAmOeKmIiiGqdd8jISnyy+bC6x0OD++bISbMHwjJi7KN+na1Eb9JxxEEH0SmCNgEoIhb3mREbFUXpLCQ==",
-    "signedAt": "2026-10-09T12:14:48.000Z"
+    "sig": "zzaEmCUePO7rKbVcRHdNoWtjqv4Nby5c3cYzX91EimVy02yRay3v/veY76ccH4Ss26v41rpbWXmYNaMRhWcaCw==",
+    "signedAt": "2026-10-09T13:13:23.243Z"
   }
 }
