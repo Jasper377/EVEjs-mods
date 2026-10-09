@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-09T16:38:24.605Z",
+  "publishedAt": "2026-10-09T17:07:20.755Z",
   "mods": [
     {
       "author": {
@@ -194,7 +194,7 @@
       "tags": [],
       "version": "0.3.0",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 248,
+      "downloads": 253,
       "cdnHits": 0
     },
     {
@@ -246,7 +246,7 @@
       "tags": [],
       "version": "0.2.0",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
-      "downloads": 132,
+      "downloads": 134,
       "cdnHits": 0
     },
     {
@@ -375,7 +375,7 @@
       "tags": [],
       "version": "0.2.0",
       "source": "Jasper377/evejs-mod-evejs-sim-guard",
-      "downloads": 2,
+      "downloads": 3,
       "cdnHits": 0
     },
     {
@@ -416,7 +416,7 @@
       "tags": [],
       "version": "0.2.2",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 156,
+      "downloads": 158,
       "cdnHits": 0
     },
     {
@@ -533,7 +533,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "trv9G65INhpm04QbDi+VjRwU77Iw8hLEXFWDXD5f7Z6qzx5cymBTS6Atja15Rhh01m0HAg6oYbFYnRE/oVgbDw==",
-    "signedAt": "2026-10-09T16:38:24.608Z"
+    "sig": "MMflNq4tYkHUxQ74h/d7FRrHzpFSSfDHyBWp/NmqteennO+HK+Xff7Ir1wwDMdYdXI35uRmM3pazxvz1UFjEAA==",
+    "signedAt": "2026-10-09T17:07:20.757Z"
   }
 }
