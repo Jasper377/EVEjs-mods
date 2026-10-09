@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-09T11:46:45.726Z",
+  "publishedAt": "2026-10-09T12:14:47.996Z",
   "mods": [
     {
       "author": {
@@ -194,7 +194,7 @@
       "tags": [],
       "version": "0.3.0",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 149,
+      "downloads": 160,
       "cdnHits": 0
     },
     {
@@ -246,7 +246,7 @@
       "tags": [],
       "version": "0.2.0",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
-      "downloads": 84,
+      "downloads": 92,
       "cdnHits": 0
     },
     {
@@ -286,7 +286,7 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 290,
+      "downloads": 291,
       "cdnHits": 3
     },
     {
@@ -333,7 +333,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 321,
+      "downloads": 322,
       "cdnHits": 55
     },
     {
@@ -374,7 +374,7 @@
       "tags": [],
       "version": "0.2.2",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 109,
+      "downloads": 118,
       "cdnHits": 0
     },
     {
@@ -449,7 +449,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "OS23+4MwfQo2t7GRZTLc5zZ7xX++CU7vGyrJvuJQkRH5NP2+h/APDtM3vVQqc0NCNgr/NSJ6n3vI01Vv/B1DBQ==",
-    "signedAt": "2026-10-09T11:46:45.729Z"
+    "sig": "K2bCKRkAmOeKmIiiGqdd8jISnyy+bC6x0OD++bISbMHwjJi7KN+na1Eb9JxxEEH0SmCNgEoIhb3mREbFUXpLCQ==",
+    "signedAt": "2026-10-09T12:14:48.000Z"
   }
 }
