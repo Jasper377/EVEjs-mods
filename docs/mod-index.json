@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-09T03:32:08.802Z",
+  "publishedAt": "2026-10-09T11:43:07.397Z",
   "mods": [
     {
       "author": {
@@ -43,7 +43,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 327,
+      "downloads": 337,
       "cdnHits": 51
     },
     {
@@ -91,7 +91,7 @@
       "tags": [],
       "version": "1.0.10",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 242,
+      "downloads": 250,
       "cdnHits": 7
     },
     {
@@ -135,7 +135,7 @@
       "tags": [],
       "version": "1.0.3",
       "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite-1-0-3",
-      "downloads": 59,
+      "downloads": 63,
       "cdnHits": 0
     },
     {
@@ -145,16 +145,16 @@
         "name": "xuenai"
       },
       "category": "玩法",
-      "changelog": "修改bug",
+      "changelog": "【NPC势力模拟-2 NPC 势力模拟】0.3.0 测试版（需要舰队模板 0.2.0）\n· NPC 像真人：有玩家的星系里，船从星门、出站口、跃迁落点进场，不再凭空出现；空闲的船停着不绕圈；名册上的人按自己的日程出站、干活、回站，本地频道里的名字就是开船的人；矿工看到敌对玩家进本地会陆续躲进站。\n· 建筑是建起来的：勘察、部署队出发、投放、守卫、锚定、送燃料，每一步有真船；货船被击毁要重新造船体。\n· 玩家可以建国当君主：/faction nation，国务窗口、谕令、舰队指挥、外交、网页面板。\n· 真实市场、合同、委托；可以给势力捐 ISK 换声望。\n· 大规模会战：开场一批到齐、增员更密；小船直接跳到阵位旁进场；每一方按指挥舰、主力、后勤、快船分联队走位；同时开火的船更多；在场真船上限提高。\n· 普通交战：挨打的一方会出兵了；打击队整队跃迁、落在炮程里、一起动手。\n· 性能：高倍速下推演线程占用大幅下降。\n· 测试版：新行为大多没有逐项在客户端里验证过。出问题可设环境变量 EVEJS_FACTIONSIM_LIFELIKE=0 关掉“像真人”这一层。开局后 36 个推演小时内不会自动触发会战，想看用 /faction theatre start。",
       "conflicts": [],
       "delisted": false,
-      "description": "像玩家一样的 NPC 势力：独立推演线程按事件推进势力数据（faction.sqlite），为每个势力建机器人账号、角色、公司和联盟，本机面板 127.0.0.1:26410 查看状态。聊天命令 /faction。只在内存中打补丁，不改任何文件；EVEJS_MOD_FACTIONSIM=0 关闭。 必须和 evejs-npc-fleet（NPC 舰队模板）一起安装；推荐再装 evejs-perf-fix。首次启动数据库为空时自动按「开放宇宙」剧本开局，面板有「入门」页。",
+      "description": "【仅限本机／内网使用，禁止用于公开或收费服务器】像玩家一样的 NPC 势力：独立推演线程按事件推进势力数据（faction.sqlite），为每个势力建机器人账号、角色、公司和联盟，本机面板 127.0.0.1:26410 查看状态。聊天命令 /faction。只在内存中打补丁，不改任何文件；EVEJS_MOD_FACTIONSIM=0 关闭。 必须和 evejs-npc-fleet（NPC 舰队模板）一起安装；推荐再装 evejs-perf-fix。首次启动数据库为空时自动按「开放宇宙」剧本开局，面板有「入门」页。",
       "displayName": "NPC 势力模拟（推演线程 / 机器人势力 / 面板）",
       "downloadUrls": [
         {
           "mirror": "github",
           "priority": 1,
-          "url": "https://github.com/xuenaimiao/evejs-mod-evejs-faction-sim/releases/download/v0.2.3/evejs-faction-sim-0.2.3.zip"
+          "url": "https://github.com/xuenaimiao/evejs-mod-evejs-faction-sim/releases/download/v0.3.0/evejs-faction-sim-0.3.0.zip"
         }
       ],
       "evejsVersions": [
@@ -177,8 +177,9 @@
       ],
       "history": [],
       "id": "evejs-faction-sim",
-      "publishedAt": "2026-10-06",
+      "publishedAt": "2026-10-09",
       "readme": [
+        "> **使用声明：仅限本机／内网使用，禁止用于公开或收费服务器。** 本模组不接受公网地址的连接；作者不同意、也不支持把它用于对外开放或收费的服务器。全文见 [NOTICE.md](NOTICE.md)。",
         "> **必须和 `evejs-npc-fleet`（NPC 舰队模板）一起安装。** 势力的舰船是通过它整队生成、摆阵型、整队跃迁的，势力模拟启动时还要把舰队模板登记进去；没有它，势力出不了船（日志会提示「没有 evejs-npc-fleet」）。\n> 安装顺序：先 `evejs-npc-fleet`，再 `evejs-faction-sim`（清单里 `loadAfter` 了前者）。推荐再装 `evejs-perf-fix`（性能修复，可选）。",
         "像玩家一样的 NPC 势力：每个势力有自己的机器人账号、角色、公司和联盟，由一个独立的推演线程按事件推进。已有：",
         "设计和进度见 `docs/npc-faction-plan.html`、`docs/npc-faction-dev-plan.html`。",
@@ -188,12 +189,12 @@
       ],
       "repo": "https://github.com/xuenaimiao/evejs-mod-evejs-faction-sim",
       "requiresRestart": true,
-      "sha256": "327bb5ceb98c55883cb902ed8e9b5b6500d963907b6e58ebea84bd2010163e8a",
-      "sizeBytes": 5393741,
+      "sha256": "2880787a7e95de128f94cafa8697595a8cfc3ad1adba3eade0245ad802e45c8b",
+      "sizeBytes": 6687859,
       "tags": [],
-      "version": "0.2.3",
+      "version": "0.3.0",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 137,
+      "downloads": 148,
       "cdnHits": 0
     },
     {
@@ -243,7 +244,7 @@
       "tags": [],
       "version": "0.1.1",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
-      "downloads": 76,
+      "downloads": 84,
       "cdnHits": 0
     },
     {
@@ -283,7 +284,7 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 257,
+      "downloads": 290,
       "cdnHits": 3
     },
     {
@@ -330,7 +331,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 311,
+      "downloads": 321,
       "cdnHits": 55
     },
     {
@@ -370,7 +371,7 @@
       "tags": [],
       "version": "0.2.1",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 98,
+      "downloads": 109,
       "cdnHits": 0
     },
     {
@@ -445,7 +446,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "KtLn7ei8wLruti1mtr5zXDmWKXAOa7pGx0LzdgGNMZPsYs/jqJt2EsMBgJoCWG6IgfQEnJIFoTN919EoGv3YAA==",
-    "signedAt": "2026-10-09T03:32:08.804Z"
+    "sig": "351pJsIqp/sAT+4K53TJi5zPlVVTwdCnWxpUiUDT2jfZ+xNCOdSnRf41SiX4G+qWQflc0yeD7Aorp5H9SGYOAQ==",
+    "signedAt": "2026-10-09T11:43:07.400Z"
   }
 }
