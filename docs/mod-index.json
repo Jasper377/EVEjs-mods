@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-09T20:31:08.569Z",
+  "publishedAt": "2026-10-09T20:34:14.168Z",
   "mods": [
     {
       "author": {
@@ -484,7 +484,7 @@
         {
           "mirror": "github",
           "priority": 1,
-          "url": "https://github.com/Jasper377/evejs-mod-evejs-acspecialbattleship/releases/download/v1.2/evejs-acspecialbattleship-1.2.zip"
+          "url": "https://github.com/Jasper377/evejs-mod-evejs-acspecialbattleship/releases/download/v1.3.2/evejs-acspecialbattleship-1.3.2.zip"
         }
       ],
       "evejsVersions": [
@@ -502,10 +502,10 @@
       ],
       "repo": "https://github.com/Jasper377/evejs-mod-evejs-acspecialbattleship",
       "requiresRestart": true,
-      "sha256": "0e272de798559602b511296be35b3fd176c65704860e31b1392798ca01eea471",
-      "sizeBytes": 21989,
+      "sha256": "4c600c5171cddb50d7d0c7efd2aee48c54e8ea05d53de9f583503e83a3376f86",
+      "sizeBytes": 84009,
       "tags": [],
-      "version": "1.2",
+      "version": "1.3.2",
       "source": "Jasper377/evejs-mod-evejs-acspecialbattleship",
       "downloads": 23,
       "cdnHits": 0
@@ -514,7 +514,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "L4Eq+TfQQwYQe3aWiMUOjqp0zlLrRYYonAdrjNx0wBBgNqF00F8Ma82dBhCbljLQ7DUbGc9adXtaVc+YRVieCw==",
-    "signedAt": "2026-10-09T20:31:08.572Z"
+    "sig": "7Wr5k5ZyEbBIqgC4di8qSjpcgJ8DXrSG633kWijhWdI9R5fYQzqcEQmOv8hwDYJPU5YhG6IM9ieXBtq4ZDBgAw==",
+    "signedAt": "2026-10-09T20:34:14.170Z"
   }
 }
