@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-09T13:13:23.240Z",
+  "publishedAt": "2026-10-09T14:38:59.390Z",
   "mods": [
     {
       "author": {
@@ -43,7 +43,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 339,
+      "downloads": 346,
       "cdnHits": 51
     },
     {
@@ -91,7 +91,7 @@
       "tags": [],
       "version": "1.0.10",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 251,
+      "downloads": 255,
       "cdnHits": 7
     },
     {
@@ -135,7 +135,7 @@
       "tags": [],
       "version": "1.0.3",
       "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite-1-0-3",
-      "downloads": 66,
+      "downloads": 70,
       "cdnHits": 0
     },
     {
@@ -194,7 +194,7 @@
       "tags": [],
       "version": "0.3.0",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 195,
+      "downloads": 216,
       "cdnHits": 0
     },
     {
@@ -246,7 +246,7 @@
       "tags": [],
       "version": "0.2.0",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
-      "downloads": 104,
+      "downloads": 121,
       "cdnHits": 0
     },
     {
@@ -286,7 +286,7 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 291,
+      "downloads": 305,
       "cdnHits": 3
     },
     {
@@ -333,7 +333,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 323,
+      "downloads": 329,
       "cdnHits": 55
     },
     {
@@ -374,7 +374,7 @@
       "tags": [],
       "version": "0.2.2",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 128,
+      "downloads": 145,
       "cdnHits": 0
     },
     {
@@ -384,7 +384,7 @@
         "name": "正在北极拔草"
       },
       "category": "玩法",
-      "changelog": "",
+      "changelog": "1.修复路径问题\n2.完善了舰船相关细节部分",
       "conflicts": [],
       "delisted": false,
       "description": "新增两艘特别版掠夺舰：炽天使级（地狱天使级T2，激光4+导弹4，黑隐跳跃/隐身）与扶摇级（鹏鲲级T2，混合4+射弹4，黑隐跳跃/隐身）。加成链与角色文案全部复用帕拉丁/魔像/克洛诺斯/恶狼原版实现。服务端内存注入不改任何文件；客户端 a5 补丁见 client-patch/（需先安装并重启）。",
@@ -393,7 +393,7 @@
         {
           "mirror": "github",
           "priority": 1,
-          "url": "https://github.com/Jasper377/evejs-mod-evejs-acspecialbattleship/releases/download/v1.0/evejs-acspecialbattleship-1.0.zip"
+          "url": "https://github.com/Jasper377/evejs-mod-evejs-acspecialbattleship/releases/download/v1.1/evejs-acspecialbattleship-1.1.zip"
         }
       ],
       "evejsVersions": [
@@ -411,12 +411,12 @@
       ],
       "repo": "https://github.com/Jasper377/evejs-mod-evejs-acspecialbattleship",
       "requiresRestart": true,
-      "sha256": "926613af1639a1efd23df59b6ed9548e36fd0d0e29fd5fd75ea164b766172d07",
-      "sizeBytes": 14071,
+      "sha256": "622c16304fe5bbbf92d84d14d1b6315e5e8e1b450438db20b8c325ef55b6b62a",
+      "sizeBytes": 20662,
       "tags": [],
-      "version": "1.0",
+      "version": "1.1",
       "source": "Jasper377/evejs-mod-evejs-acspecialbattleship",
-      "downloads": 0,
+      "downloads": 9,
       "cdnHits": 0
     },
     {
@@ -464,7 +464,7 @@
       "tags": [],
       "version": "1.0.2",
       "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite",
-      "downloads": 2,
+      "downloads": 5,
       "cdnHits": 0,
       "delistReason": {
         "zh": "loader.js内容不符",
@@ -491,7 +491,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "zzaEmCUePO7rKbVcRHdNoWtjqv4Nby5c3cYzX91EimVy02yRay3v/veY76ccH4Ss26v41rpbWXmYNaMRhWcaCw==",
-    "signedAt": "2026-10-09T13:13:23.243Z"
+    "sig": "rXHSVDMqr4hvBqAwMk+1T+1dD7pdG6aBlJeJXOCJ7oa3ZF5ku0boq2dtv8p/P6DVywdQwOW/MWiJTrKebQnMCQ==",
+    "signedAt": "2026-10-09T14:38:59.393Z"
   }
 }
