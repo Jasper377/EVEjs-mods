@@ -1,17 +1,5 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T10:29:37.890Z",
-  "entries": [
-    {
-      "target": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite",
-      "kind": "source",
-      "action": "delist",
-      "reason": {
-        "zh": "loader.js内容不符",
-        "en": "loader.js内容不符"
-      },
-      "at": "2026-10-05T09:19:36.753Z",
-      "by": "diguo520"
-    }
-  ]
+  "updatedAt": "2026-10-09T17:35:01.239Z",
+  "entries": []
 }
