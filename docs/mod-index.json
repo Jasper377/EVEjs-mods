@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-09T11:45:05.287Z",
+  "publishedAt": "2026-10-09T11:46:45.726Z",
   "mods": [
     {
       "author": {
@@ -194,7 +194,7 @@
       "tags": [],
       "version": "0.3.0",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 148,
+      "downloads": 149,
       "cdnHits": 0
     },
     {
@@ -343,16 +343,16 @@
         "name": "xuenai"
       },
       "category": "玩法",
-      "changelog": "修复bug",
+      "changelog": "【NPC势力模拟-3 性能修复】0.2.2\n· 修复：几百艘船在同一个战场时，服务端的“隐身接近解除”检查让主线程一次停 5–7 秒、时间膨胀 30%。\n· 大量舰船同时跃迁进场或有导弹在飞时，移动计划的比对快了约 1.8 倍（结果不变）。",
       "conflicts": [],
       "delisted": false,
-      "description": "修复太空帧循环在实体多时的开销：移动计划不再逐个刷新整场景、只比对成员；NPC 每帧只推演一遍（玩家不变）；锁定扫描按场景时间测距；NPC 存储按行读取、按舰船索引；启动规则先筛选后克隆；击毁时残骸类型查找不再做模糊匹配（每艘 1.2 秒 → 22 毫秒）；跃迁拦截扫描先判类型（每次 15 → 不到 1 毫秒）。只在内存中打补丁，不改任何文件；EVEJS_MOD_PERFFIX=0 全部关闭，EVEJS_PERF_DISABLE=plan,member,lock,store,rules,wreck,warp,npcmove,gc,prio 单项关闭。",
+      "description": "【仅限本机／内网使用，禁止用于公开或收费服务器】修复太空帧循环在实体多时的开销：移动计划不再逐个刷新整场景、只比对成员；NPC 每帧只推演一遍（玩家不变）；锁定扫描按场景时间测距；NPC 存储按行读取、按舰船索引；启动规则先筛选后克隆；击毁时残骸类型查找不再做模糊匹配（每艘 1.2 秒 → 22 毫秒）；跃迁拦截扫描先判类型（每次 15 → 不到 1 毫秒）。只在内存中打补丁，不改任何文件；EVEJS_MOD_PERFFIX=0 全部关闭，EVEJS_PERF_DISABLE=plan,member,lock,store,rules,wreck,warp,npcmove,gc,prio 单项关闭。",
       "displayName": "性能修复（移动推演 / 锁定扫描 / NPC 存储 / 刷怪规则 / 击毁 / 跃迁）",
       "downloadUrls": [
         {
           "mirror": "github",
           "priority": 1,
-          "url": "https://github.com/xuenaimiao/evejs-mod-evejs-perf-fix/releases/download/v0.2.1/evejs-perf-fix-0.2.1.zip"
+          "url": "https://github.com/xuenaimiao/evejs-mod-evejs-perf-fix/releases/download/v0.2.2/evejs-perf-fix-0.2.2.zip"
         }
       ],
       "evejsVersions": [
@@ -362,16 +362,17 @@
       "highlights": [],
       "history": [],
       "id": "evejs-perf-fix",
-      "publishedAt": "2026-10-06",
+      "publishedAt": "2026-10-09",
       "readme": [
+        "> **使用声明：仅限本机／内网使用，禁止用于公开或收费服务器。** 本模组不接受公网地址的连接；作者不同意、也不支持把它用于对外开放或收费的服务器。全文见 [NOTICE.md](NOTICE.md)。",
         "只在服务端内存中打补丁，不改任何文件。大多数补丁在目标模块末尾追加代码（给模块内的 `function` 声明重新赋值，或者在其他模块拿到导出之前包装它）。`npcmove`、`rebind`、`micro`、`scope`、`thinkfast`、`logiplayer` 和 `lockdist` 的一处要改函数内部，用的是源码锚点替换：每个锚点必须按预期次数精确命中，替换前后行数不变（报错行号和 CPU 分析仍对得上原文件），任何一处对不上就整个放弃。某个补丁挂不上时写进 `server/logs/evejs-mods.log`，服务器照常以原版逻辑启动。"
       ],
       "repo": "https://github.com/xuenaimiao/evejs-mod-evejs-perf-fix",
       "requiresRestart": true,
-      "sha256": "2b4ced985e07606ce43fc78d1920de03bdbf7689344e7283feaa28d277ea813b",
-      "sizeBytes": 155422,
+      "sha256": "c4b5e35fb4cf1d66000d9993ceb348891f4430afe7fb01b9e1471e1cb9d3ad10",
+      "sizeBytes": 158451,
       "tags": [],
-      "version": "0.2.1",
+      "version": "0.2.2",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
       "downloads": 109,
       "cdnHits": 0
@@ -448,7 +449,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "ayj+wvzLWBM/zzg6Pgr59GEPdNBEdb5JiXspPZONUUg9rZRiIvi+nQpU9m6jRsaluBhm/HIPi/PXZAJqLeMQBQ==",
-    "signedAt": "2026-10-09T11:45:05.290Z"
+    "sig": "OS23+4MwfQo2t7GRZTLc5zZ7xX++CU7vGyrJvuJQkRH5NP2+h/APDtM3vVQqc0NCNgr/NSJ6n3vI01Vv/B1DBQ==",
+    "signedAt": "2026-10-09T11:46:45.729Z"
   }
 }
