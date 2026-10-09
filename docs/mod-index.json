@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-09T15:25:07.226Z",
+  "publishedAt": "2026-10-09T15:47:08.203Z",
   "mods": [
     {
       "author": {
@@ -194,7 +194,7 @@
       "tags": [],
       "version": "0.3.0",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 236,
+      "downloads": 247,
       "cdnHits": 0
     },
     {
@@ -246,7 +246,7 @@
       "tags": [],
       "version": "0.2.0",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
-      "downloads": 130,
+      "downloads": 132,
       "cdnHits": 0
     },
     {
@@ -286,7 +286,7 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 305,
+      "downloads": 306,
       "cdnHits": 3
     },
     {
@@ -338,6 +338,48 @@
     },
     {
       "author": {
+        "id": "au-muwt2r89fjz0",
+        "keyId": "62c4ee92863e",
+        "name": "正在北极拔草"
+      },
+      "category": "玩法",
+      "changelog": "",
+      "conflicts": [
+        "NPC势力模拟"
+      ],
+      "delisted": false,
+      "description": "【附属优化 mod，依赖NPC势力模拟mod】推演守护：主线程每 5 秒读推演库 WAL 大小与 pending 堆积，超限自动把推演倍速降到安全档",
+      "displayName": "倍速推演守护（WAL 与堆积自动限速）",
+      "downloadUrls": [
+        {
+          "mirror": "github",
+          "priority": 1,
+          "url": "https://github.com/Jasper377/evejs-mod-evejs-sim-guard/releases/download/v0.1.0/evejs-sim-guard-0.1.0.zip"
+        }
+      ],
+      "evejsVersions": [
+        "0.12.9"
+      ],
+      "featured": false,
+      "highlights": [],
+      "history": [],
+      "id": "evejs-sim-guard",
+      "publishedAt": "2026-10-09",
+      "readme": [
+        "> 附属包：必须和 **evejs-faction-sim**（≥0.3.0）一起装。仅限本机／内网使用。"
+      ],
+      "repo": "https://github.com/Jasper377/evejs-mod-evejs-sim-guard",
+      "requiresRestart": true,
+      "sha256": "190da6ad0cf059cf1c07026607919b7706fa47e397ceec0cd1a94bdc53ee49d7",
+      "sizeBytes": 15067,
+      "tags": [],
+      "version": "0.1.0",
+      "source": "Jasper377/evejs-mod-evejs-sim-guard",
+      "downloads": 0,
+      "cdnHits": 0
+    },
+    {
+      "author": {
         "id": "au-mujkaep5shgv",
         "keyId": "2792fbac9b88",
         "name": "xuenai"
@@ -374,7 +416,7 @@
       "tags": [],
       "version": "0.2.2",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 154,
+      "downloads": 156,
       "cdnHits": 0
     },
     {
@@ -416,7 +458,7 @@
       "tags": [],
       "version": "1.2",
       "source": "Jasper377/evejs-mod-evejs-acspecialbattleship",
-      "downloads": 15,
+      "downloads": 16,
       "cdnHits": 0
     },
     {
@@ -491,7 +533,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "CibXhOGXUfkAuqhE9ODtu0a4x571dMudAMNQB9vGDX/bzf2oYAZZqtGBP/I44ZJQofu/5TkuEFdQfnIe0Sr4AQ==",
-    "signedAt": "2026-10-09T15:25:07.229Z"
+    "sig": "KfhO8SCrG8weg6b4OCzMlH5DNrDn3JMhDdxeaqCDAKwceAvRvK4aw2sHpf3ZEyMKXOGH8NeZZKy0mVm4eShaBw==",
+    "signedAt": "2026-10-09T15:47:08.206Z"
   }
 }
