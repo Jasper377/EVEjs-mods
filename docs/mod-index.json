@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-10T12:27:13.523Z",
+  "publishedAt": "2026-10-10T13:32:25.637Z",
   "mods": [
     {
       "author": {
@@ -43,7 +43,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 365,
+      "downloads": 366,
       "cdnHits": 51
     },
     {
@@ -90,7 +90,7 @@
       "tags": [],
       "version": "1.0.14",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 292,
+      "downloads": 301,
       "cdnHits": 7
     },
     {
@@ -134,7 +134,7 @@
       "tags": [],
       "version": "1.0.3",
       "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite-1-0-3",
-      "downloads": 80,
+      "downloads": 81,
       "cdnHits": 0
     },
     {
@@ -193,7 +193,7 @@
       "tags": [],
       "version": "0.3.1",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 319,
+      "downloads": 335,
       "cdnHits": 0
     },
     {
@@ -245,7 +245,7 @@
       "tags": [],
       "version": "0.2.0",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
-      "downloads": 159,
+      "downloads": 162,
       "cdnHits": 0
     },
     {
@@ -285,7 +285,7 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 321,
+      "downloads": 325,
       "cdnHits": 3
     },
     {
@@ -327,7 +327,7 @@
       "tags": [],
       "version": "1.0.0",
       "source": "Jasper377/evejs-mod-evejs-worldark",
-      "downloads": 0,
+      "downloads": 12,
       "cdnHits": 0
     },
     {
@@ -374,7 +374,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 351,
+      "downloads": 352,
       "cdnHits": 55
     },
     {
@@ -416,7 +416,7 @@
       "tags": [],
       "version": "0.3.0",
       "source": "Jasper377/evejs-mod-evejs-sim-guard",
-      "downloads": 27,
+      "downloads": 31,
       "cdnHits": 0
     },
     {
@@ -465,7 +465,7 @@
       "tags": [],
       "version": "2.0.0",
       "source": "Jasper377/evejs-mod-evejs-racks16",
-      "downloads": 21,
+      "downloads": 28,
       "cdnHits": 0
     },
     {
@@ -506,7 +506,7 @@
       "tags": [],
       "version": "0.2.2",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 195,
+      "downloads": 202,
       "cdnHits": 0
     },
     {
@@ -516,7 +516,7 @@
         "name": "正在北极拔草"
       },
       "category": "玩法",
-      "changelog": "修复拓展槽位服务端不认的BUG",
+      "changelog": "添加了安装报错探针 服务端日志搜“探针上报\"行",
       "conflicts": [],
       "delisted": false,
       "description": "新增两艘特别版掠夺舰：炽天使级与扶摇级。登录后自动安装客户端补丁（首次进游戏即完成），需前置mod解锁槽位上限",
@@ -525,7 +525,7 @@
         {
           "mirror": "github",
           "priority": 1,
-          "url": "https://github.com/Jasper377/evejs-mod-evejs-acspecialbattleship/releases/download/v1.5.0/evejs-acspecialbattleship-1.5.0.zip"
+          "url": "https://github.com/Jasper377/evejs-mod-evejs-acspecialbattleship/releases/download/v1.5.2/evejs-acspecialbattleship-1.5.2.zip"
         }
       ],
       "evejsVersions": [
@@ -541,19 +541,19 @@
       ],
       "repo": "https://github.com/Jasper377/evejs-mod-evejs-acspecialbattleship",
       "requiresRestart": true,
-      "sha256": "161a34669488c37311d12c1c6c2ced19944225ddc413354d3975d5b6e4368e3a",
-      "sizeBytes": 1557713,
+      "sha256": "9665ed01360669020d94bede2c62c62c48d5a9b76b5811b83b5d5f726969d279",
+      "sizeBytes": 1560203,
       "tags": [],
-      "version": "1.5.0",
+      "version": "1.5.2",
       "source": "Jasper377/evejs-mod-evejs-acspecialbattleship",
-      "downloads": 56,
+      "downloads": 64,
       "cdnHits": 0
     }
   ],
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "sNZci3Ewr/K9oxEJ+BhIPaL+9cEXWC3XQGh1KHwXOYHLSvr6a8kl1RsSzEHjMJ62XydFVLCy0Cl0Cs7SS7jiBA==",
-    "signedAt": "2026-10-10T12:27:13.525Z"
+    "sig": "34hsu/Q4tzOcUArIBgdibnXRoxUYJ13CS5LUcKTnbHj4hG86uGSwKSvZYuDQtHFUoF062MrM5c0XXWJNOPjMDg==",
+    "signedAt": "2026-10-10T13:32:25.639Z"
   }
 }
