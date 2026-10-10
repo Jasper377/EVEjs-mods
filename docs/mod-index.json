@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-10T16:18:17.968Z",
+  "publishedAt": "2026-10-10T16:21:49.487Z",
   "mods": [
     {
       "author": {
@@ -43,7 +43,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 389,
+      "downloads": 390,
       "cdnHits": 51
     },
     {
@@ -415,7 +415,7 @@
       "tags": [],
       "version": "0.2.2",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 216,
+      "downloads": 217,
       "cdnHits": 0
     },
     {
@@ -425,16 +425,16 @@
         "name": "正在北极拔草"
       },
       "category": "玩法",
-      "changelog": "",
+      "changelog": "修复交互与观感上的问题",
       "conflicts": [],
       "delisted": false,
-      "description": "把原版「低/中/高每族最多 8 槽」的上限解禁到 16，默认不修改任何舰船的槽位数值。",
+      "description": "把原版「低/中/高每族最多 8 槽」的上限解禁到 16、改装件解禁到 6，默认不修改任何舰船的槽位数值；并修正配装界面的槽位摆位与交互范围。",
       "displayName": "槽位上限解禁 8→16",
       "downloadUrls": [
         {
           "mirror": "github",
           "priority": 1,
-          "url": "https://github.com/Jasper377/evejs-mod-evejs-racks16/releases/download/v3.0.0/evejs-racks16-3.0.0.zip"
+          "url": "https://github.com/Jasper377/evejs-mod-evejs-racks16/releases/download/v3.1.0/evejs-racks16-3.1.0.zip"
         }
       ],
       "evejsVersions": [
@@ -451,20 +451,22 @@
       "readme": [
         "**这是「对原版游戏的扩展」，不是「替你把船改掉」。**",
         "原版服务端与客户端都把低 / 中 / 高槽卡在**每族 8 个**。本模组把这条线抬到 **16**，但\n**默认完全不碰任何舰船的槽位数值**：",
-        "| 机架 | 原版上限 | 解禁后上限 | 新增用到的 flag |\n| --- | --- | --- | --- |\n| 低槽 lowSlots | 8 | **16** | 11..18 + 37..44 |\n| 中槽 medSlots | 8 | **16** | 19..26 + 45..52 |\n| 高槽 hiSlots | 8 | **16** | 27..34 + 65..72 |",
-        "`rigSlots`、炮位硬点、CPU / PG 全部不变。",
+        "| 机架 | 原版上限 | 解禁后上限 | 新增用到的 flag |\n| --- | --- | --- | --- |\n| 低槽 lowSlots | 8 | **16** | 11..18 + 37..44 |\n| 中槽 medSlots | 8 | **16** | 19..26 + 45..52 |\n| 高槽 hiSlots | 8 | **16** | 27..34 + 65..72 |\n| 改装件 rigSlots | 3 | **6** | 92..97 |",
+        "炮位硬点、子系统槽、CPU / PG 全部不变。",
+        "改装件与低/中/高不同：原版一条 31° 的弧只放得下 3 个槽，所以 6 个改装件按\n**3 + 3 两环**摆（第 1 环就是原版那 3 个位置，不多不少），而不是硬挤在同一条弧上。",
         "> **装了之后你会看到什么？** 如果没改过任何船的槽位数据 —— **和没装一样**。8 槽的船还是 8 槽、\n> HUD 还是画 8 格。因为 HUD 本来就按「当前船实际槽数」画（`GetNumSlots → GetNumHiSlots()`），\n> 它不需要被\"改\"。本模组做的是**把天花板抬起来**：一旦某艘船的 `lowSlots/medSlots/hiSlots`\n> 被改成 9..16（你自己改数据、或别的模组改），它才能真的用满，而且从 HUD 到装配、编组、\n> 激活整条链都不会再出问题。",
-        "槽位数有**两条上游**，两边都要有：服务端负责放行扩展槽并把槽位数下发给客户端（本模组本体，\n不修改任何文件）；客户端负责 HUD 的每族上限与 16 列布局（`client-patch/`，**要单独跑一次安装脚本**）。",
+        "槽位数有**两条上游**，两边都要有：服务端负责放行扩展槽并把槽位数下发给客户端（本模组本体，\n不修改任何文件）；客户端负责 HUD 的每族上限与 16 列布局、以及**配装界面**的槽位摆位\n（`client-patch/`，**要单独跑一次安装脚本**）。",
+        "> 顺带修好了配装界面的两处老问题：第 2 环（第 9 格起）原本被整体缩到 0.78 倍，\n> 因为缩的就是控件矩形、而控件矩形就是**点击/悬停范围**，所以第二环的格子明显难点；\n> 现在半径照样内收、**尺寸不再缩**，交互范围和第一环一致。",
         "---"
       ],
       "repo": "https://github.com/Jasper377/evejs-mod-evejs-racks16",
       "requiresRestart": true,
-      "sha256": "05908004032f4b2bfd3be9aea5c1c1e1662946058e307eb0044f6f61aa21e982",
-      "sizeBytes": 81999,
+      "sha256": "bcec4f82ac9040f0ea01c33a7f62926ea3f0cb74f69dc33e203499f7a76a2e3c",
+      "sizeBytes": 223396,
       "tags": [],
-      "version": "3.0.0",
+      "version": "3.1.0",
       "source": "Jasper377/evejs-mod-evejs-racks16",
-      "downloads": 42,
+      "downloads": 46,
       "cdnHits": 0
     },
     {
@@ -511,7 +513,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "lOPSKQ5fUj1DRnnRv0Q35RqVNNdNI6uqXXyEh/xTLhICjFYaMYjXtuRQq3UFelFkT5LSwHdq34ua7w6xj4DqDA==",
-    "signedAt": "2026-10-10T16:18:17.971Z"
+    "sig": "n8Yd2wQRQwldoSwSzDM6c8snWoxPYS3q+FI63MYhAgDbsQW5aXTGosWvfTFguvyRDez1XQmk00X4jLkgXKMzCg==",
+    "signedAt": "2026-10-10T16:21:49.490Z"
   }
 }
