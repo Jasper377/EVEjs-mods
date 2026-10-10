@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": 1791629445447,
+  "generatedAt": 1791648046647,
   "sponsors": [
     {
       "id": "sponsor-01",
@@ -163,11 +163,23 @@
       "name": "*全",
       "amount": 50,
       "currency": "CNY"
+    },
+    {
+      "id": "sponsor-28",
+      "name": "*时",
+      "amount": 50,
+      "currency": "CNY"
+    },
+    {
+      "id": "sponsor-29",
+      "name": "近畿鉄道23000系特急電車",
+      "amount": 20,
+      "currency": "CNY"
     }
   ],
   "signature": {
     "alg": "ed25519",
     "keyId": "evejs-ratings-2026-10-01",
-    "sig": "qwf6+yx5430ZKuQzU6Xr8PCNf7l60x2rle7k3UWfGRzIjsPj413AebSw7KlJ1YUsbE5OFGOHn+Xr1cXgjFKPDg=="
+    "sig": "b9b0FBIvudJhl0T3hP9vVF876RAeOnkLU0UYoorFPG7hBnf8ttNP6+bvmgoLv5zUZteZdYmKZAn/aerxUbJeBQ=="
   }
 }
