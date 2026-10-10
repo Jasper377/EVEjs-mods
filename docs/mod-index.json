@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-10T15:22:00.010Z",
+  "publishedAt": "2026-10-10T15:38:19.802Z",
   "mods": [
     {
       "author": {
@@ -90,7 +90,7 @@
       "tags": [],
       "version": "1.0.14",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 323,
+      "downloads": 324,
       "cdnHits": 7
     },
     {
@@ -134,7 +134,7 @@
       "tags": [],
       "version": "1.0.3",
       "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite-1-0-3",
-      "downloads": 84,
+      "downloads": 85,
       "cdnHits": 0
     },
     {
@@ -193,7 +193,7 @@
       "tags": [],
       "version": "0.3.1",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 371,
+      "downloads": 377,
       "cdnHits": 0
     },
     {
@@ -245,7 +245,7 @@
       "tags": [],
       "version": "0.2.0",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
-      "downloads": 171,
+      "downloads": 172,
       "cdnHits": 0
     },
     {
@@ -332,7 +332,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 360,
+      "downloads": 362,
       "cdnHits": 55
     },
     {
@@ -374,55 +374,6 @@
       "tags": [],
       "version": "0.3.0",
       "source": "Jasper377/evejs-mod-evejs-sim-guard",
-      "downloads": 35,
-      "cdnHits": 0
-    },
-    {
-      "author": {
-        "id": "au-muwt2r89fjz0",
-        "keyId": "62c4ee92863e",
-        "name": "正在北极拔草"
-      },
-      "category": "玩法",
-      "changelog": "",
-      "conflicts": [],
-      "delisted": false,
-      "description": "把原版「低/中/高每族最多 8 槽」的上限解禁到 16（低槽 flag 11..18+37..44、中槽 19..26+45..52、高槽 27..34+65..72），让超过 8 槽的舰船能被正常显示、装配、编组与激活。默认【不修改任何舰船的槽位数值】——装上后原版船行为与原来完全一致，只有槽位数据被改成 9..16 的船才会用满新上限；HUD 本来就按当前船的实际槽数画格子，所以天然自适应。想要模组顺手扩船，把 config.json 的 expand.mode 设为 fill / multiply / add 即可。服务端只在内存里改（注入总线给四份同源 flag 区间表补两段），不修改任何服务端文件。⚠ 客户端必须配套一次：HUD 每族上限与扩展 flag 常量都在客户端，请按 README 运行 client-patch/apply_client_patch.py（自带备份与一键卸载）。",
-      "displayName": "十六槽机架（槽位上限解禁 8→16）",
-      "downloadUrls": [
-        {
-          "mirror": "github",
-          "priority": 1,
-          "url": "https://github.com/Jasper377/evejs-mod-evejs-racks16/releases/download/v2.0.0/evejs-racks16-2.0.0.zip"
-        }
-      ],
-      "evejsVersions": [
-        "0.12.9"
-      ],
-      "featured": false,
-      "highlights": [
-        "客户端 `slotsContainer.CheckButtonVisibility`：`if sidx == 8: break`",
-        "服务端四份 flag 区间表：都止于 flag 34"
-      ],
-      "history": [],
-      "id": "evejs-racks16",
-      "publishedAt": "2026-10-09",
-      "readme": [
-        "**这是「对原版游戏的扩展」，不是「替你把船改掉」。**",
-        "原版服务端与客户端都把低 / 中 / 高槽卡在**每族 8 个**：",
-        "本模组把这条线抬到 **16**（flag 见下表），但**默认完全不碰任何舰船的槽位数值**：",
-        "| 机架 | 原版上限 | 解禁后上限 | 新增用到的 flag |\n| --- | --- | --- | --- |\n| 低槽 lowSlots | 8 | **16** | 11..18 + 37..44 |\n| 中槽 medSlots | 8 | **16** | 19..26 + 45..52 |\n| 高槽 hiSlots | 8 | **16** | 27..34 + 65..72 |",
-        "`rigSlots`、炮位硬点、CPU / PG 全部不变。",
-        "> **装了之后你会看到什么？** 如果没改过任何船的槽位数据 —— **和没装一样**。8 槽的船还是 8 槽、HUD 还是画 8 格。\n> 因为 HUD 本来就按「当前船实际槽数」画（`GetNumSlots → GetNumHiSlots()`），它不需要被\"改\"。\n> 本模组做的是**把天花板抬起来**：一旦某艘船的 `lowSlots/medSlots/hiSlots` 被改成 9..16\n> （你自己改数据、或别的模组改），它才能真的用满，而且从 HUD 到装配、编组、激活整条链都不会再出问题。",
-        "---"
-      ],
-      "repo": "https://github.com/Jasper377/evejs-mod-evejs-racks16",
-      "requiresRestart": true,
-      "sha256": "05be2af8d264343f798981f3c735a50ba859b4144cf1d96dbf59b9e548320ba5",
-      "sizeBytes": 55609,
-      "tags": [],
-      "version": "2.0.0",
-      "source": "Jasper377/evejs-mod-evejs-racks16",
       "downloads": 36,
       "cdnHits": 0
     },
@@ -464,7 +415,56 @@
       "tags": [],
       "version": "0.2.2",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 211,
+      "downloads": 213,
+      "cdnHits": 0
+    },
+    {
+      "author": {
+        "id": "au-muwt2r89fjz0",
+        "keyId": "62c4ee92863e",
+        "name": "正在北极拔草"
+      },
+      "category": "玩法",
+      "changelog": "",
+      "conflicts": [],
+      "delisted": false,
+      "description": "把原版「低/中/高每族最多 8 槽」的上限解禁到 16，默认不修改任何舰船的槽位数值。",
+      "displayName": "槽位上限解禁 8→16",
+      "downloadUrls": [
+        {
+          "mirror": "github",
+          "priority": 1,
+          "url": "https://github.com/Jasper377/evejs-mod-evejs-racks16/releases/download/v3.0.0/evejs-racks16-3.0.0.zip"
+        }
+      ],
+      "evejsVersions": [
+        "0.12.9"
+      ],
+      "featured": false,
+      "highlights": [
+        "客户端 `slotsContainer.CheckButtonVisibility`：`if sidx == 8: break`",
+        "服务端四份 flag 区间表：都止于 flag 34"
+      ],
+      "history": [],
+      "id": "evejs-racks16",
+      "publishedAt": "2026-10-10",
+      "readme": [
+        "**这是「对原版游戏的扩展」，不是「替你把船改掉」。**",
+        "原版服务端与客户端都把低 / 中 / 高槽卡在**每族 8 个**。本模组把这条线抬到 **16**，但\n**默认完全不碰任何舰船的槽位数值**：",
+        "| 机架 | 原版上限 | 解禁后上限 | 新增用到的 flag |\n| --- | --- | --- | --- |\n| 低槽 lowSlots | 8 | **16** | 11..18 + 37..44 |\n| 中槽 medSlots | 8 | **16** | 19..26 + 45..52 |\n| 高槽 hiSlots | 8 | **16** | 27..34 + 65..72 |",
+        "`rigSlots`、炮位硬点、CPU / PG 全部不变。",
+        "> **装了之后你会看到什么？** 如果没改过任何船的槽位数据 —— **和没装一样**。8 槽的船还是 8 槽、\n> HUD 还是画 8 格。因为 HUD 本来就按「当前船实际槽数」画（`GetNumSlots → GetNumHiSlots()`），\n> 它不需要被\"改\"。本模组做的是**把天花板抬起来**：一旦某艘船的 `lowSlots/medSlots/hiSlots`\n> 被改成 9..16（你自己改数据、或别的模组改），它才能真的用满，而且从 HUD 到装配、编组、\n> 激活整条链都不会再出问题。",
+        "槽位数有**两条上游**，两边都要有：服务端负责放行扩展槽并把槽位数下发给客户端（本模组本体，\n不修改任何文件）；客户端负责 HUD 的每族上限与 16 列布局（`client-patch/`，**要单独跑一次安装脚本**）。",
+        "---"
+      ],
+      "repo": "https://github.com/Jasper377/evejs-mod-evejs-racks16",
+      "requiresRestart": true,
+      "sha256": "05908004032f4b2bfd3be9aea5c1c1e1662946058e307eb0044f6f61aa21e982",
+      "sizeBytes": 81999,
+      "tags": [],
+      "version": "3.0.0",
+      "source": "Jasper377/evejs-mod-evejs-racks16",
+      "downloads": 36,
       "cdnHits": 0
     },
     {
@@ -504,14 +504,14 @@
       "tags": [],
       "version": "1.5.3",
       "source": "Jasper377/evejs-mod-evejs-acspecialbattleship",
-      "downloads": 86,
+      "downloads": 90,
       "cdnHits": 0
     }
   ],
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "8mcvOPhT0MvaObd4C8zRZtsmxDoF99cyE11lpwsQdH1mCmsgKbr1RC1CxmfKoACaNYvmhBLNCVdy/3At1Il6Dw==",
-    "signedAt": "2026-10-10T15:22:00.013Z"
+    "sig": "DiVWAmxhmxYQ5zAswJLLys3K8qIyIOokxBL6t/WMEr2PHiyzFvp31mcd2r2THn38KzaLdQB/KKnrTWlguBN1DQ==",
+    "signedAt": "2026-10-10T15:38:19.804Z"
   }
 }
