@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-10T15:38:19.802Z",
+  "publishedAt": "2026-10-10T16:18:17.968Z",
   "mods": [
     {
       "author": {
@@ -43,7 +43,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 387,
+      "downloads": 389,
       "cdnHits": 51
     },
     {
@@ -90,7 +90,7 @@
       "tags": [],
       "version": "1.0.14",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 324,
+      "downloads": 329,
       "cdnHits": 7
     },
     {
@@ -134,7 +134,7 @@
       "tags": [],
       "version": "1.0.3",
       "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite-1-0-3",
-      "downloads": 85,
+      "downloads": 86,
       "cdnHits": 0
     },
     {
@@ -193,7 +193,7 @@
       "tags": [],
       "version": "0.3.1",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 377,
+      "downloads": 387,
       "cdnHits": 0
     },
     {
@@ -245,7 +245,7 @@
       "tags": [],
       "version": "0.2.0",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
-      "downloads": 172,
+      "downloads": 175,
       "cdnHits": 0
     },
     {
@@ -285,7 +285,7 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 328,
+      "downloads": 329,
       "cdnHits": 3
     },
     {
@@ -332,7 +332,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 362,
+      "downloads": 365,
       "cdnHits": 55
     },
     {
@@ -374,7 +374,7 @@
       "tags": [],
       "version": "0.3.0",
       "source": "Jasper377/evejs-mod-evejs-sim-guard",
-      "downloads": 36,
+      "downloads": 38,
       "cdnHits": 0
     },
     {
@@ -415,7 +415,7 @@
       "tags": [],
       "version": "0.2.2",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 213,
+      "downloads": 216,
       "cdnHits": 0
     },
     {
@@ -464,7 +464,7 @@
       "tags": [],
       "version": "3.0.0",
       "source": "Jasper377/evejs-mod-evejs-racks16",
-      "downloads": 36,
+      "downloads": 42,
       "cdnHits": 0
     },
     {
@@ -474,7 +474,7 @@
         "name": "正在北极拔草"
       },
       "category": "玩法",
-      "changelog": "修复安装失败直接跳过的问题",
+      "changelog": "优化安装逻辑",
       "conflicts": [],
       "delisted": false,
       "description": "新增两艘特别版掠夺舰：炽天使级与扶摇级。登录后自动安装客户端补丁（首次进游戏即完成），需前置mod解锁槽位上限",
@@ -483,7 +483,7 @@
         {
           "mirror": "github",
           "priority": 1,
-          "url": "https://github.com/Jasper377/evejs-mod-evejs-acspecialbattleship/releases/download/v1.5.3/evejs-acspecialbattleship-1.5.3.zip"
+          "url": "https://github.com/Jasper377/evejs-mod-evejs-acspecialbattleship/releases/download/v1.5.4/evejs-acspecialbattleship-1.5.4.zip"
         }
       ],
       "evejsVersions": [
@@ -499,19 +499,19 @@
       ],
       "repo": "https://github.com/Jasper377/evejs-mod-evejs-acspecialbattleship",
       "requiresRestart": true,
-      "sha256": "182a9010b7c50cbfd4a850e7d478b3eb3451c0a30b11750cf24d0f5f996cf6b1",
-      "sizeBytes": 1561466,
+      "sha256": "8ccb352d768a6e4609961f894fd80b7f24010efe9820e07184f498708921da7d",
+      "sizeBytes": 1565066,
       "tags": [],
-      "version": "1.5.3",
+      "version": "1.5.4",
       "source": "Jasper377/evejs-mod-evejs-acspecialbattleship",
-      "downloads": 90,
+      "downloads": 98,
       "cdnHits": 0
     }
   ],
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "DiVWAmxhmxYQ5zAswJLLys3K8qIyIOokxBL6t/WMEr2PHiyzFvp31mcd2r2THn38KzaLdQB/KKnrTWlguBN1DQ==",
-    "signedAt": "2026-10-10T15:38:19.804Z"
+    "sig": "lOPSKQ5fUj1DRnnRv0Q35RqVNNdNI6uqXXyEh/xTLhICjFYaMYjXtuRQq3UFelFkT5LSwHdq34ua7w6xj4DqDA==",
+    "signedAt": "2026-10-10T16:18:17.971Z"
   }
 }
