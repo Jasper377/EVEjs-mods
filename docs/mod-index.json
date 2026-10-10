@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-10T13:32:25.637Z",
+  "publishedAt": "2026-10-10T15:22:00.010Z",
   "mods": [
     {
       "author": {
@@ -43,7 +43,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 366,
+      "downloads": 387,
       "cdnHits": 51
     },
     {
@@ -90,7 +90,7 @@
       "tags": [],
       "version": "1.0.14",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 301,
+      "downloads": 323,
       "cdnHits": 7
     },
     {
@@ -134,7 +134,7 @@
       "tags": [],
       "version": "1.0.3",
       "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite-1-0-3",
-      "downloads": 81,
+      "downloads": 84,
       "cdnHits": 0
     },
     {
@@ -193,7 +193,7 @@
       "tags": [],
       "version": "0.3.1",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 335,
+      "downloads": 371,
       "cdnHits": 0
     },
     {
@@ -245,7 +245,7 @@
       "tags": [],
       "version": "0.2.0",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
-      "downloads": 162,
+      "downloads": 171,
       "cdnHits": 0
     },
     {
@@ -285,50 +285,8 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 325,
+      "downloads": 328,
       "cdnHits": 3
-    },
-    {
-      "author": {
-        "id": "au-muwt2r89fjz0",
-        "keyId": "62c4ee92863e",
-        "name": "正在北极拔草"
-      },
-      "category": "玩法",
-      "changelog": "流程验证mod包 v2.0发布时需卸载本mod",
-      "conflicts": [],
-      "delisted": false,
-      "description": "新增世界方舟（World Ark, typeID 91900）泰坦舰船：会战装备展开/收拢形态、30 款官方涂装、专属 XL 激光炮模型与技能。客户端补丁登录后自动安装。由 v1.0 预览版安装包按模组规范转换：不改服务端任何文件，全部内存注入 + 注入总线追加补丁。",
-      "displayName": "世界方舟舰船化（World Ark 91900）",
-      "downloadUrls": [
-        {
-          "mirror": "github",
-          "priority": 1,
-          "url": "https://github.com/Jasper377/evejs-mod-evejs-worldark/releases/download/v1.0.0/evejs-worldark-1.0.0.zip"
-        }
-      ],
-      "evejsVersions": [
-        "0.12.9"
-      ],
-      "featured": false,
-      "highlights": [],
-      "history": [],
-      "id": "evejs-worldark",
-      "publishedAt": "2026-10-10",
-      "readme": [
-        "客户端补丁复用 1.0 分发包原样载荷（`client/manifest.json` + `client/payload.tar.xz`），\n由自带 `client/tools/ark_pack.py`（新增 `--client-only` 模式）安装：",
-        "- 资源落盘前自动备份到 `<客户端>\\_ark_backup_<时间戳>\\`\n- `code.ccp` 控制器注入支持合并策略（保留已有第三方 shim）\n- 卸载：`python client/tools/ark_pack.py uninstall --client \"<客户端目录>\" --client-only [--purge]`\n- 校验：`python client/tools/ark_pack.py verify --client \"<客户端目录>\" --client-only`",
-        "要求：客户端 build 3396210、Python 3.8+（自动安装需要；手动跑 bat 也需要）。"
-      ],
-      "repo": "https://github.com/Jasper377/evejs-mod-evejs-worldark",
-      "requiresRestart": true,
-      "sha256": "80fdd940016c97775e967bbc3001a615d5653777178867203294f874d2122607",
-      "sizeBytes": 70627861,
-      "tags": [],
-      "version": "1.0.0",
-      "source": "Jasper377/evejs-mod-evejs-worldark",
-      "downloads": 12,
-      "cdnHits": 0
     },
     {
       "author": {
@@ -374,7 +332,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 352,
+      "downloads": 360,
       "cdnHits": 55
     },
     {
@@ -416,7 +374,7 @@
       "tags": [],
       "version": "0.3.0",
       "source": "Jasper377/evejs-mod-evejs-sim-guard",
-      "downloads": 31,
+      "downloads": 35,
       "cdnHits": 0
     },
     {
@@ -465,7 +423,7 @@
       "tags": [],
       "version": "2.0.0",
       "source": "Jasper377/evejs-mod-evejs-racks16",
-      "downloads": 28,
+      "downloads": 36,
       "cdnHits": 0
     },
     {
@@ -506,7 +464,7 @@
       "tags": [],
       "version": "0.2.2",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 202,
+      "downloads": 211,
       "cdnHits": 0
     },
     {
@@ -516,7 +474,7 @@
         "name": "正在北极拔草"
       },
       "category": "玩法",
-      "changelog": "添加了安装报错探针 服务端日志搜“探针上报\"行",
+      "changelog": "修复安装失败直接跳过的问题",
       "conflicts": [],
       "delisted": false,
       "description": "新增两艘特别版掠夺舰：炽天使级与扶摇级。登录后自动安装客户端补丁（首次进游戏即完成），需前置mod解锁槽位上限",
@@ -525,7 +483,7 @@
         {
           "mirror": "github",
           "priority": 1,
-          "url": "https://github.com/Jasper377/evejs-mod-evejs-acspecialbattleship/releases/download/v1.5.2/evejs-acspecialbattleship-1.5.2.zip"
+          "url": "https://github.com/Jasper377/evejs-mod-evejs-acspecialbattleship/releases/download/v1.5.3/evejs-acspecialbattleship-1.5.3.zip"
         }
       ],
       "evejsVersions": [
@@ -541,19 +499,19 @@
       ],
       "repo": "https://github.com/Jasper377/evejs-mod-evejs-acspecialbattleship",
       "requiresRestart": true,
-      "sha256": "9665ed01360669020d94bede2c62c62c48d5a9b76b5811b83b5d5f726969d279",
-      "sizeBytes": 1560203,
+      "sha256": "182a9010b7c50cbfd4a850e7d478b3eb3451c0a30b11750cf24d0f5f996cf6b1",
+      "sizeBytes": 1561466,
       "tags": [],
-      "version": "1.5.2",
+      "version": "1.5.3",
       "source": "Jasper377/evejs-mod-evejs-acspecialbattleship",
-      "downloads": 64,
+      "downloads": 86,
       "cdnHits": 0
     }
   ],
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "34hsu/Q4tzOcUArIBgdibnXRoxUYJ13CS5LUcKTnbHj4hG86uGSwKSvZYuDQtHFUoF062MrM5c0XXWJNOPjMDg==",
-    "signedAt": "2026-10-10T13:32:25.639Z"
+    "sig": "8mcvOPhT0MvaObd4C8zRZtsmxDoF99cyE11lpwsQdH1mCmsgKbr1RC1CxmfKoACaNYvmhBLNCVdy/3At1Il6Dw==",
+    "signedAt": "2026-10-10T15:22:00.013Z"
   }
 }
