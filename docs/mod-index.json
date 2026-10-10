@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-10T11:32:28.119Z",
+  "publishedAt": "2026-10-10T12:27:13.523Z",
   "mods": [
     {
       "author": {
@@ -90,7 +90,7 @@
       "tags": [],
       "version": "1.0.14",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 291,
+      "downloads": 292,
       "cdnHits": 7
     },
     {
@@ -134,7 +134,7 @@
       "tags": [],
       "version": "1.0.3",
       "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite-1-0-3",
-      "downloads": 79,
+      "downloads": 80,
       "cdnHits": 0
     },
     {
@@ -193,7 +193,7 @@
       "tags": [],
       "version": "0.3.1",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 317,
+      "downloads": 319,
       "cdnHits": 0
     },
     {
@@ -245,7 +245,7 @@
       "tags": [],
       "version": "0.2.0",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
-      "downloads": 158,
+      "downloads": 159,
       "cdnHits": 0
     },
     {
@@ -285,8 +285,50 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 320,
+      "downloads": 321,
       "cdnHits": 3
+    },
+    {
+      "author": {
+        "id": "au-muwt2r89fjz0",
+        "keyId": "62c4ee92863e",
+        "name": "正在北极拔草"
+      },
+      "category": "玩法",
+      "changelog": "流程验证mod包 v2.0发布时需卸载本mod",
+      "conflicts": [],
+      "delisted": false,
+      "description": "新增世界方舟（World Ark, typeID 91900）泰坦舰船：会战装备展开/收拢形态、30 款官方涂装、专属 XL 激光炮模型与技能。客户端补丁登录后自动安装。由 v1.0 预览版安装包按模组规范转换：不改服务端任何文件，全部内存注入 + 注入总线追加补丁。",
+      "displayName": "世界方舟舰船化（World Ark 91900）",
+      "downloadUrls": [
+        {
+          "mirror": "github",
+          "priority": 1,
+          "url": "https://github.com/Jasper377/evejs-mod-evejs-worldark/releases/download/v1.0.0/evejs-worldark-1.0.0.zip"
+        }
+      ],
+      "evejsVersions": [
+        "0.12.9"
+      ],
+      "featured": false,
+      "highlights": [],
+      "history": [],
+      "id": "evejs-worldark",
+      "publishedAt": "2026-10-10",
+      "readme": [
+        "客户端补丁复用 1.0 分发包原样载荷（`client/manifest.json` + `client/payload.tar.xz`），\n由自带 `client/tools/ark_pack.py`（新增 `--client-only` 模式）安装：",
+        "- 资源落盘前自动备份到 `<客户端>\\_ark_backup_<时间戳>\\`\n- `code.ccp` 控制器注入支持合并策略（保留已有第三方 shim）\n- 卸载：`python client/tools/ark_pack.py uninstall --client \"<客户端目录>\" --client-only [--purge]`\n- 校验：`python client/tools/ark_pack.py verify --client \"<客户端目录>\" --client-only`",
+        "要求：客户端 build 3396210、Python 3.8+（自动安装需要；手动跑 bat 也需要）。"
+      ],
+      "repo": "https://github.com/Jasper377/evejs-mod-evejs-worldark",
+      "requiresRestart": true,
+      "sha256": "80fdd940016c97775e967bbc3001a615d5653777178867203294f874d2122607",
+      "sizeBytes": 70627861,
+      "tags": [],
+      "version": "1.0.0",
+      "source": "Jasper377/evejs-mod-evejs-worldark",
+      "downloads": 0,
+      "cdnHits": 0
     },
     {
       "author": {
@@ -464,7 +506,7 @@
       "tags": [],
       "version": "0.2.2",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 194,
+      "downloads": 195,
       "cdnHits": 0
     },
     {
@@ -511,7 +553,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "F8cVPdSpJ1dynQxpWOGPOk1lbTuxGxgZULOZfLqRpa+A2klgnOCGYDG9MS/0lgV3cbI/slzpPUOJCzw7spVmDw==",
-    "signedAt": "2026-10-10T11:32:28.122Z"
+    "sig": "sNZci3Ewr/K9oxEJ+BhIPaL+9cEXWC3XQGh1KHwXOYHLSvr6a8kl1RsSzEHjMJ62XydFVLCy0Cl0Cs7SS7jiBA==",
+    "signedAt": "2026-10-10T12:27:13.525Z"
   }
 }
