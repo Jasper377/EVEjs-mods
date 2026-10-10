@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-10T03:12:26.961Z",
+  "publishedAt": "2026-10-10T06:33:50.201Z",
   "mods": [
     {
       "author": {
@@ -43,17 +43,17 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 358,
+      "downloads": 361,
       "cdnHits": 51
     },
     {
       "author": {
-        "id": "au-muk52dvb6mve",
-        "keyId": "1382094598d9",
+        "id": "au-muvf3plbuo9n",
+        "keyId": "bc816da2a7bc",
         "name": "波坤太叔"
       },
       "category": "玩法",
-      "changelog": "兼容0.12.9版本，现在不再使用命令打开设置窗口，使用左侧工具栏图标打开即可。",
+      "changelog": "兼容群星MOD，将本MOD放在所有MOD之后加载。",
       "conflicts": [],
       "delisted": false,
       "description": "这是一个在游戏内自动采矿,自动压缩的工具",
@@ -62,7 +62,7 @@
         {
           "mirror": "github",
           "priority": 1,
-          "url": "https://github.com/diguo520/evejs-mod-evejs-automining/releases/download/v1.0.10/evejs-automining-1.0.10.zip"
+          "url": "https://github.com/diguo520/evejs-mod-evejs-automining/releases/download/v1.0.14/evejs-automining-1.0.14.zip"
         }
       ],
       "evejsVersions": [
@@ -78,20 +78,19 @@
       ],
       "history": [],
       "id": "evejs-automining",
-      "publishedAt": "2026-09-30",
+      "publishedAt": "2026-10-10",
       "readme": [
-        "这是一个在游戏内自动采矿,自动压缩的工具。",
-        "- 进入游戏后，左侧工具栏（Neocom）会固定一个 ⛏ 采矿按钮，单击即可打开设置窗口。\n- 该按钮属于工具栏的「固定按钮区」，显示在左侧工具栏**底部**（时钟上方），不\n  在顶部的主图标列表里；鼠标悬停会显示「自动采矿」。\n- 也可以使用聊天命令：/AutoMining（不分大小写）打开工具。\n- 界面、状态与矿名会跟随客户端语言自动翻译；矿名使用客户端官方中文名称。",
+        "这是一个在游戏内自动采矿,自动压缩的工具。\n-将本MOD放在所有MOD之后进行加载。\n- 进入游戏后，左侧工具栏（Neocom）会固定一个 ⛏ 采矿按钮，单击即可打开设置窗口。\n- 该按钮属于工具栏的「固定按钮区」，显示在左侧工具栏**底部**（时钟上方），不\n  在顶部的主图标列表里；鼠标悬停会显示「自动采矿」。\n- 也可以使用聊天命令：/AutoMining（不分大小写）打开工具。\n- 界面、状态与矿名会跟随客户端语言自动翻译；矿名使用客户端官方中文名称。",
         "> 若看不到左侧 ⛏ 按钮：请先彻底关闭游戏客户端与服务器进程，再通过启动器重新启动（服务器与客户端都要重启，客户端更新内容在登录握手中下发）。"
       ],
       "repo": "https://github.com/diguo520/evejs-mod-evejs-automining",
       "requiresRestart": true,
-      "sha256": "2ad1f026c982a1fc30aac67e3518b93841b8fae0092b90dc73ad710cdf0f9a94",
-      "sizeBytes": 199543,
+      "sha256": "42135eacd49ee6b5f9e7f9e0df5f8dbc647bd7f9f2d3df78ece1225cd648e301",
+      "sizeBytes": 10155202,
       "tags": [],
-      "version": "1.0.10",
+      "version": "1.0.14",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 263,
+      "downloads": 267,
       "cdnHits": 7
     },
     {
@@ -135,7 +134,7 @@
       "tags": [],
       "version": "1.0.3",
       "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite-1-0-3",
-      "downloads": 76,
+      "downloads": 77,
       "cdnHits": 0
     },
     {
@@ -194,7 +193,7 @@
       "tags": [],
       "version": "0.3.1",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 282,
+      "downloads": 294,
       "cdnHits": 0
     },
     {
@@ -246,7 +245,7 @@
       "tags": [],
       "version": "0.2.0",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
-      "downloads": 147,
+      "downloads": 152,
       "cdnHits": 0
     },
     {
@@ -286,7 +285,7 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 315,
+      "downloads": 318,
       "cdnHits": 3
     },
     {
@@ -333,7 +332,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 343,
+      "downloads": 345,
       "cdnHits": 55
     },
     {
@@ -375,7 +374,7 @@
       "tags": [],
       "version": "0.3.0",
       "source": "Jasper377/evejs-mod-evejs-sim-guard",
-      "downloads": 14,
+      "downloads": 17,
       "cdnHits": 0
     },
     {
@@ -424,7 +423,7 @@
       "tags": [],
       "version": "2.0.0",
       "source": "Jasper377/evejs-mod-evejs-racks16",
-      "downloads": 9,
+      "downloads": 14,
       "cdnHits": 0
     },
     {
@@ -465,7 +464,7 @@
       "tags": [],
       "version": "0.2.2",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 181,
+      "downloads": 186,
       "cdnHits": 0
     },
     {
@@ -507,14 +506,14 @@
       "tags": [],
       "version": "1.3.3",
       "source": "Jasper377/evejs-mod-evejs-acspecialbattleship",
-      "downloads": 39,
+      "downloads": 43,
       "cdnHits": 0
     }
   ],
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "hj6r0UOgHfjMZAR6ZILgBcR/jB7sEBlC/fRSGJhKX8st9QxDDV1ohTIGWhzFS85JTa7sZ4tw3oA2LtMyOt76CA==",
-    "signedAt": "2026-10-10T03:12:26.963Z"
+    "sig": "Q5PeqoNoo1te2EUKFFnZWA5ZBOkhEAVbywcFDMQz8ASTcUSFZ57F+F8MVMuFxomd6ulx50H54jbmV8zPl8cBBQ==",
+    "signedAt": "2026-10-10T06:33:50.204Z"
   }
 }
