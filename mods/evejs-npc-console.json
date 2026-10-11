@@ -1,0 +1,23 @@
+{
+  "author": {
+    "id": "au-muwt2r89fjz0",
+    "keyId": "62c4ee92863e",
+    "name": "正在北极拔草"
+  },
+  "displayName": "NPC 控制台（本机 Web 控制台）",
+  "downloadUrls": [
+    {
+      "mirror": "github",
+      "priority": 1,
+      "url": "https://github.com/Jasper377/evejs-mod-evejs-npc-console/releases/download/v0.4.2/evejs-npc-console-0.4.2.zip"
+    }
+  ],
+  "id": "evejs-npc-console",
+  "publishedAt": "2026-10-11",
+  "schemaVersion": 1,
+  "sha256": "3fa8e646f4fc51e9824c1e2f4024aae1fc3e15c405a7de99ccc2bb6788dc9f42",
+  "sizeBytes": 91288,
+  "source": "Jasper377/evejs-mod-evejs-npc-console",
+  "submittedAt": "2026-10-11T17:30:41.197Z",
+  "version": "0.4.2"
+}
