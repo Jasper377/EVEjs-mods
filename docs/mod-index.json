@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-11T08:18:02.121Z",
+  "publishedAt": "2026-10-11T11:46:05.667Z",
   "mods": [
     {
       "author": {
@@ -43,7 +43,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 411,
+      "downloads": 414,
       "cdnHits": 51
     },
     {
@@ -90,7 +90,7 @@
       "tags": [],
       "version": "1.0.14",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 354,
+      "downloads": 362,
       "cdnHits": 7
     },
     {
@@ -134,7 +134,7 @@
       "tags": [],
       "version": "1.0.3",
       "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite-1-0-3",
-      "downloads": 102,
+      "downloads": 104,
       "cdnHits": 0
     },
     {
@@ -193,7 +193,7 @@
       "tags": [],
       "version": "0.3.1",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 431,
+      "downloads": 444,
       "cdnHits": 0
     },
     {
@@ -245,7 +245,7 @@
       "tags": [],
       "version": "0.2.0",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
-      "downloads": 183,
+      "downloads": 184,
       "cdnHits": 0
     },
     {
@@ -332,7 +332,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 376,
+      "downloads": 381,
       "cdnHits": 55
     },
     {
@@ -374,7 +374,7 @@
       "tags": [],
       "version": "0.3.0",
       "source": "Jasper377/evejs-mod-evejs-sim-guard",
-      "downloads": 44,
+      "downloads": 50,
       "cdnHits": 0
     },
     {
@@ -415,7 +415,7 @@
       "tags": [],
       "version": "0.2.2",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 228,
+      "downloads": 230,
       "cdnHits": 0
     },
     {
@@ -466,7 +466,7 @@
       "tags": [],
       "version": "3.1.2",
       "source": "Jasper377/evejs-mod-evejs-racks16",
-      "downloads": 87,
+      "downloads": 94,
       "cdnHits": 0
     },
     {
@@ -506,14 +506,14 @@
       "tags": [],
       "version": "1.6.0",
       "source": "Jasper377/evejs-mod-evejs-acspecialbattleship",
-      "downloads": 134,
+      "downloads": 145,
       "cdnHits": 0
     }
   ],
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "FyQnXJ6hjXo33TGHHr2DkgC2rJ4mwheaNsVcv8Hd/X0VzycqiES323bRIgSj5TNFyT2IZIrReOYgb4xGRdrUCw==",
-    "signedAt": "2026-10-11T08:18:02.124Z"
+    "sig": "iO5Sqa0OIjIbBBGDMlX0RbbEWLPUtsd3ytWEEToXdGxaUalmvL8crLnpUMiCrs3J2uOKFOIUG3i9rx+SjbmSBQ==",
+    "signedAt": "2026-10-11T11:46:05.670Z"
   }
 }
