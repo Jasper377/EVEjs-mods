@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-11T02:45:07.684Z",
+  "publishedAt": "2026-10-11T08:18:02.121Z",
   "mods": [
     {
       "author": {
@@ -43,7 +43,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 401,
+      "downloads": 411,
       "cdnHits": 51
     },
     {
@@ -90,7 +90,7 @@
       "tags": [],
       "version": "1.0.14",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 344,
+      "downloads": 354,
       "cdnHits": 7
     },
     {
@@ -134,7 +134,7 @@
       "tags": [],
       "version": "1.0.3",
       "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite-1-0-3",
-      "downloads": 93,
+      "downloads": 102,
       "cdnHits": 0
     },
     {
@@ -193,7 +193,7 @@
       "tags": [],
       "version": "0.3.1",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 400,
+      "downloads": 431,
       "cdnHits": 0
     },
     {
@@ -245,7 +245,7 @@
       "tags": [],
       "version": "0.2.0",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
-      "downloads": 180,
+      "downloads": 183,
       "cdnHits": 0
     },
     {
@@ -285,7 +285,7 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 338,
+      "downloads": 341,
       "cdnHits": 3
     },
     {
@@ -332,7 +332,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 371,
+      "downloads": 376,
       "cdnHits": 55
     },
     {
@@ -374,7 +374,7 @@
       "tags": [],
       "version": "0.3.0",
       "source": "Jasper377/evejs-mod-evejs-sim-guard",
-      "downloads": 43,
+      "downloads": 44,
       "cdnHits": 0
     },
     {
@@ -415,7 +415,7 @@
       "tags": [],
       "version": "0.2.2",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 222,
+      "downloads": 228,
       "cdnHits": 0
     },
     {
@@ -466,7 +466,7 @@
       "tags": [],
       "version": "3.1.2",
       "source": "Jasper377/evejs-mod-evejs-racks16",
-      "downloads": 69,
+      "downloads": 87,
       "cdnHits": 0
     },
     {
@@ -476,7 +476,7 @@
         "name": "正在北极拔草"
       },
       "category": "玩法",
-      "changelog": "优化安装逻辑",
+      "changelog": "",
       "conflicts": [],
       "delisted": false,
       "description": "新增两艘特别版掠夺舰：炽天使级与扶摇级。登录后自动安装客户端补丁（首次进游戏即完成），需前置mod解锁槽位上限",
@@ -485,7 +485,7 @@
         {
           "mirror": "github",
           "priority": 1,
-          "url": "https://github.com/Jasper377/evejs-mod-evejs-acspecialbattleship/releases/download/v1.5.4/evejs-acspecialbattleship-1.5.4.zip"
+          "url": "https://github.com/Jasper377/evejs-mod-evejs-acspecialbattleship/releases/download/v1.6.0/evejs-acspecialbattleship-1.6.0.zip"
         }
       ],
       "evejsVersions": [
@@ -495,25 +495,25 @@
       "highlights": [],
       "history": [],
       "id": "evejs-acspecialbattleship",
-      "publishedAt": "2026-10-10",
+      "publishedAt": "2026-10-11",
       "readme": [
         "新增两艘**特别版掠夺舰**ID340010/340011（属于额外新增物品，不改任何原版船）\n可从购买市场-特别版舰船-特别版掠夺舰分类中购买\n客户端补丁全自动安装：登录后自动完成，无需手动运行脚本"
       ],
       "repo": "https://github.com/Jasper377/evejs-mod-evejs-acspecialbattleship",
       "requiresRestart": true,
-      "sha256": "8ccb352d768a6e4609961f894fd80b7f24010efe9820e07184f498708921da7d",
-      "sizeBytes": 1565066,
+      "sha256": "85c4bb4dfb61d7d4b23aa8ec73fadd1a5912fc0a090c34b999001efa4daa67e4",
+      "sizeBytes": 1567392,
       "tags": [],
-      "version": "1.5.4",
+      "version": "1.6.0",
       "source": "Jasper377/evejs-mod-evejs-acspecialbattleship",
-      "downloads": 117,
+      "downloads": 134,
       "cdnHits": 0
     }
   ],
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "kPLd8TZVb3Gg4iaqL4LhhivOy4XZ4q+tPXXJvHU/Jd08M3KOoxxMZ/RStAdXHDDuzWATLODqW1hDIAG6p606CQ==",
-    "signedAt": "2026-10-11T02:45:07.687Z"
+    "sig": "FyQnXJ6hjXo33TGHHr2DkgC2rJ4mwheaNsVcv8Hd/X0VzycqiES323bRIgSj5TNFyT2IZIrReOYgb4xGRdrUCw==",
+    "signedAt": "2026-10-11T08:18:02.124Z"
   }
 }
