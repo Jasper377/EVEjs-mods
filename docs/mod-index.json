@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-11T17:40:17.091Z",
+  "publishedAt": "2026-10-11T18:07:53.878Z",
   "mods": [
     {
       "author": {
@@ -42,7 +42,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "rzwm/evejs-mod-evejs-beijing-time",
-      "downloads": 12,
+      "downloads": 13,
       "cdnHits": 0
     },
     {
@@ -246,7 +246,7 @@
         "name": "正在北极拔草"
       },
       "category": "玩法",
-      "changelog": "",
+      "changelog": "控制台用户个人文件存储路径同步NPC势力mod存储路径",
       "conflicts": [],
       "delisted": false,
       "description": "【NPC势力模拟控制台拓展】主要功能：重建剧本 · 世界重生成-推演倍速每10秒恢复设定值-加速快进时间的写入速度",
@@ -255,7 +255,7 @@
         {
           "mirror": "github",
           "priority": 1,
-          "url": "https://github.com/Jasper377/evejs-mod-evejs-npc-console/releases/download/v0.4.2/evejs-npc-console-0.4.2.zip"
+          "url": "https://github.com/Jasper377/evejs-mod-evejs-npc-console/releases/download/v0.5.0/evejs-npc-console-0.5.0.zip"
         }
       ],
       "evejsVersions": [
@@ -271,12 +271,12 @@
       ],
       "repo": "https://github.com/Jasper377/evejs-mod-evejs-npc-console",
       "requiresRestart": true,
-      "sha256": "3fa8e646f4fc51e9824c1e2f4024aae1fc3e15c405a7de99ccc2bb6788dc9f42",
-      "sizeBytes": 91288,
+      "sha256": "181ef7c7a29075175a1ba4b38788ff10879b44d394297da61dec2caf1d3f8c56",
+      "sizeBytes": 92726,
       "tags": [],
-      "version": "0.4.2",
+      "version": "0.5.0",
       "source": "Jasper377/evejs-mod-evejs-npc-console",
-      "downloads": 0,
+      "downloads": 2,
       "cdnHits": 0
     },
     {
@@ -606,7 +606,7 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "/+4cjuikOLQbfb0bpHU9+jdoVYwF7PuAaTgzsrp+TuvFiXx6cpISIF1u+h0ASKmgcHqfo4zexDX0FV94ttiyAA==",
-    "signedAt": "2026-10-11T17:40:17.094Z"
+    "sig": "2TJxo43yaynMbsRJ+gj0MqCcDJfRyOcTz8rFvgLP6Mvb1MmSVEBnPUFC3l3KEFy0Pp5wrR3xftDj9GU4w5JPBA==",
+    "signedAt": "2026-10-11T18:07:53.881Z"
   }
 }
