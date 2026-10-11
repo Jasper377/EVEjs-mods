@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-11T11:46:05.667Z",
+  "publishedAt": "2026-10-11T13:11:34.845Z",
   "mods": [
     {
       "author": {
@@ -43,7 +43,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 414,
+      "downloads": 420,
       "cdnHits": 51
     },
     {
@@ -90,7 +90,7 @@
       "tags": [],
       "version": "1.0.14",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 362,
+      "downloads": 368,
       "cdnHits": 7
     },
     {
@@ -134,7 +134,7 @@
       "tags": [],
       "version": "1.0.3",
       "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite-1-0-3",
-      "downloads": 104,
+      "downloads": 107,
       "cdnHits": 0
     },
     {
@@ -193,7 +193,7 @@
       "tags": [],
       "version": "0.3.1",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 444,
+      "downloads": 451,
       "cdnHits": 0
     },
     {
@@ -245,7 +245,7 @@
       "tags": [],
       "version": "0.2.0",
       "source": "xuenaimiao/evejs-mod-evejs-npc-fleet",
-      "downloads": 184,
+      "downloads": 187,
       "cdnHits": 0
     },
     {
@@ -285,7 +285,7 @@
       "tags": [],
       "version": "1.5.2",
       "source": "JUZIMandarin/evejs-mod-evejs-sleeper-drifters",
-      "downloads": 341,
+      "downloads": 348,
       "cdnHits": 3
     },
     {
@@ -332,7 +332,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 381,
+      "downloads": 385,
       "cdnHits": 55
     },
     {
@@ -374,7 +374,7 @@
       "tags": [],
       "version": "0.3.0",
       "source": "Jasper377/evejs-mod-evejs-sim-guard",
-      "downloads": 50,
+      "downloads": 54,
       "cdnHits": 0
     },
     {
@@ -415,7 +415,7 @@
       "tags": [],
       "version": "0.2.2",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 230,
+      "downloads": 234,
       "cdnHits": 0
     },
     {
@@ -466,7 +466,7 @@
       "tags": [],
       "version": "3.1.2",
       "source": "Jasper377/evejs-mod-evejs-racks16",
-      "downloads": 94,
+      "downloads": 99,
       "cdnHits": 0
     },
     {
@@ -506,14 +506,64 @@
       "tags": [],
       "version": "1.6.0",
       "source": "Jasper377/evejs-mod-evejs-acspecialbattleship",
-      "downloads": 145,
+      "downloads": 154,
+      "cdnHits": 0
+    },
+    {
+      "author": {
+        "id": "au-mv2j36e77ld7",
+        "keyId": "c790c8221d09",
+        "name": "蓝星指挥官"
+      },
+      "category": "玩法",
+      "changelog": "实现功能。",
+      "conflicts": [],
+      "delisted": false,
+      "description": "自动导航的时候，直接跳星门0km。自动导航默认把船停在星门约 10km 外，再亚光速慢慢爬进跳跃距离，然后才过门。 本模组把「自动导航」这一次跃迁的停船距离改成 0，船直接落到星门中心， 客户端立刻发跳跃指令 —— 和手动点「跳跃」的行为一致，自动导航明显更快。",
+      "displayName": "自动导航跳星门0km",
+      "downloadUrls": [
+        {
+          "mirror": "github",
+          "priority": 1,
+          "url": "https://github.com/rzwm/evejs-mod-evejs-autopilot-jump-stargate-0km/releases/download/v1.0.0/evejs-autopilot-jump-stargate-0km-1.0.0.zip"
+        }
+      ],
+      "evejsVersions": [
+        "0.12.9"
+      ],
+      "featured": false,
+      "highlights": [
+        "自动导航落点 0km，落点即进跳跃距离，省掉亚光速接近段",
+        "只影响**自动导航**；手动跃迁（跃迁到 0 / 10 / … km）、舰队跃迁、扫描点跃迁全部原样透传",
+        "不修改 `<EveJS 根>/server` 下任何文件：补丁只进内存，停用模组 + 重启服务端即还原",
+        "原方法一行没动：深渊禁跳、跃迁失败提示、日志都保留出厂行为"
+      ],
+      "history": [],
+      "id": "evejs-autopilot-jump-stargate-0km",
+      "publishedAt": "2026-10-11",
+      "readme": [
+        "改动点只有一个：`server/src/services/ship/beyonceService.js` 里的",
+        "```js\nHandle_CmdWarpToStuffAutopilot(args, session) {\n  ...\n  const result = spaceRuntime.warpToEntity(session, targetID, { minimumRange: 10000 });\n  //                                                              ^^^^^^^^^^^^^^^\n  //                                           出厂值，停船距离；手动跳跃走的是 0\n}\n```",
+        "`minimumRange` 在 `space/destiny/commands/warpCommands.js` 里被当成**停船距离**\n（`stopDistance: Math.max(0, toFiniteNumber(options.minimumRange, 0))`），\n所以 `10000` 就是「停在星门 10km 外」。改成 `0` 即落到星门中心。",
+        "**为什么不直接把那一行改掉？** 因为 MOD_AUTHORING.md 附录 G 的硬约定是\n**`apply` 只追加，不整段重写、不删原有内容**（后面的层要拿到你改完的结果继续追加）。\n所以本模组在目标文件**末尾追加**一小段代码（`lib/patch.js`），它在那个模块自己的\n作用域里运行，于是可以直接用模块顶层的 `BeyonceService`（class）与 `spaceRuntime`（单例）：",
+        "1. 包住 `BeyonceService.prototype.Handle_CmdWarpToStuffAutopilot`，调用期间把深度计数 `+1`；\n2. 包住 `spaceRuntime.warpToEntity`，深度计数 `> 0` 时把 `minimumRange` 强制成 `0`。\n   第 2 步是**延迟安装**的（第一次真的有人自动导航时才包）：目标文件有可能在 runtime\n   装配完成之前就被 require（循环依赖），那时 `warpToEntity` 还不存在 ——\n   延迟到调用时安装就不会因为编译时机而错过补丁。",
+        "该方法体内只有这一处 `warpToEntity` 调用，所以结果与「把那一行改成 0」等价；\n其它跃迁不在深度计数内，原样透传它们自己的 `minimumRange`。\n`finally` 复位计数，原方法抛错也不会把后续跃迁带偏。"
+      ],
+      "repo": "https://github.com/rzwm/evejs-mod-evejs-autopilot-jump-stargate-0km",
+      "requiresRestart": true,
+      "sha256": "43b0d3c402d4ceb689f6d3b204367e0d4db6e8ea12d2fc08fb3be53aef810f6c",
+      "sizeBytes": 17209,
+      "tags": [],
+      "version": "1.0.0",
+      "source": "rzwm/evejs-mod-evejs-autopilot-jump-stargate-0km",
+      "downloads": 0,
       "cdnHits": 0
     }
   ],
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "iO5Sqa0OIjIbBBGDMlX0RbbEWLPUtsd3ytWEEToXdGxaUalmvL8crLnpUMiCrs3J2uOKFOIUG3i9rx+SjbmSBQ==",
-    "signedAt": "2026-10-11T11:46:05.670Z"
+    "sig": "6TbdB7UW3vjMuUh3zB1zc0YDwtj0CLuV/iqh5AgZZHRegTWf5+R0CfsVZn6vjMMrg+yxquumy8Wtw9zic8hODg==",
+    "signedAt": "2026-10-11T13:11:34.848Z"
   }
 }
