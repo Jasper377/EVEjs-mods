@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-11T13:11:34.845Z",
+  "publishedAt": "2026-10-11T13:33:38.174Z",
   "mods": [
     {
       "author": {
@@ -43,7 +43,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 420,
+      "downloads": 421,
       "cdnHits": 51
     },
     {
@@ -134,7 +134,7 @@
       "tags": [],
       "version": "1.0.3",
       "source": "guihaitianyi-cmd/evejs-mod-evejs-evejs-hacking-suite-1-0-3",
-      "downloads": 107,
+      "downloads": 108,
       "cdnHits": 0
     },
     {
@@ -144,7 +144,7 @@
         "name": "匿名"
       },
       "category": "玩法",
-      "changelog": "mod整合 修复模拟建筑bug",
+      "changelog": "【势力模拟 0.3.2】\n· 只装这一个模组。国家无论哪一档，离首都近的可以是真建筑，不再整档只记账。\n· 生涯「雇佣」：没雇到人时只点「雇佣」。雇到以后再派护航、挖矿、运输、打捞、作战；没有目标就不放空按钮。收益进你的货。\n· 雇佣船只出现在你身边大约 8 公里。你不在或走远了就收回。\n· 锁住国家舰队时，没有舰队也会建队，驾驶员入队。\n· 运输工业船有驾驶员，旁边的人登不上去。\n· 舰队调令不盖过每艘船自己的命令。名叫「测试·」的演习舰队，重启后不再回来。\n· 舰长室默认仍是原来的房间。\n一、生涯里可以雇一支小队\n\n左侧栏「生涯」窗口多了一页，名字是「雇佣」。不用建国，普通飞行员就能用。不花军功，不走国库。\n\n- **报价不扣钱**。页上写着价钱、船数和时限。没雇到人时只有一个「雇佣」按钮，不把五种任务铺出来。\n- **点「雇佣」才扣**。从你自己的角色钱包扣这一次，编一支小队。同一条确认不会扣第二次，也不会再编一支。钱不够就不动钱包。\n- **雇到以后才派活**。一起挖矿、护航各自一个按钮。作战、打捞、帮忙运输只在真有目标、残骸或已记下的货时出现，点哪一行就做哪一件。没有目标时不放空按钮。\n- **这支小队不是任何国家的**。国家的调令、巡逻和打击计划不会把它派走。\n- **没编成会退钱**。船没造出来就退回刚才扣的钱，场上不留空舰队。\n- **结束不再扣钱**。解散、契约到期、船损失过半、或者你离线超过配置的分钟数，小队送回，不再收第二次。\n- 雇来的船是矿霸的精确档案，套上抓人船的炮。不是零伤害空壳，也不会把你自己算进自动开火。\n- **只能派这五件事**，收益只进你的货，不进势力库存：\n  - 护航：跟着你，打正在打你或者你正在打的人\n  - 一起挖矿：在你所在的星系采矿\n  - 帮忙运输：把你点名的货从起点运到终点，货还是你的\n  - 打捞：打捞你附近的残骸，同一残骸只入账一次\n  - 作战：打你指定的敌人，不会把你当目标\n- 不认识的任务会拒绝。点按钮之后，窗口底下有一句中文，说明做成了还是为什么没做成。\n- 护航和作战会把对方的船写到这支舰队上。打的是那艘船，不是角色编号，也不会把你自己的船当成目标。小队经常在你进星系时就已经生成，当时还没有任务；你之后点护航或作战，已经在场的船会改去打那艘敌船。敌船如果是点了任务之后才出现的，下一次视野检查也会补上。\n- **雇佣船只在你身边。** 雇主的船在这个星系里才生成，落在旁边大约 8 公里。不按护航停到星门。离你大约 40 公里以上，或者你不在这个星系，船收回，你再出现时放回身边。别人在、你不在，小队不出来。一起挖矿是把矿记到你身上，不会单靠这句话把船拉过来。改完后没有在真实客户端里再看过身边是否出现。\n\n### 二、舰队按自己的命令走，演习舰队不会赖着不走\n\n- 整队的意图不再替换每艘船自己的订单。\n- 你中途才看到一支正在跃迁的船时，按它还没飞完的那段算，不把整段航线再放一遍。\n- 推演按档走：停着的船不进移动计划，远的大约每秒动一次，近的想得更勤。\n- 测试场面刷出来的舰队名字以「测试·」开头。重启之后这些船不会再被生成出来。清除时先标成解散，再把船拆掉。\n\n### 三、舰长室打开时不再读后台缓冲\n\n以前打开舰长室会去读默认后台缓冲，窗口停住，不再往下走。这一版打开时不再读那一块。\n\n- 默认 `/cq` 和左侧栏的舰长室按钮仍是原来的房间。`/cq legacy` 也是那间。\n- `/cq layer a`、`/cq layer b1`、`/cq layer b2` 才是另外打开的分层试验，一次只试一种。不点这个，不会进那一间。\n- **写实房间没有在真实客户端里看过。** 这一版不能当成“房间已经在游戏里显示正确”。\n\n### 四、锁住国家舰队时，没有舰队也会给你建一支\n\n你用国务把国家舰队锁给自己之后，舰队指令以前会说你不在舰队里。客户端只有自己建过队、或接受过邀请，才记住这支舰队。服务器又要等船已经在太空、而且有驾驶员，才建你的舰队。\n\n- **至少锁住一支、自己还没有舰队时，马上建一支。** 船还没出站也建。\n- **现役船的 NPC 驾驶员加入你的舰队窗口。** 还没有驾驶员的现役船会借一名 NPC 驾驶员再加入。退役的不加入。\n- **没锁的舰队不会被拉进来。** 你已经在别人的舰队里时，这些 NPC 不加进去。\n- **锁定都解开之后**，若这支舰队是这次给你建的，会解散，并清掉会话里的舰队编号。\n- **重新登录时**，会话里已经有舰队编号，客户端会接上舰队服务。舰队指令不再因为你没自己点过建队，就说你不在舰队里。\n- **舰队窗口没有在真实客户端里看过。**\n\n### 五、运输队的工业船有驾驶员，登不上去\n\n运输队是三艘工业船，再加护航。比如天使运输队是两艘猛犸、一艘巨象。以前这些船生成成没有角色的船体，外观又经常借不到驾驶员，所以选中时驾驶员是空的，船却在移动。旁边的人可以登船。\n\n- 生成时写上这支舰队的势力。外观按这个势力借驾驶员，不靠公司名单是否已经跟上。\n- 球标成已经有人。客户端只在球不是交互的时候给出「登船」，所以这项菜单不再出现。\n- 就算菜单还开着，登船请求也会被拒绝。\n- 驾驶员还在补的那一小段，名字可能仍是船体名。这段时间也不能登。",
       "conflicts": [],
       "delisted": false,
       "description": "【仅限本机／内网使用，禁止用于公开或收费服务器】【整合版：一个 mod 装齐】NPC 势力模拟，把以前要分开装的几个合成了一个：势力模拟本体（像玩家一样的 NPC 势力：独立推演线程按事件推进势力数据 faction.sqlite，为每个势力建机器人账号、角色、公司和联盟，本机面板 127.0.0.1:26410，聊天命令 /faction） + 舰队模板（原 evejs-npc-fleet：整队生成 / 阵型 / 整队跃迁，/npcfleet） + 性能修复（原 evejs-perf-fix：空间帧循环 / 锁定扫描 / NPC 存储） + 舰长室 PoC（原 evejs-captains-quarters，/cq）。只装这一个就够了，不用再单独装那三个；如果你以前单独装过它们并且还启用着，整合版里自带的那份自动不加载，用你单独装的，不会冲突。只在内存中打补丁，不改任何文件；分项开关 EVEJS_MOD_FACTIONSIM=0、EVEJS_MOD_NPCFLEET=0、EVEJS_MOD_PERFFIX=0、EVEJS_MOD_CQ=0。首次启动数据库为空时自动按「开放宇宙」剧本开局，面板有「入门」页。",
@@ -153,7 +153,7 @@
         {
           "mirror": "github",
           "priority": 1,
-          "url": "https://github.com/xuenaimiao/evejs-mod-evejs-faction-sim/releases/download/v0.3.1/evejs-faction-sim-0.3.1.zip"
+          "url": "https://github.com/xuenaimiao/evejs-mod-evejs-faction-sim/releases/download/v0.3.2/evejs-faction-sim-0.3.2.zip"
         }
       ],
       "evejsVersions": [
@@ -176,7 +176,7 @@
       ],
       "history": [],
       "id": "evejs-faction-sim",
-      "publishedAt": "2026-10-10",
+      "publishedAt": "2026-10-11",
       "readme": [
         "> **使用声明：仅限本机／内网使用，禁止用于公开或收费服务器。** 本模组不接受公网地址的连接；作者不同意、也不支持把它用于对外开放或收费的服务器。全文见 [NOTICE.md](NOTICE.md)。",
         "> **只装 `evejs-faction-sim` 这一个 mod。** 舰队模板（原 `evejs-npc-fleet`，势力的舰船靠它整队生成、摆阵型、整队跃迁）、性能修复（原 `evejs-perf-fix`）和舰长室 PoC（原 `evejs-captains-quarters`）都在它的 `parts/` 里，加载时按这个顺序一起装上（`lib/bundle.js`）。\n> 以前单独装过那三个、现在还启用着的：自带的那份不加载，用单独装的，不会冲突；想改用自带的，把单独装的卸载或停用，重启。分项开关：`EVEJS_MOD_FACTIONSIM=0`、`EVEJS_MOD_NPCFLEET=0`、`EVEJS_MOD_PERFFIX=0`、`EVEJS_MOD_CQ=0`。",
@@ -188,12 +188,12 @@
       ],
       "repo": "https://github.com/xuenaimiao/evejs-mod-evejs-faction-sim",
       "requiresRestart": true,
-      "sha256": "7093a922b6ee07999ca8e50c33bd652631b1182b53e837a1f4945a529579b3a0",
-      "sizeBytes": 9274708,
+      "sha256": "4c9c1179068446c2732a7c258c0310eb1656241146449e638fdfd9d86525d08f",
+      "sizeBytes": 9459967,
       "tags": [],
-      "version": "0.3.1",
+      "version": "0.3.2",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 451,
+      "downloads": 458,
       "cdnHits": 0
     },
     {
@@ -332,7 +332,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 385,
+      "downloads": 386,
       "cdnHits": 55
     },
     {
@@ -415,7 +415,7 @@
       "tags": [],
       "version": "0.2.2",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 234,
+      "downloads": 235,
       "cdnHits": 0
     },
     {
@@ -506,7 +506,7 @@
       "tags": [],
       "version": "1.6.0",
       "source": "Jasper377/evejs-mod-evejs-acspecialbattleship",
-      "downloads": 154,
+      "downloads": 156,
       "cdnHits": 0
     },
     {
@@ -556,14 +556,14 @@
       "tags": [],
       "version": "1.0.0",
       "source": "rzwm/evejs-mod-evejs-autopilot-jump-stargate-0km",
-      "downloads": 0,
+      "downloads": 4,
       "cdnHits": 0
     }
   ],
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "6TbdB7UW3vjMuUh3zB1zc0YDwtj0CLuV/iqh5AgZZHRegTWf5+R0CfsVZn6vjMMrg+yxquumy8Wtw9zic8hODg==",
-    "signedAt": "2026-10-11T13:11:34.848Z"
+    "sig": "Wq9v6lZvN90fz9MfGgM+ji38BCf7y19dL03pJ4NiorukSEbicnlJph2DBaGxkDaw2SiZrBA7/UpA3sdBfMdbAg==",
+    "signedAt": "2026-10-11T13:33:38.177Z"
   }
 }
