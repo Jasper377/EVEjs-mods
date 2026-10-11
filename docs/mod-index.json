@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "publishedAt": "2026-10-11T18:07:53.878Z",
+  "publishedAt": "2026-10-11T21:11:53.727Z",
   "mods": [
     {
       "author": {
@@ -42,7 +42,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "rzwm/evejs-mod-evejs-beijing-time",
-      "downloads": 13,
+      "downloads": 14,
       "cdnHits": 0
     },
     {
@@ -86,7 +86,7 @@
       "tags": [],
       "version": "1.1.0",
       "source": "diguo520/evejs-mod-evejs-autolockfire",
-      "downloads": 432,
+      "downloads": 433,
       "cdnHits": 51
     },
     {
@@ -133,7 +133,7 @@
       "tags": [],
       "version": "1.0.14",
       "source": "diguo520/evejs-mod-evejs-automining",
-      "downloads": 382,
+      "downloads": 383,
       "cdnHits": 7
     },
     {
@@ -236,7 +236,7 @@
       "tags": [],
       "version": "0.3.2",
       "source": "xuenaimiao/evejs-mod-evejs-faction-sim",
-      "downloads": 539,
+      "downloads": 545,
       "cdnHits": 0
     },
     {
@@ -276,7 +276,7 @@
       "tags": [],
       "version": "0.5.0",
       "source": "Jasper377/evejs-mod-evejs-npc-console",
-      "downloads": 2,
+      "downloads": 6,
       "cdnHits": 0
     },
     {
@@ -415,7 +415,7 @@
       "tags": [],
       "version": "1.0.5",
       "source": "diguo520/evejs-mod-evejs-cntext-fix",
-      "downloads": 391,
+      "downloads": 393,
       "cdnHits": 55
     },
     {
@@ -456,7 +456,7 @@
       "tags": [],
       "version": "0.2.2",
       "source": "xuenaimiao/evejs-mod-evejs-perf-fix",
-      "downloads": 239,
+      "downloads": 242,
       "cdnHits": 0
     },
     {
@@ -509,7 +509,7 @@
       "tags": [],
       "version": "3.2.0",
       "source": "Jasper377/evejs-mod-evejs-racks16",
-      "downloads": 107,
+      "downloads": 110,
       "cdnHits": 0
     },
     {
@@ -549,7 +549,7 @@
       "tags": [],
       "version": "1.6.0",
       "source": "Jasper377/evejs-mod-evejs-acspecialbattleship",
-      "downloads": 165,
+      "downloads": 166,
       "cdnHits": 0
     },
     {
@@ -599,14 +599,14 @@
       "tags": [],
       "version": "1.0.0",
       "source": "rzwm/evejs-mod-evejs-autopilot-jump-stargate-0km",
-      "downloads": 16,
+      "downloads": 19,
       "cdnHits": 0
     }
   ],
   "signature": {
     "alg": "ed25519",
     "keyId": "944f9c6ed4b6",
-    "sig": "2TJxo43yaynMbsRJ+gj0MqCcDJfRyOcTz8rFvgLP6Mvb1MmSVEBnPUFC3l3KEFy0Pp5wrR3xftDj9GU4w5JPBA==",
-    "signedAt": "2026-10-11T18:07:53.881Z"
+    "sig": "aRsjkcOEYCGm8q0cYKQNXGadCqmSgMSh+Z8AYBEI2wMc6G+1O+TR9fakMeX54qVFMWIynQfWRjR1R/0Yfs2fDg==",
+    "signedAt": "2026-10-11T21:11:53.729Z"
   }
 }
