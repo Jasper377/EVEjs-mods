@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": 1791726042474,
+  "generatedAt": 1791743443460,
   "modId": "evejs-faction-sim",
   "reviews": [
     {
@@ -8,12 +8,12 @@
       "keyId": "1574beaf5442",
       "author": "",
       "corp": "",
-      "country": "CN",
+      "country": "JP",
       "stars": 5,
-      "version": "0.3.1",
-      "date": "2026-10-10",
-      "body": "",
-      "edited": false
+      "version": "0.3.2",
+      "date": "2026-10-11",
+      "body": "0.3.2没法更新啊，显示zip压缩包里没有evejs-launcher.mod.json文件",
+      "edited": true
     },
     {
       "id": "rv-1791438395469-21220",
@@ -31,6 +31,6 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "evejs-ratings-2026-10-01",
-    "sig": "DiJ/71pMfUBIcqXNQSTzDhokxaDybkpS6F8MKVMZ7DxgcXeedkrkyK1ljg7onWdMyb7EEkS7kvjNcynInYozDQ=="
+    "sig": "AZQJR/MndFjqdtgfBcTqzgVmXug6M1vv6qS7DzlkXahdMp70sNY/LckHCeUxUmTUM6hZvzbuspXlZODkmseNAg=="
   }
 }
