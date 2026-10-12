@@ -58,5 +58,11 @@
     "publicKey": "",
     "repo": "rzwm/evejs-mod-evejs-autopilot-jump-stargate-0km",
     "firstSeen": "2026-10-11"
+  },
+  "au-mugiwdpeuaty": {
+    "keyId": "41cce0afeee7",
+    "publicKey": "",
+    "repo": "exiell/evejs-mod-evejs-npc",
+    "firstSeen": "2026-10-12"
   }
 }
