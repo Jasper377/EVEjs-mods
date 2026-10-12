@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": 1791758441258,
+  "generatedAt": 1791770444361,
   "modId": "evejs-npc-fleet",
   "reviews": [
     {
@@ -19,6 +19,6 @@
   "signature": {
     "alg": "ed25519",
     "keyId": "evejs-ratings-2026-10-01",
-    "sig": "3mm0XHurqyOiABHR9QTvxQ8UmBfXvvxKWRqGcJeoeJL5PLVYEicOu4U49kHakow80za3VY5zTa1oefKLDoH6Bg=="
+    "sig": "oo/e8kS8J+3pO/LTHSg+XWpt3rbXy2G98Zg4Hei/QCgjiShbHObyzIMt9x1dNnp1kd/bOo4ck8/VqgRcstdKCg=="
   }
 }
